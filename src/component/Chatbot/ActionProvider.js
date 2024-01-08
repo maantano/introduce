@@ -50,7 +50,6 @@ const ActionProvider = ({ createChatBotMessage, setState, children }) => {
   const handleIntroduceDetail = () => {
     const botMessage = createChatBotMessage("경력 소개입니다.", {
       widget: "introduceDetail",
-      delay: 500,
     });
     setState((prev) => ({
       ...prev,
