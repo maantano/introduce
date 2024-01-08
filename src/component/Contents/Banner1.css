@@ -1,0 +1,60 @@
+.banner-block {
+  display: flex;
+  flex-direction: column;
+  border-bottom: 1px solid #3f3f3f;
+}
+.banner-menu {
+  display: flex;
+  flex-direction: row;
+  padding-top: 20px;
+}
+.banner-item {
+  align-items: center;
+  cursor: pointer;
+  display: flex;
+  flex-shrink: 0;
+  height: 48px;
+  justify-content: center;
+  margin-right: 24px;
+  min-width: 48px;
+  padding: 0;
+  position: relative;
+}
+.banner-menu .tab {
+  color: #aaa;
+  font-family: "Roboto", "Arial", sans-serif;
+  font-size: 12px;
+  line-height: 2.2rem;
+  font-weight: 500;
+}
+.banner-menu .tab-selected {
+  color: #f1f1f1;
+}
+
+.banner-menu .tab-bar {
+  bottom: 1px;
+  left: 0;
+  position: absolute;
+  right: 0;
+  z-index: 1;
+  height: 2px;
+  background-color: #717171;
+  opacity: 0;
+}
+.banner-menu .tab-bar-selected {
+  opacity: 1;
+  background-color: white;
+}
+.banner-item:hover .tab-bar {
+  opacity: 1;
+}
+
+.banner-block .tab-bar-selected-slider {
+  background-color: #f1f1f1;
+  border-radius: 1px;
+  bottom: 1px;
+  height: 2px;
+  margin-top: -2px;
+  transition: 0.2s;
+  width: 50px;
+}

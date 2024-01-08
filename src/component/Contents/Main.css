@@ -1,0 +1,137 @@
+.banner-mx {
+  margin-left: calc(35% - 442px);
+  margin-right: calc(35% - 442px);
+}
+.banner-img {
+  border-radius: 12px;
+}
+.thumb-container {
+  margin: 0 24px 0 0;
+}
+.thumb-nail {
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  overflow: hidden;
+  background-color: transparent;
+}
+
+.certificated-icon {
+  width: 11px;
+  height: 11px;
+  fill: #aaaaaa;
+}
+.name {
+  font-weight: 600;
+  font-size: 32px;
+}
+
+.thumb-nail-sub {
+  color: #aaaaaa;
+  font-size: 12px;
+  margin: 5px 4px;
+}
+.email {
+  color: #3ea6ff;
+}
+.other-link {
+  font-size: 12px;
+}
+.mydata .justify-align {
+  align-items: center;
+  justify-content: center;
+}
+.my-data .flex-type {
+  flex-direction: row;
+}
+
+/* .banner-img {
+	position: relative;
+	background-image: url("https://yt3.googleusercontent.com/p2ZIcHzBIMFBLqhAZJ8pGHc1c2F1BzKxFPpUtaAMMSC7xlNFWabSLVbi_w0B5wmP6gKDIZ6NbQ=w2560-fcrop64=1,00005a57ffffa5a8-k-c0xffffffff-no-nd-rj");
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center center;
+	border-radius: 12px;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+  } */
+
+/* 노트북 & 테블릿 가로 (해상도 1024px ~ 1279px)*/
+@media all and (min-width: 1110px) and (max-width: 1460px) {
+  .banner-mx {
+    margin-left: calc(50% - 442px);
+    margin-right: calc(50% - 442px);
+  }
+}
+
+/* 테블릿 가로 (해상도 768px ~ 1023px)*/
+@media all and (min-width: 890px) and (max-width: 1110px) {
+  .banner-mx {
+    margin-left: calc(50% - 342px);
+    margin-right: calc(50% - 342px);
+  }
+}
+
+/* 모바일 가로 & 테블릿 세로 (해상도 480px ~ 767px)*/
+@media all and (min-width: 670px) and (max-width: 890px) {
+  .banner-mx {
+    margin-left: calc(50% - 242px);
+    margin-right: calc(50% - 242px);
+  }
+}
+
+/* 모바일 세로 (해상도 ~ 479px)*/
+@media all and (min-width: 500px) and (max-width: 670px) {
+  .banner-mx {
+    margin-left: calc(50% - 142px);
+    margin-right: calc(50% - 142px);
+  }
+  .my-data .justify-align {
+    align-items: center;
+    justify-content: center;
+  }
+  .my-data .flex-type {
+    flex-direction: column;
+  }
+
+  .thumb-nail {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    overflow: hidden;
+    background-color: transparent;
+  }
+  .arr-icon {
+    display: none;
+  }
+}
+
+@media all and (max-width: 500px) {
+  .banner-mx {
+    margin-left: calc(50% - 42px);
+    margin-right: calc(50% - 42px);
+  }
+  .banner-mx .banner-img {
+    display: none;
+  }
+  .my-data .justify-align {
+    align-items: center;
+    justify-content: center;
+  }
+  .my-data .flex-type {
+    flex-direction: column;
+  }
+
+  .thumb-nail {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    overflow: hidden;
+    background-color: transparent;
+  }
+  .arr-icon {
+    display: none;
+  }
+}

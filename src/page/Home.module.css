@@ -1,0 +1,36 @@
+/* .tableList {
+  border: 1px solid white;
+  border-radius: 15px;
+} */
+.tableListItem {
+  border: none;
+}
+.tableBody {
+  border-radius: 15px;
+}
+.tableListItem:hover {
+  color: black;
+  background-color: white;
+  border-radius: 15px;
+}
+
+.tableList tr:last-child td:first-child {
+  border-bottom-left-radius: 13px;
+}
+
+.tableList tr:last-child td:last-child {
+  border-bottom-right-radius: 13px;
+}
+
+.editBtn:hover {
+  border: 1px solid black;
+  color: black;
+}
+.deleteBtn:hover {
+  border: 1px solid red;
+  color: red;
+}
+
+.noneOutline {
+  outline: none;
+}

@@ -1,25 +1,63 @@
-import logo from './logo.svg';
-import './App.css';
+import { RouterProvider, createBrowserRouter } from "react-router-dom";
+import "./App.css";
+import Root from "./page/Root";
+import Test from "./page/Test";
 
+import Home from "./page/Home";
+import { firestore } from "./firebase-config.js";
+import UserRead from "./page/UserRead";
+import UserCreat from "./page/UserCreat";
+import UserUpdate from "./page/UserUpdate";
+import UserDelete from "./page/UserDelete";
+import TestList, { loader as testDetailLoader } from "./page/TestList";
+import NewInput from "./page/NewInput";
+import DescriptDetail from "./page/DescriptDetail";
+import EditTest from "./page/EditTest";
+import Chatbot from "./page/ChatbotPage";
+
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <Root />,
+    children: [
+      { index: true, element: <Home /> },
+      { path: "chatbot", element: <Chatbot /> },
+      {
+        path: "testlist",
+        element: <TestList />,
+        children: [
+          { index: true, element: <TestList /> },
+          {
+            path: ":detailId",
+            element: <DescriptDetail />,
+            id: "test-detail",
+            loader: testDetailLoader,
+          },
+          // {
+          //   path: "edit/:editId",
+          //   element: <EditTest />,
+          //   id: "test-edit",
+          //   loader: testDetailLoader,
+          // },
+        ],
+      },
+      { path: "testwrite", element: <NewInput /> },
+      // {
+      //   path: "/testlist/:detailId",
+      //   element: <DescriptDetail />,
+      //   id: "test-detail",
+      //   loader: testDetailLoader,
+      // },
+
+      { path: "/delete", element: <UserDelete /> },
+      { path: "/read", element: <UserRead /> },
+      { path: "/update", element: <UserUpdate /> },
+      { path: "/create", element: <UserCreat /> },
+    ],
+  },
+]);
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+  return <RouterProvider router={router} />;
 }
 
 export default App;

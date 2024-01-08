@@ -1,0 +1,65 @@
+.input-box-c {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.ytd-searchbox {
+  display: flex;
+  flex-direction: column;
+  justify-contents: center;
+  align-item: center;
+  font-size: 14px;
+  border: none;
+  padding: 0px;
+  margin: 0px;
+  height: auto;
+  width: 100%;
+  outline: none;
+  color: #aaaaaa;
+}
+
+.input-box .inputShow {
+  height: 384px;
+  background-color: #222222;
+  width: 100%;
+  border-radius: 10px;
+  max-width: 515px;
+  top: 50px;
+  position: fixed;
+}
+
+.input-box .inputShow ul {
+  list-style-type: none;
+  margin-top: 15px;
+  padding: 0;
+}
+
+.input-box .inputShow ul li {
+  text-align: left;
+  padding: 0px 0px 0px 16px;
+  font-size: 0.8rem;
+  line-height: 28px;
+  overflow: hidden;
+}
+.searchItem {
+  width: 100%;
+  color: white;
+  display: flex;
+  align-items: center;
+  white-space: pre;
+}
+
+.searchItem:before {
+  background: no-repeat
+    url("data:image/svg+xml;base64, PHN2ZyBmaWxsPSIjZjFmMWYxIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxwYXRoIGQ9Ik0xMi40NzUgMTQuMTI1M0w4LjMzMzMgMTEuNTU4N1Y1LjgzMzY2SDkuOTk5OTdWMTAuNjMzN0wxMy4zNTgzIDEyLjcwODdMMTIuNDc1IDE0LjEyNTNaTTE4LjMzMzMgMTAuMDAwM0MxOC4zMzMzIDE0LjU5MiAxNC41OTE2IDE4LjMzMzcgOS45OTk5NyAxOC4zMzM3QzUuNDA4MyAxOC4zMzM3IDEuNjY2NjMgMTQuNTkyIDEuNjY2NjMgMTAuMDAwM0gyLjQ5OTk3QzIuNDk5OTcgMTQuMTMzNyA1Ljg2NjYzIDE3LjUwMDMgOS45OTk5NyAxNy41MDAzQzE0LjEzMzMgMTcuNTAwMyAxNy41IDE0LjEzMzcgMTcuNSAxMC4wMDAzQzE3LjUgNS44NjY5OSAxNC4xMzMzIDIuNTAwMzMgOS45OTk5NyAyLjUwMDMzQzcuMzQxNjMgMi41MDAzMyA0LjkzMzMgMy44NjY5OSAzLjU2NjYzIDYuMTUwMzNDMy40NzQ5NyA2LjMwMDMzIDMuMzgzMyA2LjQ1ODY2IDMuMzA4MyA2LjYxNjk5QzMuMjk5OTcgNi42MzM2NiAzLjI5MTYzIDYuNjUwMzMgMy4yODMzIDYuNjY2OTlINi42NjY2M1Y3LjUwMDMzSDEuNjMzM1YyLjUwMDMzSDIuNDY2NjNWNi40NTAzM0MyLjQ5OTk3IDYuMzc1MzMgMi41MjQ5NyA2LjMwODY2IDIuNTU4MyA2LjI0MTk5QzIuNjQ5OTcgNi4wNTg2NiAyLjc0OTk3IDUuODkxOTkgMi44NDk5NyA1LjcxNjk5QzQuMzQ5OTcgMy4yMTY5OSA3LjA5MTYzIDEuNjY2OTkgOS45OTk5NyAxLjY2Njk5QzE0LjU5MTYgMS42NjY5OSAxOC4zMzMzIDUuNDA4NjYgMTguMzMzMyAxMC4wMDAzWiIvPjwvc3ZnPg==");
+}
+.searchItem:before {
+  margin-top: -2px;
+  margin-right: 7px;
+  height: 20px;
+  width: 25px;
+  content: " ";
+}
+.input-box .inputShow ul li:hover {
+  background: #303030;
+}
