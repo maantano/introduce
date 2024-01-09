@@ -1,0 +1,21 @@
+.separator {
+  height: 1px;
+  background-color: #fff; /* 나머지 부분의 배경색 */
+  margin: 10px 0;
+  border: none;
+  position: relative;
+}
+
+.thick-segment {
+  height: 10px;
+  background-color: #fff; /* 특정 길이까지의 배경색 */
+}
+
+.thin-segment {
+  height: 1px;
+  background-color: #fff; /* 나머지 길이의 배경색 */
+  position: absolute;
+  top: 10px; /* 특정 길이(10px)까지의 높이 */
+  left: 0;
+  right: 0;
+}

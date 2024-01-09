@@ -15,6 +15,8 @@ import DescriptDetail from "./page/DescriptDetail";
 
 import Chatbot from "./page/ChatbotPage";
 import PortfolioDetail from "./page/portfolio/PortfolioDetail";
+import PortfolioItem from "./page/portfolio/PortfolioItem";
+import PortfolioItem2 from "./page/portfolio/PortfolioItem2";
 
 const router = createBrowserRouter([
   {
@@ -49,7 +51,8 @@ const router = createBrowserRouter([
       //   id: "test-detail",
       //   loader: testDetailLoader,
       // },
-      { path: "/portDetail", element: <PortfolioDetail /> },
+      // { path: "/portDetail", element: <PortfolioDetail /> },
+      { path: "/portDetail", element: <PortfolioItem2 /> },
       { path: "/delete", element: <UserDelete /> },
       { path: "/read", element: <UserRead /> },
       { path: "/update", element: <UserUpdate /> },
