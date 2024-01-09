@@ -47,49 +47,9 @@ const UnderLine = styled(motion.div)`
 `;
 
 const Banner1 = () => {
-  // useEffect(() => {
-  //   // 클라이언트에서만 실행되는 코드
-  //   const screenWidth = window.innerWidth;
-  //   const screenHeight = window.innerHeight;
-
-  //   console.log("screenWidth ===>", screenWidth);
-  //   console.log("screenHeight ===>", screenHeight);
-  // }, []); // []는 componentDidMount와 동일하게 컴포넌트가 마운트될 때 한 번만 실행
-
-  // // 나머지 컴포넌트 로직
-  // const [selectTab, setSelectTab] = useState(0);
-  // const [sliderStyle, setSliderStyle] = useState({
-  //   width: "48px",
-  //   transform: "translateX(132.5px)",
-  // });
-
-  // const handleSelectTab = (idx) => {
-  //   setSelectTab(idx);
-  // };
-
-  // const bannerRef = useRef(null);
-
-  // useEffect(() => {
-  //   const tab = bannerRef.current?.querySelector(
-  //     `.banner-item:nth-child(${selectTab + 1})`
-  //   );
-
-  //   if (tab) {
-  //     const tabRect = tab.getBoundingClientRect();
-  //     const newPoint = tabRect.left - 220;
-
-  //     setSliderStyle({
-  //       width: `${tabRect.width}px`,
-  //       transform: `translateX(${newPoint}px)`,
-  //     });
-  //   }
-  // }, [selectTab]);
-
   // ================================================================
-  const tabs = ["홈", "동영상", "Shorts", "라이브", "팟캐스트", "재생목록"];
+  const tabs = ["포트폴리오", "개인공부", "인생 그래프", "경력 한눈에 보기"];
   const dispatch = useDispatch();
-  // const curIdx = useSelector((state) => state.currentReducer.index);
-
   const [selectedIndex, setIndex] = useState(0);
   const onClickIndx = (idx) => {
     setIndex(idx);

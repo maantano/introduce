@@ -15,6 +15,7 @@ import IntroduceDetail from "./Introduce/IntroduceDetail";
 import IntroduceMyself from "./Introduce/IntroduceMyself";
 import MoreQuestion from "./Introduce/MoreQuestion";
 import Typography from "@mui/joy/Typography";
+import Options from "./Options";
 // const optionBtn = (
 //   <div
 //     className="border border-solid text-black w-1/3 p-2 text-center rounded-3xl"
@@ -29,12 +30,9 @@ const config = {
   initialMessages: [
     createChatBotMessage(
       // "안녕하세요! 민경언의 챗봇 입니다.⌛️처음으로 돌아가길 원하시면 '다시 시작'을 입력해 주세요."
-      <div>
-        안녕하세요! 민경언의 챗봇 입니다.
-        <br />
-        <br />
-        ⌛️처음으로 돌아가길 원하시면 '다시 시작'을 입력해 주세요.
-      </div>,
+      <Typography level="title-md">
+        안녕하세요! 민경언의 챗봇 입니다. 궁금하신 내용을 클릭해주세요.
+      </Typography>,
 
       {
         widget: "intiOption",
@@ -68,7 +66,7 @@ const config = {
     },
     {
       widgetName: "showOption",
-      widgetFunc: (props) => <InitOption {...props} />,
+      widgetFunc: (props) => <Options {...props} />,
     },
   ],
   customComponents: {

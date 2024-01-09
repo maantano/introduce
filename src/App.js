@@ -12,8 +12,9 @@ import UserDelete from "./page/UserDelete";
 import TestList, { loader as testDetailLoader } from "./page/TestList";
 import NewInput from "./page/NewInput";
 import DescriptDetail from "./page/DescriptDetail";
-import EditTest from "./page/EditTest";
+
 import Chatbot from "./page/ChatbotPage";
+import PortfolioDetail from "./page/portfolio/PortfolioDetail";
 
 const router = createBrowserRouter([
   {
@@ -48,7 +49,7 @@ const router = createBrowserRouter([
       //   id: "test-detail",
       //   loader: testDetailLoader,
       // },
-
+      { path: "/portDetail", element: <PortfolioDetail /> },
       { path: "/delete", element: <UserDelete /> },
       { path: "/read", element: <UserRead /> },
       { path: "/update", element: <UserUpdate /> },

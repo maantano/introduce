@@ -3,14 +3,11 @@ import { db } from "../firebase-config";
 import {
   addDoc,
   collection,
-  deleteDoc,
-  doc,
   getDocs,
   orderBy,
   query,
 } from "firebase/firestore";
-import classes from "./Home.module.css";
-import { redirect, useNavigate } from "react-router-dom";
+
 const Test = () => {
   const [users, setUsers] = useState([]);
 
@@ -34,11 +31,6 @@ const Test = () => {
     };
     getUsers();
   }, []);
-
-  // author
-  // date,
-  // description,
-  // title
 
   const [title, setTitle] = useState();
   const [author, setAuthor] = useState();
@@ -69,28 +61,6 @@ const Test = () => {
     setAuthor("");
     setDescription("");
   };
-  // useEffect(() => {
-  //   console.log("title ===>", title);
-  //   console.log("author ===>", author);
-  //   console.log("description ===>", description);
-  // }, [title, author, description]);
-
-  // const deleteUser = async (id) => {
-  //   // 내가 삭제하고자 하는 db의 컬렉션의 id를 뒤지면서 데이터를 찾는다
-  //   const userDoc = doc(db, "users", id);
-  //   // deleteDoc을 이용해서 삭제
-  //   await deleteDoc(userDoc);
-  //   const updatedData = await getDocs(
-  //     query(usersCollectionRef, orderBy("date", "desc"))
-  //   );
-  //   setUsers(
-  //     updatedData.docs.map((doc) => ({
-  //       ...doc.data(),
-  //       id: doc.id,
-  //       date: doc.data().date.toDate(),
-  //     }))
-  //   );
-  // };
 
   return (
     <main className="mt-28 flex flex-col gap-4 p-4 md:p-6 bg-black text-white">
@@ -123,66 +93,6 @@ const Test = () => {
           </form>
         </div>
       </header>
-      {/* <div
-        className={`border border-white shadow-sm rounded-lg ${classes.tableList}`}
-      >
-        <div className="relative w-full overflow-auto">
-          <table className="border border-gray-700 w-full caption-bottom text-sm">
-            <thead className="border-b">
-              <tr className="border-b transition-color">
-                <th className="h-12 px-4 text-center align-middle font-medium text-muted-foreground pr-0 max-w-[150px]">
-                  Title
-                </th>
-                <th className="h-12 px-4 text-center align-middle font-medium text-muted-foreground pr-0">
-                  Description
-                </th>
-                <th className="h-12 px-4 text-center align-middle font-medium text-muted-foreground pr-0 hidden md:table-cell">
-                  Created At
-                </th>
-                <th className="h-12 px-4 text-center align-middle font-medium text-muted-foreground pr-0">
-                  Actions
-                </th>
-              </tr>
-            </thead>
-            <tbody className={`text-center border-0 ${classes.tableBody}`}>
-              {users.map((item) => (
-                <tr
-                  key={item.id}
-                  className={`border-b transition-colors ${classes.tableListItem}`}
-                >
-                  <td className="p-4 align-middle pr-0 font-medium">
-                    {item.title}
-                  </td>
-                  <td className="p-4 align-middle pr-0">{item.author}</td>
-                  <td className="p-4 align-middle pr-0 hidden md:table-cell">
-                    {item.date.toLocaleString()}
-                  </td>
-                  <td className="p-4 align-middle pr-0">
-                    <button
-                      className={`${classes.editBtn} inline-flex items-center justify-center text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border bg-background hover:bg-accent hover:text-accent-foreground h-9 rounded-md px-3 text-gray-300 border-gray-300`}
-                    >
-                      Edit
-                    </button>
-                    <button
-                      className={`${classes.deleteBtn} inline-flex items-center justify-center text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border bg-background hover:bg-accent hover:text-accent-foreground h-9 rounded-md px-3 ml-2 text-gray-300 border-gray-300`}
-                      type="button"
-                      aria-haspopup="dialog"
-                      aria-expanded="false"
-                      aria-controls="radix-:r2q:"
-                      data-state="closed"
-                      onClick={() => {
-                        deleteUser(item.id);
-                      }}
-                    >
-                      Delete
-                    </button>
-                  </td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        </div>
-      </div> */}
       <form className="flex flex-col gap-4 md:gap-6">
         <div className="grid gap-2 ">
           <label

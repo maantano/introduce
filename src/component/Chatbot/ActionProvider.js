@@ -17,6 +17,7 @@
 // in ActionProvider.jsx
 import React from "react";
 
+import Typography from "@mui/joy/Typography";
 const ActionProvider = ({ createChatBotMessage, setState, children }) => {
   const handleHello = () => {
     const botMessage = createChatBotMessage("Hello. Nice to meet you.");
@@ -39,18 +40,40 @@ const ActionProvider = ({ createChatBotMessage, setState, children }) => {
     }));
   };
   const handleIntroduceMyself = () => {
-    const botMessage = createChatBotMessage("안녕하세요, 민경언입니다.", {
-      widget: "introduceMySelf",
-    });
+    const botMessage = createChatBotMessage(
+      <Typography level="title-md">
+        안녕하세요, 민경언입니다.
+        <br />
+        <br />
+        ⌛️처음으로 돌아가길 원하시면 '다시 시작'을 입력해 주세요.
+      </Typography>,
+      {
+        widget: "introduceMySelf",
+      }
+    );
     setState((prev) => ({
       ...prev,
       messages: [...prev.messages, botMessage],
     }));
   };
   const handleIntroduceDetail = () => {
-    const botMessage = createChatBotMessage("경력 소개입니다.", {
-      widget: "introduceDetail",
-    });
+    // const botMessage = createChatBotMessage("경력 소개입니다.", {
+    //   widget: "introduceDetail",
+    // });
+    const botMessage = createChatBotMessage(
+      <Typography level="title-md">
+        2019.07 ~2023.03까지
+        <br />
+        3년9개월의 경력이 있습니다.
+        <br />
+        <br />
+        ⌛️처음으로 돌아가길 원하시면 '다시 시작'을 입력해 주세요.
+      </Typography>,
+      {
+        widget: "introduceDetail",
+      }
+    );
+
     setState((prev) => ({
       ...prev,
       messages: [...prev.messages, botMessage],
@@ -58,7 +81,9 @@ const ActionProvider = ({ createChatBotMessage, setState, children }) => {
   };
   const handleMoreQ = () => {
     const botMessage = createChatBotMessage(
-      "질문과 이메일을 남겨주시면 답변드리겠습니다.",
+      <Typography level="title-md">
+        질문과 이메일을 남겨주시면 답변드리겠습니다.
+      </Typography>,
       {
         widget: "moreQuestion",
         delay: 500,
@@ -71,7 +96,9 @@ const ActionProvider = ({ createChatBotMessage, setState, children }) => {
   };
   const optionShow = () => {
     const botMessage = createChatBotMessage(
-      "⌛️처음으로 돌아가길 원하시면 '다시 시작'을 입력해 주세요.",
+      <Typography level="title-md">
+        ⌛️처음으로 돌아가길 원하시면 '다시 시작'을 입력해 주세요.
+      </Typography>,
       {
         widget: "showOption",
       }

@@ -4,10 +4,10 @@ import "./Options.css";
 import Typography from "@mui/joy/Typography";
 import Button from "@mui/joy/Button";
 // import { wrap } from "module";
-const InitOption = (props) => {
+const Options = (props) => {
   const options = [
     {
-      text: "제 소개",
+      text: "자기 소개",
       handler: props.actionProvider.handleIntroduceMyself,
       id: 1,
     },
@@ -17,8 +17,8 @@ const InitOption = (props) => {
       id: 2,
     },
     { text: "인생 그래프", handler: () => {}, id: 3 },
-    { text: "포트폴리오", handler: () => {}, id: 4 },
-    { text: "질문 하기", handler: props.actionProvider.handleMoreQ, id: 5 },
+    { text: "포트 폴리오", handler: () => {}, id: 4 },
+    { text: "더 질문 하기", handler: props.actionProvider.handleMoreQ, id: 5 },
   ];
 
   const buttonsMarkup = options.map((option) => (
@@ -38,7 +38,7 @@ const InitOption = (props) => {
     </Button>
   ));
 
-  return <div className="options-container">{buttonsMarkup}</div>;
+  return <div className="options-container mb-20">{buttonsMarkup}</div>;
 };
 
-export default InitOption;
+export default Options;

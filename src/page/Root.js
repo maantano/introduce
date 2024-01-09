@@ -131,6 +131,7 @@ const Root = () => {
       <Header />
       <main>
         <Outlet />
+        <div>footer</div>
       </main>
       <ChatbotBnt onClick={() => dispatch(chatbotTogle())}>
         {/* <div shape="circle" className="sc-1w3tvxe-0 eDjTHR"> */}

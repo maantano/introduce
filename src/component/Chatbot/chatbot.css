@@ -38,6 +38,7 @@
   padding: 1.3rem 1.2rem;
   margin-right: 0.5rem;
   font-weight: 300;
+  color: black;
 }
 .react-chatbot-kit-chat-input:focus-visible {
   outline: none;

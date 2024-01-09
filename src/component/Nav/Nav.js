@@ -3,7 +3,7 @@ import React from "react";
 import "./nav.css";
 const Nav = () => {
   return (
-    <div className="left-0 bottom-0 top-14 box-border ">
+    <div className="left-0 bottom-0 top-14 box-border mt-14">
       <div className="nav-bar">
         <div className="nav-items">
           <div className="item">
@@ -60,7 +60,7 @@ const Nav = () => {
                   </div>
                 </div>
               </div>
-              <span className="title ">Shorts</span>
+              <span className="title ">포트폴리오</span>
             </a>
           </div>
         </div>
@@ -89,7 +89,7 @@ const Nav = () => {
                   </div>
                 </div>
               </div>
-              <span className="title ">구독</span>
+              <span className="title ">개인 공부</span>
             </a>
           </div>
         </div>
@@ -117,36 +117,7 @@ const Nav = () => {
                   </div>
                 </div>
               </div>
-              <span className="title ">YouTube Mu...</span>
-            </a>
-          </div>
-        </div>
-        <div className="nav-items">
-          <div className="item">
-            <a>
-              <div className="icon">
-                <div className="icon-box">
-                  <div style={{ width: "24px", height: "18px", fill: "white" }}>
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      enableBackground="new 0 0 24 24"
-                      height="24"
-                      viewBox="0 0 24 24"
-                      width="24"
-                      focusable="false"
-                      style={{
-                        pointerEvents: "none",
-                        display: "block",
-                        width: "100%",
-                        height: "100%",
-                      }}
-                    >
-                      <path d="m11 7 6 3.5-6 3.5V7zm7 13H4V6H3v15h15v-1zm3-2H6V3h15v15zM7 17h13V4H7v13z"></path>
-                    </svg>
-                  </div>
-                </div>
-              </div>
-              <span className="title ">나</span>
+              <span className="title ">인생 그래프</span>
             </a>
           </div>
         </div>
@@ -174,10 +145,39 @@ const Nav = () => {
                   </div>
                 </div>
               </div>
-              <span className="title ">오프라인 저장 ...</span>
+              <span className="title ">경력 한눈에 보기</span>
             </a>
           </div>
         </div>
+
+        {/* <div className="nav-items">
+          <div className="item">
+            <a>
+              <div className="icon">
+                <div className="icon-box">
+                  <div style={{ width: "24px", height: "18px", fill: "white" }}>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      width="24"
+                      focusable="false"
+                      style={{
+                        pointerEvents: "none",
+                        display: "block",
+                        width: "100%",
+                        height: "100%",
+                      }}
+                    >
+                      <path d="M17 18v1H6v-1h11zm-.5-6.6-.7-.7-3.8 3.7V4h-1v10.4l-3.8-3.8-.7.7 5 5 5-4.9z"></path>
+                    </svg>
+                  </div>
+                </div>
+              </div>
+              <span className="title ">오프라인 저장 ...</span>
+            </a>
+          </div>
+        </div> */}
       </div>
     </div>
   );

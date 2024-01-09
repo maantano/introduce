@@ -61,6 +61,7 @@ const MoreQuestion = () => {
             id="title"
             placeholder="제목"
             onChange={(e) => setTitle(e.target.value)}
+            value={title}
             required=""
           />
           <label
@@ -75,6 +76,7 @@ const MoreQuestion = () => {
             placeholder="작성자"
             onChange={(e) => setAuthor(e.target.value)}
             required=""
+            value={author}
           />
         </div>
         <div className="grid gap-2">
@@ -89,6 +91,7 @@ const MoreQuestion = () => {
             onChange={(e) => setDescription(e.target.value)}
             placeholder="내용"
             id="description"
+            value={description}
             required=""
           ></textarea>
         </div>

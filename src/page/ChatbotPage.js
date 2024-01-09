@@ -62,7 +62,6 @@ const ChatbotDiv = styled.div`
 // `;
 
 const ChatbotPage = () => {
-  const dispatch = useDispatch();
   const chatbotvisible = useSelector((state) => state.chatbotReducer.visible);
   return (
     <div className="m-24 ">
