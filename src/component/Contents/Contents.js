@@ -1,23 +1,24 @@
 import Main from "./Main";
 import Banner1 from "./Banner1";
-import Video from "./video/Video";
+import Study from "./study/Study";
 import { useDispatch, useSelector } from "react-redux";
 import { reset } from "../../redux/feature/inputSlice";
 import { useEffect } from "react";
-import Home from "./home/Home";
+import Portfolio from "./portfolio/Portfolio";
 
 const Contents = () => {
   const dispatch = useDispatch();
   const currentIdx = useSelector((state) => state.currentReducer.index);
+  console.log("currentIdx ===>", currentIdx);
   const components = {
-    0: <Home />,
-    1: <Video />,
+    0: <Portfolio />,
+    1: <Study />,
   };
   return (
     <div onClick={() => dispatch(reset())}>
       <Main />
       <Banner1 />
-      {components[currentIdx]}
+      <div className="p-3">{components[currentIdx]}</div>
     </div>
   );
 };

@@ -1,3 +1,7 @@
+.BannerDiv {
+  display: flex;
+  gap: 2rem;
+}
 .HomeDiv {
   width: 250px;
 }

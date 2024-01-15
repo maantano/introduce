@@ -16,7 +16,9 @@ import DescriptDetail from "./page/DescriptDetail";
 import Chatbot from "./page/ChatbotPage";
 import PortfolioDetail from "./page/portfolio/PortfolioDetail";
 import PortfolioItem from "./page/portfolio/PortfolioItem";
-import PortfolioItem2 from "./page/portfolio/PortfolioItem2";
+import Webuilder from "./page/portfolio/Webuilder";
+import PorterZone from "./page/portfolio/PorterZone";
+import Platform from "./page/portfolio/Platform";
 
 const router = createBrowserRouter([
   {
@@ -52,7 +54,10 @@ const router = createBrowserRouter([
       //   loader: testDetailLoader,
       // },
       // { path: "/portDetail", element: <PortfolioDetail /> },
-      { path: "/portDetail", element: <PortfolioItem2 /> },
+      { path: "/webuilder", element: <Webuilder /> },
+      { path: "/porterzone", element: <PorterZone /> },
+      { path: "/platform", element: <Platform /> },
+
       { path: "/delete", element: <UserDelete /> },
       { path: "/read", element: <UserRead /> },
       { path: "/update", element: <UserUpdate /> },
