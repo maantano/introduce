@@ -3,7 +3,7 @@ import "./Portfolio.css";
 
 import logo from "../../logo.png";
 
-import porterzoneLogo from "../../porterzoneLogo.png";
+import porterzoneLogo from "../../asset/porterzone/porterzoneLogo.png";
 
 import poterZ2 from "../../asset/porterzone/poterZ2.jpg";
 import poterZ3 from "../../asset/porterzone/poterZ3.jpg";
@@ -51,7 +51,7 @@ const SlideWrap = styled.div`
 const Box = styled(motion.img)`
   position: absolute;
   width: 70%;
-  height: 60%; /* 높이를 원하는 비율로 조절할 수 있습니다. */
+  height: 60%;
   object-fit: cover;
   border-radius: 20px;
   text-align: center;
@@ -62,6 +62,7 @@ const Box = styled(motion.img)`
   background-color: transparent;
   box-shadow: 0 2px 3px rgba(0, 0, 0, 0.1), 0 10px 20px rgba(0, 0, 0, 0.06);
 `;
+
 const Box2 = styled(motion.div)`
   position: absolute;
   text-align: center;
@@ -103,6 +104,7 @@ const boxVariants = {
     transition: { duration: 0.5 },
   }),
 };
+
 const boxVariants2 = {
   entry: (back) => ({
     x: back ? -150 : 200,
@@ -150,10 +152,10 @@ const PorterZone = () => {
   };
 
   const fetchData = async () => {
-    const fileRef = ref(storage, "/");
+    const fileRef = ref(storage, "/poterzoneFile");
     try {
       const result = await listAll(fileRef);
-
+      console.log("result ===>", result);
       const newUrls = await Promise.all(
         result.items.map(async (item) => {
           const url = await getDownloadURL(item);
@@ -170,7 +172,6 @@ const PorterZone = () => {
   };
   useEffect(() => {
     fetchData();
-    console.log("fileItem ===>", fileItem);
   }, []);
 
   return (
@@ -278,10 +279,10 @@ const PorterZone = () => {
               <p className="text-2xl">Frontend</p>
               <ul className="p-3">
                 <li className="py-1">
-                  주문 도메인 개발
+                  - 주문 도메인 개발
                   <ul className="pl-4">
-                    <li>유저(구매 신청, 구매 신청 내역 확인)</li>
-                    <li>관리자(구매 신청 승인, 구매 승인 상세 내역)</li>
+                    <li> - 유저(구매 신청, 구매 신청 내역 확인)</li>
+                    <li> - 관리자(구매 신청 승인, 구매 승인 상세 내역)</li>
                   </ul>
                 </li>
                 <li className="py-1">
@@ -292,6 +293,7 @@ const PorterZone = () => {
                   </ul>
                 </li>
                 <li className="py-1">- 연동 및 부가서비스 개발</li>
+                <li className="py-1">- 인증서 관리 및 등록</li>
               </ul>
             </div>
           </div>
@@ -416,33 +418,72 @@ const PorterZone = () => {
 
         <div className="p-2">
           <h2 className="text-3xl font-bold mb-4">회고</h2>
-          <p className="text-2xl mt-10 mb-8">1. 테스트 및 코드 리뷰</p>
-          <p className="text-xl mt-10 mb-8">
-            테스트 코드 작성 및 문서화
-            <br />
-            테스트 코드 작성을 위한 규칙과 가이드 문서를 작성했습니다. 서비스
-            초기 개발 단계에서는 테스트 코드 작성과 테스트를 진행하였지만,
-            일정과 업무 때문에 테스트를 소홀히 하게 되었습니다. 테스트 코드
-            작성에는 여러가지 이유가 있지만, 리팩토링을 진행할 때 부담을
-            덜어준다는 점이 가장 와닿았습니다. 실제로 다른 프로젝트에서
-            리팩토링을 진행할때 브라우저에서 확인하고, QA팀과 핑퐁이 많았는데,
-            테스트 코드를 작성하고 통과가 되면 QA팀에 넘겨 반복되는 일을 줄일 수
-            있다고 생각합니다. 다음 프로젝트에서는 조금더 비중을 두고 싶습니다.
-          </p>
-          <ul className="text-xl">
-            <li className="py-1">
-              <a href={fileItem[0]} target="_blank" rel="noreferrer">
-                - Front-end 테스트 개요
-              </a>
-            </li>
-
-            <li>
-              <a href={fileItem[1]} target="_blank" rel="noreferrer">
-                - Jest, testing-library 를 이용한 React 단위 테스트
-                작성 방법
-              </a>
-            </li>
-          </ul>
+          <div>
+            <p className="text-2xl mt-10 mb-8">1. 테스트 및 코드 리뷰</p>
+            <p className="text-xl mt-10 mb-8">
+              테스트 코드 작성 및 문서화
+              <br />
+              테스트 코드 작성을 위한 규칙과 가이드 문서를 작성했습니다. 서비스
+              초기 개발 단계에서는 테스트 코드 작성과 테스트를 진행하였지만,
+              일정과 업무 때문에 테스트를 소홀히 하게 되었습니다. 테스트 코드
+              작성에는 여러가지 이유가 있지만, 리팩토링을 진행할 때 부담을
+              덜어준다는 점이 가장 와닿았습니다. 실제로 다른 프로젝트에서
+              리팩토링을 진행할때 브라우저에서 확인하고, QA팀과 핑퐁이 많았는데,
+              테스트 코드를 작성하고 통과가 되면 QA팀에 넘겨 반복되는 일을 줄일
+              수 있다고 생각합니다. 다음 프로젝트에서는 조금더 비중을 두고
+              싶습니다.
+            </p>
+            <div
+              className="rounded-xl p-4"
+              style={{ backgroundColor: "#212121" }}
+            >
+              <div className="p-3 inline-block font-bold bg-red-600 rounded-lg">
+                <p className="">File</p>
+              </div>
+              <div className="mt-3">
+                <ul className="text-xl">
+                  <li className="py-1">
+                    <a href={fileItem[0]} target="_blank" rel="noreferrer">
+                      - Front-end 테스트 개요
+                    </a>
+                  </li>
+                  <li>
+                    <a href={fileItem[1]} target="_blank" rel="noreferrer">
+                      - Jest, testing-library 를 이용한 React 단위
+                      테스트 작성 방법
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div>
+            <p className="text-2xl mt-10 mb-8">2. 인증서 관리 및 등록</p>
+            <p className="text-xl mt-10 mb-8">
+              SSL 인증서 관리 및 등록을 진행했습니다.
+              <br />
+              생성되는 컨테이너를 대표 인증서를 통해서 ssl 인증서를 적용시키도록
+              구성되어있습니다. 발급 받은 인증서의 기간에 맞게 교체하고
+              관리했습니다.
+            </p>
+            <div
+              className="rounded-xl p-4"
+              style={{ backgroundColor: "#212121" }}
+            >
+              <div className="p-3 inline-block font-bold bg-red-600 rounded-lg">
+                <p className="">File</p>
+              </div>
+              <div className="mt-4">
+                <ul className="text-xl">
+                  <li className="py-1">
+                    <a href={fileItem[2]} target="_blank" rel="noreferrer">
+                      - 인증서 관리 및 등록 History
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
     </div>

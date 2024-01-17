@@ -124,7 +124,7 @@ const VisibleTrue = styled.div`
 const Root = () => {
   const dispatch = useDispatch();
   const chatbotvisible = useSelector((state) => state.chatbotReducer.visible);
-  console.log("chatbotVisible ===>", chatbotvisible);
+  console.log("root  | chatbotvisible ===>", chatbotvisible);
 
   return (
     <>

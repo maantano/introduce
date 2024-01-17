@@ -1,18 +1,13 @@
 import React, { useEffect, useState } from "react";
 import "./Portfolio.css";
+import logo from "../../asset/platform/douzone-logo.png";
+import platformLogo from "../../asset/platform/platform-logo.png";
 
-import logo from "../../logo.png";
-
-import porterzoneLogo from "../../porterzoneLogo.png";
-
-import poterZ2 from "../../asset/porterzone/poterZ2.jpg";
-import poterZ3 from "../../asset/porterzone/poterZ3.jpg";
-import poterZ4 from "../../asset/porterzone/poterZ4.jpg";
-import poterZ5 from "../../asset/porterzone/poterZ5.jpg";
-import poterZ6 from "../../asset/porterzone/poterZ6.jpg";
-import poterZ7 from "../../asset/porterzone/poterZ7.jpg";
-import poterzoneMain from "../../asset/porterzone/poterzoneMain.png";
-import poterzoneMro from "../../asset/porterzone/poterzoneMroMain.png";
+import image1 from "../../asset/platform/yogamoon.png";
+import image2 from "../../asset/platform/dforest.png";
+import image3 from "../../asset/platform/krinruck.png";
+import image4 from "../../asset/platform/amaranth.png";
+import reservation from "../../asset/platform/dforestReserve.png";
 
 import styled from "styled-components";
 import { wrap } from "popmotion";
@@ -20,15 +15,56 @@ import { AnimatePresence, motion } from "framer-motion";
 import { storage } from "../../firebase-config";
 import { getDownloadURL, listAll, ref } from "firebase/storage";
 
-const images = [
-  poterzoneMain,
-  poterzoneMro,
-  poterZ2,
-  poterZ3,
-  poterZ4,
-  poterZ5,
-  poterZ6,
-  poterZ7,
+const images = [image1, image2, image3, image4];
+
+const projectDue = [
+  "2020.10~2021.01",
+  "2020.06~2020.09",
+  "2019.11~2020.02",
+  "2019.07~2019.11",
+];
+const itemDescription = [
+  {
+    item: [
+      "- 기여도: 100%",
+      "- 상품 결제 개발",
+      "- 네이버 페이, 카카오 페이 연동 개발",
+      "- 레슨 예약 시스템 개발",
+      "- UI/UX 구축 개발",
+      "- react, redux, javascript, html, css",
+    ],
+    title: "요가문 서울 (호스팅 정지)",
+  },
+  {
+    item: [
+      "- 기여도: 100%",
+      "- 투어 및 단체 예약 개발",
+      "- UI/UX 구축 개발",
+      "- javascript, jquery, html, css",
+    ],
+    link: "https://www.dforest.co.kr/",
+    title: " www.dforest.co.kr (강아지 숲)",
+  },
+  {
+    item: [
+      "- 기여도: 100%",
+      "- 사내 게시판 서비스 개발",
+      "- 비즈니스 워치(뉴스 기사) 연동 개발",
+      "- UI/UX 구축 개발",
+      "- javascript, jquery, html, css",
+    ],
+    link: "https://www.kaits.or.kr/",
+    title: "www.kaits.or.kr (한국산업기술보호협회)",
+  },
+  {
+    item: [
+      "- 기여도: 40%",
+      "- UI/UX 구축 개발",
+      "- react, javascript, html, css",
+    ],
+    link: "https://www.amaranth10.com/",
+    title: "www.amaranth10.com (아마란쓰10)",
+  },
 ];
 const Wrapper = styled(motion.div)`
   display: flex;
@@ -50,9 +86,9 @@ const SlideWrap = styled.div`
 
 const Box = styled(motion.img)`
   position: absolute;
-  width: 70%;
-  height: 60%; /* 높이를 원하는 비율로 조절할 수 있습니다. */
-  object-fit: contain;
+  width: 500px;
+  height: 500px; /* 높이를 원하는 비율로 조절할 수 있습니다. */
+  object-fit: cover;
   border-radius: 20px;
   text-align: center;
   display: flex;
@@ -68,6 +104,12 @@ const Box2 = styled(motion.div)`
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-shrink: 0;
+  background-color: transparent;
+  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.1), 0 10px 20px rgba(0, 0, 0, 0.06);
+`;
+const Box3 = styled(motion.div)`
+  position: absolute;
   flex-shrink: 0;
   background-color: transparent;
   box-shadow: 0 2px 3px rgba(0, 0, 0, 0.1), 0 10px 20px rgba(0, 0, 0, 0.06);
@@ -123,14 +165,10 @@ const boxVariants2 = {
   }),
 };
 const ImageTitle = [
-  "PoterZone",
-  "PoterZone MRO",
-  "Admin (주문 관리)",
-  "Admin (주문 내역)",
-  "Admin (주문 상세내역)",
-  "Admin (선물 하기)",
-  "Admin (선물 상세내역)",
-  "Admin (견적 관리)",
+  "요가문 서울",
+  "강아지 숲",
+  "한국산업기술보호협회",
+  "아마란쓰 10",
 ];
 
 const Platform = () => {
@@ -150,7 +188,7 @@ const Platform = () => {
   };
 
   const fetchData = async () => {
-    const fileRef = ref(storage, "/");
+    const fileRef = ref(storage, "/platformFile");
     try {
       const result = await listAll(fileRef);
 
@@ -170,12 +208,11 @@ const Platform = () => {
   };
   useEffect(() => {
     fetchData();
-    console.log("fileItem ===>", fileItem);
   }, []);
 
   return (
     <div className="mt-24 bg-black text-white flex flex-col justify-center items-center">
-      <section className="w-full h-[300px] relative bg-white">
+      <section className="w-full h-[300px] relative bg-white overflow-hidden">
         <div
           style={{
             background: `url(${logo})`,
@@ -188,7 +225,7 @@ const Platform = () => {
 
       <section className="container mx-auto px-4 pt-16 pb-12">
         <div className="h-20 w-56">
-          <img src={porterzoneLogo} alt="logo" />
+          <img src={platformLogo} alt="logo" />
         </div>
         <div className="flex items-center pb-6">
           <div className="h-2 rounded-sm bg-white w-20"></div>
@@ -196,15 +233,13 @@ const Platform = () => {
         </div>
 
         <div className="p-2">
-          <div className=" text-3xl font-bold mb-4">
-            더 포터존 : 이커머스 플랫폼(B2B) & MRO
-          </div>
+          <div className=" text-3xl font-bold mb-4">플랫폼개발 Unit : 구축</div>
           <div className="grid grid-cols-2 gap-4 p-2">
             <div className="flex items-center">
               <div className="flex justify-center items-center text-2xl bg-gray-300 bg-opacity-20 rounded-md text-center w-32 p-[7px]">
                 기간
               </div>
-              <p className="flex items-center text-2xl ml-3">2021.02~2023.03</p>
+              <p className="flex items-center text-2xl ml-3">2019.07~2021.02</p>
             </div>
             <div className="flex">
               <div className="flex justify-center items-center text-2xl bg-gray-300 bg-opacity-20 rounded-md text-center w-32 p-[7px]">
@@ -216,15 +251,14 @@ const Platform = () => {
               <div className="flex justify-center items-center text-2xl bg-gray-300 bg-opacity-20 rounded-md text-center w-32 p-[7px]">
                 현황
               </div>
-              <p className="flex items-center text-2xl ml-3">서비스 운영중</p>
+              <p className="flex items-center text-2xl ml-3">In some case</p>
             </div>
             <div className="flex">
-              <div className="flex justify-center items-center text-2xl bg-gray-300 bg-opacity-20 rounded-md text-center w-72 p-[7px]">
+              <div className="flex justify-center items-center text-2xl bg-gray-300 bg-opacity-20 rounded-md text-center w-36 p-[7px]">
                 참가인원
               </div>
               <p className="ml-3 flex items-center text-2xl">
-                총 23명- PM: 1명, 프론트엔드: 7명, 백엔드: 9명, 퍼블리셔: 2명,
-                기획: 6명, 운영 및 QA: 3 명, 디자인: 디자인 센터
+                In some case : 개발 인원, 기획 인원, 디자인 센터 참여
               </p>
             </div>
             <div className="flex">
@@ -232,15 +266,15 @@ const Platform = () => {
                 기여도
               </div>
               <p className="flex items-center text-2xl ml-3">
-                프론트 개발 - 20%
+                프론트 개발 - 100%
               </p>
             </div>
             <div className="flex">
-              <div className="flex justify-center items-center text-2xl bg-gray-300 bg-opacity-20 rounded-md text-center w-44 p-[7px]">
+              <div className="flex justify-center items-center text-2xl bg-gray-300 bg-opacity-20 rounded-md text-center w-36 p-[7px]">
                 개발 환경
               </div>
               <p className="flex items-center text-2xl ml-3">
-                react, redux-toolkit, javascript ,html, css, styled-component
+                javascript, react, redux, javascript, jquery, html, css,
               </p>
             </div>
           </div>
@@ -256,158 +290,133 @@ const Platform = () => {
           <div className="p-2">
             <div className="text-lg">
               <div className="inline-block font-bold mb-4 p-3 bg-red-600 rounded-lg">
-                통합 이커머스 플랫폼과 연계 서비스의 융합을 통해 원스탑 토탈
-                서비스를 제공합니다.
+                그룹사 프로젝트 및 구축 개발을 진행합니다.
               </div>
               <br />
-              기업에서 제품생산에 필요한 원부ㅏ재와 소모성 자재등 기업에 필요한
-              모든것을 관리합니다.
+              그룹사 프로젝트 2건, 구축 개발 2건을 진행했습니다.
             </div>
           </div>
         </div>
       </section>
       <section className="container mx-auto px-4 py-12">
         <div className="flex items-center pb-6">
-          <div className="h-2 rounded-sm bg-white w-40"></div>
+          <div className="h-2 rounded-sm bg-white w-60"></div>
           <div className="h-[1px] rounded-sm bg-white w-full"></div>
         </div>
         <div className="p-2 text-lg">
           <h2 className="text-3xl font-bold mb-4">주요 업무 요약</h2>
           <div className="grid grid-cols-2 gap-4">
             <div className="p-2">
-              <p className="text-2xl">Frontend</p>
-              <ul className="p-3">
-                <li className="py-1">
-                  주문 도메인 개발
-                  <ul className="pl-4">
-                    <li>유저(구매 신청, 구매 신청 내역 확인)</li>
-                    <li>관리자(구매 신청 승인, 구매 승인 상세 내역)</li>
-                  </ul>
-                </li>
-                <li className="py-1">
-                  - 견적 도메인 개발
-                  <ul className="pl-4">
-                    <li> - 유저(견적 신청, 견적 신청 내역 확인)</li>
-                    <li> - 관리자(신청 내역 확인)</li>
-                  </ul>
-                </li>
-                <li className="py-1">- 연동 및 부가서비스 개발</li>
-              </ul>
+              <Box3
+                custom={back}
+                variants={boxVariants2}
+                initial="entry"
+                animate="center"
+                exit="exit"
+                key={visible}
+              >
+                <p className="text-2xl">
+                  {ImageTitle[imageIndex]} ({projectDue[imageIndex]})
+                </p>
+                <ul className="p-3">
+                  {itemDescription[imageIndex].item.map(
+                    (projectItem, index) => (
+                      <li key={index} className="py-1">
+                        {projectItem}
+                      </li>
+                    )
+                  )}
+                </ul>
+                {itemDescription[imageIndex].link ? ( // Check if link is defined
+                  <a
+                    href={itemDescription[imageIndex].link}
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    URL : {itemDescription[imageIndex].title}
+                  </a>
+                ) : (
+                  <div>URL : {itemDescription[imageIndex].title}</div>
+                )}
+              </Box3>
+            </div>
+            <div>
+              <Wrapper>
+                <PrevNextBtn
+                  onClick={prevPlease}
+                  className="flex flex-col items-center justify-center "
+                >
+                  <div
+                    style={{
+                      width: "24px",
+                      height: "24px",
+                      fill: "currentcolor",
+                    }}
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      width="24"
+                      focusable="false"
+                      style={{
+                        pointerEvents: "none",
+                        display: "block",
+                        width: "100%",
+                        height: "100%",
+                      }}
+                    >
+                      <path d="M14.96 18.96 8 12l6.96-6.96.71.71L9.41 12l6.25 6.25-.7.71z"></path>
+                    </svg>
+                  </div>
+                </PrevNextBtn>
+                <SlideWrap>
+                  <AnimatePresence custom={back}>
+                    <Box
+                      custom={back}
+                      variants={boxVariants}
+                      src={images[imageIndex]}
+                      initial="entry"
+                      animate="center"
+                      exit="exit"
+                      key={visible}
+                    />
+                  </AnimatePresence>
+                </SlideWrap>
+                <PrevNextBtn
+                  onClick={nextPlease}
+                  className="flex flex-col items-center justify-center "
+                >
+                  <div
+                    style={{
+                      width: "24px",
+                      height: "24px",
+                      fill: "currentcolor",
+                    }}
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      height="20"
+                      viewBox="0 0 24 24"
+                      width="20"
+                      focusable="false"
+                      style={{
+                        pointerEvents: "none",
+                        display: "block",
+                        width: "100%",
+                        height: "100%",
+                      }}
+                    >
+                      <path d="m9.4 18.4-.7-.7 5.6-5.6-5.7-5.7.7-.7 6.4 6.4-6.3 6.3z"></path>
+                    </svg>
+                  </div>
+                </PrevNextBtn>
+              </Wrapper>
             </div>
           </div>
         </div>
       </section>
-      <section className="container mx-auto px-4 py-12">
-        <div className="flex items-center pb-6">
-          <div className="h-2 rounded-sm bg-white w-40"></div>
-          <div className="h-[1px] rounded-sm bg-white w-full"></div>
-        </div>
-        <div className="p-2">
-          <div className="text-white text-2xl mb-20 ">
-            <Box2
-              custom={back}
-              variants={boxVariants2}
-              initial="entry"
-              animate="center"
-              exit="exit"
-              key={visible}
-            >
-              {ImageTitle[imageIndex]}
-            </Box2>
-          </div>
-          <div className="flex items-center justify-center">
-            <Wrapper>
-              <PrevNextBtn
-                onClick={prevPlease}
-                className="flex flex-col items-center justify-center "
-              >
-                <div
-                  style={{
-                    width: "24px",
-                    height: "24px",
-                    fill: "currentcolor",
-                  }}
-                >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    height="24"
-                    viewBox="0 0 24 24"
-                    width="24"
-                    focusable="false"
-                    style={{
-                      pointerEvents: "none",
-                      display: "block",
-                      width: "100%",
-                      height: "100%",
-                    }}
-                  >
-                    <path d="M14.96 18.96 8 12l6.96-6.96.71.71L9.41 12l6.25 6.25-.7.71z"></path>
-                  </svg>
-                </div>
-              </PrevNextBtn>
 
-              <SlideWrap>
-                <AnimatePresence custom={back}>
-                  <Box
-                    custom={back}
-                    variants={boxVariants}
-                    src={images[imageIndex]}
-                    initial="entry"
-                    animate="center"
-                    exit="exit"
-                    key={visible}
-                  />
-                </AnimatePresence>
-              </SlideWrap>
-              <PrevNextBtn
-                onClick={nextPlease}
-                className="flex flex-col items-center justify-center "
-              >
-                <div
-                  style={{
-                    width: "24px",
-                    height: "24px",
-                    fill: "currentcolor",
-                  }}
-                >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    height="20"
-                    viewBox="0 0 24 24"
-                    width="20"
-                    focusable="false"
-                    style={{
-                      pointerEvents: "none",
-                      display: "block",
-                      width: "100%",
-                      height: "100%",
-                    }}
-                  >
-                    <path d="m9.4 18.4-.7-.7 5.6-5.6-5.7-5.7.7-.7 6.4 6.4-6.3 6.3z"></path>
-                  </svg>
-                </div>
-              </PrevNextBtn>
-            </Wrapper>
-          </div>
-        </div>
-        <div className="flex flex-col text-xl">
-          <p>링크(URL)</p>
-          <a
-            className="py-2 pl-4"
-            href="https://theporterzone.com/"
-            target="_black"
-          >
-            - theporterzone.com
-          </a>
-          <a
-            className="py-2 pl-4"
-            href="https://theporterzone.com/mro"
-            target="_black"
-          >
-            - theporterzone.com/mro
-          </a>
-        </div>
-      </section>
       <section className="container mx-auto px-4 py-12">
         <div className="flex items-center pb-6">
           <div className="h-2 rounded-sm bg-white w-20"></div>
@@ -416,33 +425,72 @@ const Platform = () => {
 
         <div className="p-2">
           <h2 className="text-3xl font-bold mb-4">회고</h2>
-          <p className="text-2xl mt-10 mb-8">1. 테스트 및 코드 리뷰</p>
-          <p className="text-xl mt-10 mb-8">
-            테스트 코드 작성 및 문서화
-            <br />
-            테스트 코드 작성을 위한 규칙과 가이드 문서를 작성했습니다. 서비스
-            초기 개발 단계에서는 테스트 코드 작성과 테스트를 진행하였지만,
-            일정과 업무 때문에 테스트를 소홀히 하게 되었습니다. 테스트 코드
-            작성에는 여러가지 이유가 있지만, 리팩토링을 진행할 때 부담을
-            덜어준다는 점이 가장 와닿았습니다. 실제로 다른 프로젝트에서
-            리팩토링을 진행할때 브라우저에서 확인하고, QA팀과 핑퐁이 많았는데,
-            테스트 코드를 작성하고 통과가 되면 QA팀에 넘겨 반복되는 일을 줄일 수
-            있다고 생각합니다. 다음 프로젝트에서는 조금더 비중을 두고 싶습니다.
+          <p className="text-2xl mt-10 mb-8">
+            1. 연동 개발의 경험(요가문 서울)
           </p>
-          <ul className="text-xl">
-            <li className="py-1">
-              <a href={fileItem[0]} target="_blank" rel="noreferrer">
-                - Front-end 테스트 개요
-              </a>
-            </li>
+          <p className="text-xl mt-10 mb-8">
+            결제 서비스 개발 및 연동
+            <br />
+            네이버 페이, 카카오 페이, 자사 내 PG 연동과 함께 결제 시스템을
+            개발한 경험을 했습니다. 연동 개발과 커머스, 금융 서비스와 관련된
+            업무를 진행하게 되었습니다. 이후 금융 서비스에 KISA 에서 진행하는
+            오픈 뱅킹 및 송금 교육을 수료 했습니다.
+          </p>
+          <div
+            className="rounded-xl p-4"
+            style={{ backgroundColor: "#212121" }}
+          >
+            <div className="p-3 inline-block font-bold bg-red-600 rounded-lg">
+              <p className="">File</p>
+            </div>
+            <div className="mt-4">
+              <ul className="text-xl">
+                <li className="py-1">
+                  <a href={fileItem[0]} target="_blank" rel="noreferrer">
+                    - Kakao 페이 연동 개발
+                  </a>
+                </li>
 
-            <li>
-              <a href={fileItem[1]} target="_blank" rel="noreferrer">
-                - Jest, testing-library 를 이용한 React 단위 테스트
-                작성 방법
-              </a>
-            </li>
-          </ul>
+                <li>
+                  <a href={fileItem[1]} target="_blank" rel="noreferrer">
+                    - 네이버 페이 연동 개발
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div>
+          <p className="text-2xl mt-10 mb-8">
+            2. 상세날짜 표현의 한계(강아지 숲)
+          </p>
+
+          <div
+            className="text-xl mt-10 mb-8 flex flex-col rounded-xl p-2"
+            style={{ backgroundColor: "#212121" }}
+          >
+            <div className="">
+              <div className="p-3 inline-block font-bold bg-red-600 rounded-lg mb-3">
+                <p className="">이슈</p>
+              </div>
+              <p className="p-4">
+                예약상세 조회화면에서 날짜의 선택이 긴 리스트로 표현되어
+                예약경험이 떨어진다고 생각했습니다.
+              </p>
+            </div>
+            <div className="">
+              <div className="p-3 inline-block font-bold bg-red-600 rounded-lg mb-3">
+                <p className="">해결 방법</p>
+              </div>
+              <p className="p-4">
+                예약 날짜 선택을 리스트가 이닌 캘린더로 표현하여 경험을
+                높였습니다.
+              </p>
+            </div>
+            <div className="p-10">
+              <img src={reservation} alt="reservation" />
+            </div>
+          </div>
         </div>
       </section>
     </div>

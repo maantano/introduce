@@ -57,9 +57,6 @@ const ActionProvider = ({ createChatBotMessage, setState, children }) => {
     }));
   };
   const handleIntroduceDetail = () => {
-    // const botMessage = createChatBotMessage("경력 소개입니다.", {
-    //   widget: "introduceDetail",
-    // });
     const botMessage = createChatBotMessage(
       <Typography level="title-md">
         2019.07 ~2023.03까지
@@ -108,6 +105,24 @@ const ActionProvider = ({ createChatBotMessage, setState, children }) => {
       messages: [...prev.messages, botMessage],
     }));
   };
+  const handlePortfolio = () => {
+    const botMessage = createChatBotMessage(
+      <Typography level="title-md">
+        제 포트폴리오 입니다.
+        <br />
+        <br />
+        ⌛️처음으로 돌아가길 원하시면 '다시 시작'을 입력해 주세요.
+      </Typography>,
+      {
+        widget: "introducePortfolio",
+      }
+    );
+
+    setState((prev) => ({
+      ...prev,
+      messages: [...prev.messages, botMessage],
+    }));
+  };
   return (
     <div>
       {React.Children.map(children, (child) => {
@@ -119,6 +134,7 @@ const ActionProvider = ({ createChatBotMessage, setState, children }) => {
             handleIntroduceDetail,
             handleMoreQ,
             optionShow,
+            handlePortfolio,
           },
         });
       })}

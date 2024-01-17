@@ -14,11 +14,14 @@ import NewInput from "./page/NewInput";
 import DescriptDetail from "./page/DescriptDetail";
 
 import Chatbot from "./page/ChatbotPage";
-import PortfolioDetail from "./page/portfolio/PortfolioDetail";
-import PortfolioItem from "./page/portfolio/PortfolioItem";
+// import PortfolioDetail from "./page/portfolio/PortfolioDetail";
+// import PortfolioItem from "./page/portfolio/PortfolioItem";
 import Webuilder from "./page/portfolio/Webuilder";
 import PorterZone from "./page/portfolio/PorterZone";
 import Platform from "./page/portfolio/Platform";
+import CardRecommend from "./page/portfolio/CardRecommend";
+import MyLife from "./page/graph/MyLife";
+// import CardRecommend from "./asset/webuilder/CardRecommend";
 
 const router = createBrowserRouter([
   {
@@ -54,9 +57,11 @@ const router = createBrowserRouter([
       //   loader: testDetailLoader,
       // },
       // { path: "/portDetail", element: <PortfolioDetail /> },
+      { path: "/lifegraph", element: <MyLife /> },
       { path: "/webuilder", element: <Webuilder /> },
       { path: "/porterzone", element: <PorterZone /> },
       { path: "/platform", element: <Platform /> },
+      { path: "/cardrecommend", element: <CardRecommend /> },
 
       { path: "/delete", element: <UserDelete /> },
       { path: "/read", element: <UserRead /> },

@@ -54,14 +54,9 @@ const Center = () => {
             <div className={`search-box ${inputShow && "selected-box"}`}>
               <div className="search-input">
                 <div className="input-box">
-                  <div className="input-box-b">
+                  <div className="input-box-b flex justify-center items-center">
                     <a className="gsst_a" href="#">
-                      <span className="gsok_a gsst_e">
-                        <img
-                          src="//www.gstatic.com/inputtools/images/tia.png"
-                          alt="keyboard"
-                        />
-                      </span>
+                      <span className="gsok_a gsst_e"></span>
                     </a>
                   </div>
                   <div className="input-box-c">

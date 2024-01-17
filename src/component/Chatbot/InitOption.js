@@ -17,7 +17,11 @@ const InitOption = (props) => {
       id: 2,
     },
     { text: "인생 그래프", handler: () => {}, id: 3 },
-    { text: "포트폴리오", handler: () => {}, id: 4 },
+    {
+      text: "포트폴리오",
+      handler: props.actionProvider.handlePortfolio,
+      id: 4,
+    },
     { text: "질문 하기", handler: props.actionProvider.handleMoreQ, id: 5 },
   ];
 

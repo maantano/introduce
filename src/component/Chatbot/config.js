@@ -16,6 +16,7 @@ import IntroduceMyself from "./Introduce/IntroduceMyself";
 import MoreQuestion from "./Introduce/MoreQuestion";
 import Typography from "@mui/joy/Typography";
 import Options from "./Options";
+import IntroducePortfolio from "./Introduce/IntroducePortfolio";
 // const optionBtn = (
 //   <div
 //     className="border border-solid text-black w-1/3 p-2 text-center rounded-3xl"
@@ -56,6 +57,11 @@ const config = {
       widgetName: "introduceMySelf",
       widgetFunc: (props) => <IntroduceMyself {...props} />,
     },
+    {
+      widgetName: "introducePortfolio",
+      widgetFunc: (props) => <IntroducePortfolio {...props} />,
+    },
+
     {
       widgetName: "introduceDetail",
       widgetFunc: (props) => <IntroduceDetail {...props} />,
