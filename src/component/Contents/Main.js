@@ -1,5 +1,5 @@
 import React from "react";
-
+import thumb2 from "./thumb2.JPG";
 const Main = () => {
   return (
     <div className="banner-mx">
@@ -12,11 +12,7 @@ const Main = () => {
       </div>
       <div className="mt-10 flex flex-row">
         <div className="thumb-container">
-          <img
-            className="thumb-nail"
-            src="https://yt3.googleusercontent.com/p2ZIcHzBIMFBLqhAZJ8pGHc1c2F1BzKxFPpUtaAMMSC7xlNFWabSLVbi_w0B5wmP6gKDIZ6NbQ=w2560-fcrop64=1,00005a57ffffa5a8-k-c0xffffffff-no-nd-rj"
-            alt="avatar"
-          />
+          <img className="thumb-nail object-cover" src={thumb2} alt="avatar" />
         </div>
         <div className="flex flex-col justify-start my-data">
           <div className="flex flex-row items-center flex-co">

@@ -13,7 +13,7 @@ import TestList, { loader as testDetailLoader } from "./page/TestList";
 import NewInput from "./page/NewInput";
 import DescriptDetail from "./page/DescriptDetail";
 
-import Chatbot from "./page/ChatbotPage";
+import Chatbot from "./component/Contents/ChatbotPage";
 // import PortfolioDetail from "./page/portfolio/PortfolioDetail";
 // import PortfolioItem from "./page/portfolio/PortfolioItem";
 import Webuilder from "./page/portfolio/Webuilder";
@@ -21,6 +21,7 @@ import PorterZone from "./page/portfolio/PorterZone";
 import Platform from "./page/portfolio/Platform";
 import CardRecommend from "./page/portfolio/CardRecommend";
 import MyLife from "./page/graph/MyLife";
+import Chungsol from "./page/portfolio/Chungsol";
 // import CardRecommend from "./asset/webuilder/CardRecommend";
 
 const router = createBrowserRouter([
@@ -41,27 +42,16 @@ const router = createBrowserRouter([
             id: "test-detail",
             loader: testDetailLoader,
           },
-          // {
-          //   path: "edit/:editId",
-          //   element: <EditTest />,
-          //   id: "test-edit",
-          //   loader: testDetailLoader,
-          // },
         ],
       },
       { path: "testwrite", element: <NewInput /> },
-      // {
-      //   path: "/testlist/:detailId",
-      //   element: <DescriptDetail />,
-      //   id: "test-detail",
-      //   loader: testDetailLoader,
-      // },
-      // { path: "/portDetail", element: <PortfolioDetail /> },
+
       { path: "/lifegraph", element: <MyLife /> },
       { path: "/webuilder", element: <Webuilder /> },
       { path: "/porterzone", element: <PorterZone /> },
       { path: "/platform", element: <Platform /> },
       { path: "/cardrecommend", element: <CardRecommend /> },
+      { path: "/chungsol", element: <Chungsol /> },
 
       { path: "/delete", element: <UserDelete /> },
       { path: "/read", element: <UserRead /> },

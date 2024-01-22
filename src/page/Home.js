@@ -7,7 +7,7 @@ const Home = () => {
     <div className="flex">
       <>
         <NavMenu />
-        <main className="w-full mt-11 p-5 flex">
+        <main className="w-full mt-11 p-5 flex" style={{ minHeight: 1000 }}>
           <div className="flex flex-col">
             <Contents />
           </div>

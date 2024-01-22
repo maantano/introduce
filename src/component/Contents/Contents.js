@@ -6,6 +6,7 @@ import { reset } from "../../redux/feature/inputSlice";
 import { useEffect } from "react";
 import Portfolio from "./portfolio/Portfolio";
 import MyLife from "../../page/graph/MyLife";
+import Career from "./career/Carrer";
 
 const Contents = () => {
   const dispatch = useDispatch();
@@ -15,6 +16,7 @@ const Contents = () => {
     0: <Portfolio />,
     1: <Study />,
     2: <MyLife />,
+    3: <Career />,
   };
   return (
     <div onClick={() => dispatch(reset())}>

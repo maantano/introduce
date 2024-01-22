@@ -2,7 +2,8 @@ import React from "react";
 import classes from "./Study.module.css";
 const Study = () => {
   return (
-    <div className={classes.BannerDiv}>
+    // <div className={classes.BannerDiv}>
+    <div className={`${classes.BannerDiv} max-w-[1200px] flex-wrap `}>
       <div className={classes.videoDiv}>
         <img
           className={classes.thumbImg}

@@ -4,7 +4,7 @@ import "./Main.css";
 import "./Banner1.css";
 import { motion } from "framer-motion";
 
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { navi } from "../../redux/feature/currentSlice";
 
 const Wrap = styled.div`

@@ -1,9 +1,10 @@
 .BannerDiv {
   display: flex;
-  gap: 2rem;
+  /* gap: 2rem; */
 }
 .HomeDiv {
   width: 250px;
+  margin: 3px 25px;
 }
 
 .thumbImg {

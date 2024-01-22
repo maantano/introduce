@@ -5,7 +5,7 @@ import { Outlet } from "react-router-dom";
 import styled from "styled-components";
 import { useDispatch, useSelector } from "react-redux";
 import { chatbotTogle } from "../redux/feature/chatbotSlice";
-import ChatbotPage from "./ChatbotPage";
+import ChatbotPage from "../component/Contents/ChatbotPage";
 
 const ChatbotBnt = styled.div`
   color-scheme: light;
@@ -131,17 +131,14 @@ const Root = () => {
       <Header />
       <main>
         <Outlet />
-        <div>footer</div>
       </main>
       <ChatbotBnt onClick={() => dispatch(chatbotTogle())}>
-        {/* <div shape="circle" className="sc-1w3tvxe-0 eDjTHR"> */}
         <ChatbotBtnBg
           type="button"
           shape="circle"
           aria-label="메시징 창 열기"
           className="sc-htpNat sc-1w3tvxe-1 hdJsfE sc-EHOje bsmmQV"
         >
-          {/* {!chatbotVisible ? ( */}
           <VisibleFalse
             aria-hidden="false"
             chatbotvisible={chatbotvisible.toString()}
@@ -155,7 +152,6 @@ const Root = () => {
               viewBox="0 0 24 24"
               version="1.1"
               xmlns="http://www.w3.org/2000/svg"
-              // xmlns:xlink="http://www.w3.org/1999/xlink"
             >
               <path
                 d="M10,18 L6,22 L6,18 L10,18 Z M17,6 C19.7614237,6 22,8.23857625 22,11 C22,13.7614237 19.7614237,16 17,16 L17,16 L7,16 C4.23857625,16 2,13.7614237 2,11 C2,8.23857625 4.23857625,6 7,6 L7,6 Z"
@@ -163,7 +159,6 @@ const Root = () => {
               ></path>
             </svg>
           </VisibleFalse>
-          {/* ) : ( */}
           <VisibleTrue
             aria-hidden="true"
             className=""

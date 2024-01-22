@@ -1,6 +1,11 @@
 import React from "react";
 import classes from "./Portfolio.module.css";
 import { Link, useNavigate } from "react-router-dom";
+import webuilder from "../../../asset/webuilder/main_visual_text_01.png";
+import poterzone from "../../../asset/porterzone/porterzoneLogo.png";
+import wehago from "../../../asset/platform/platform-logo.png";
+import cardPicker from "../../../asset/etc/cardPicker.png";
+import chungsol from "../../../asset/etc/chungsol.png";
 const Portfolio = () => {
   const navigate = useNavigate();
 
@@ -19,61 +24,75 @@ const Portfolio = () => {
   };
 
   return (
-    <div className={classes.BannerDiv}>
+    <div className={`${classes.BannerDiv} max-w-[1200px] flex-wrap `}>
       <Link href="/webuilder" onClick={handleLinkClick("/webuilder")}>
-        <div className={classes.HomeDiv}>
+        <div className={`${classes.HomeDiv}`}>
           <img
-            className={classes.thumbImg}
-            src="https://i.ytimg.com/vi/MJyadEmZVJ8/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLAfBxUH_J9WpSnHNl15TqM0dFsg_w"
+            className={`${classes.thumbImg} p-8 object-contain flex justify-center items-center border border-solid border-gray-500 border-opacity-30`}
+            src={webuilder}
             alt="123"
           />
           <p className="text-"></p>
           <p className={classes.thumbTitle}>
-            Home! 새해 첫 히든풋볼, 옛날 감성으로 시작합니다! ㅣ히든풋볼ㅣ월요일
+            Webuilder, 클릭 몇번으로 쇼핑몰이 완성
           </p>
-          <p className={classes.thumbWatch}>조회수 없음 1분 전</p>
+          <p className={classes.thumbWatch}>조회수 3만회 2개월전</p>
         </div>
       </Link>
       <Link href="/porterzone" onClick={handleLinkClick("/porterzone")}>
         <div className={classes.HomeDiv}>
           <img
-            className={classes.thumbImg}
-            src="https://i.ytimg.com/vi/MJyadEmZVJ8/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLAfBxUH_J9WpSnHNl15TqM0dFsg_w"
+            className={`${classes.thumbImg} p-8 object-contain flex justify-center items-center border border-solid border-gray-500 border-opacity-30`}
+            src={poterzone}
             alt="123"
           />
           <p className="text-"></p>
           <p className={classes.thumbTitle}>
-            Home! 새해 첫 히든풋볼, 옛날 감성으로 시작합니다! ㅣ히든풋볼ㅣ월요일
+            기업이 필요한 전자상거래의 모든 것, 세상에 하나뿐인 B2B 이커머스
+            플랫폼
           </p>
-          <p className={classes.thumbWatch}>조회수 없음 1분 전</p>
+          <p className={classes.thumbWatch}>조회수 2만회 1개월 전</p>
         </div>
       </Link>
       <Link href="/platform" onClick={handleLinkClick("/platform")}>
         <div className={classes.HomeDiv}>
           <img
-            className={classes.thumbImg}
-            src="https://i.ytimg.com/vi/MJyadEmZVJ8/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLAfBxUH_J9WpSnHNl15TqM0dFsg_w"
+            className={`${classes.thumbImg} p-14 object-contain flex justify-center items-center border border-solid border-gray-500 border-opacity-30`}
+            src={wehago}
             alt="123"
           />
           <p className="text-"></p>
-          <p className={classes.thumbTitle}>
-            Home! 새해 첫 히든풋볼, 옛날 감성으로 시작합니다! ㅣ히든풋볼ㅣ월요일
-          </p>
-          <p className={classes.thumbWatch}>조회수 없음 1분 전</p>
+          <p className={classes.thumbTitle}>이것은 가장 완벽한 구축이다.</p>
+          <p className={classes.thumbWatch}>조회수 1.6만회 3개월 전</p>
         </div>
       </Link>
       <Link href="/cardrecommend" onClick={handleLinkClick("/cardrecommend")}>
         <div className={classes.HomeDiv}>
           <img
-            className={classes.thumbImg}
-            src="https://i.ytimg.com/vi/MJyadEmZVJ8/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLAfBxUH_J9WpSnHNl15TqM0dFsg_w"
+            className={`${classes.thumbImg} p-8 object-contain flex justify-center items-center border border-solid border-gray-500 border-opacity-30`}
+            src={cardPicker}
+            alt="123"
+          />
+
+          <p className="text-"></p>
+          <p className={classes.thumbTitle}>
+            내가 가장 필요한 카드는? 카드 체리피커가 됩시다.
+          </p>
+          <p className={classes.thumbWatch}>조회수 7천회 3주 전</p>
+        </div>
+      </Link>
+      <Link href="/chungsol" onClick={handleLinkClick("/chungsol")}>
+        <div className={classes.HomeDiv}>
+          <img
+            className={`${classes.thumbImg} p-8 object-contain flex justify-center items-center border border-solid border-gray-500 border-opacity-30`}
+            src={chungsol}
             alt="123"
           />
           <p className="text-"></p>
           <p className={classes.thumbTitle}>
-            Home! 새해 첫 히든풋볼, 옛날 감성으로 시작합니다! ㅣ히든풋볼ㅣ월요일
+            하루만에 만든 사이트 어머님의 사이트{" "}
           </p>
-          <p className={classes.thumbWatch}>조회수 없음 1분 전</p>
+          <p className={classes.thumbWatch}>조회수 6천회 하루전</p>
         </div>
       </Link>
     </div>
