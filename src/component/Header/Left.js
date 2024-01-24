@@ -1,7 +1,6 @@
 import React from "react";
 import { toggle } from "../../redux/feature/navSlice";
 import { useDispatch } from "react-redux";
-import { Link } from "react-router-dom";
 import { NavLink } from "react-router-dom";
 
 const Left = () => {
@@ -40,7 +39,6 @@ const Left = () => {
           </div>
           <NavLink to={"/"}>
             <div className="logo-container">
-              {/* <Link to="/">1234</Link> */}
               <div style={{ width: "100%", height: "100%" }}>
                 <div className="logo">
                   <svg

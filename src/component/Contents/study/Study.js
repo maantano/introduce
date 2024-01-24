@@ -1,32 +1,56 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import classes from "./Study.module.css";
+
+import { useQuery } from "react-query";
+
+import YoutubeError from "../../Error/YoutubeError";
+import Loading from "../../Loading/Loading";
 const Study = () => {
+  // const { isLoading, error, data } = useQuery({
+  //   queryKey: ["repoData", process.env.REACT_APP_YOUTUBEKEY],
+  //   queryFn: async () => {
+  //     const response = await fetch(
+  //       `https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=25&channelId=UCqS31wLnpnl_O2M7kfnuGiw&type=video&key=${process.env.REACT_APP_YOUTUBEKEY123}`
+  //     );
+  //     await new Promise((resolve) => setTimeout(resolve, 2000));
+  //     return response.json();
+  //   },
+  // });
+  const { isLoading, error, data } = useQuery({
+    queryKey: ["repoData", process.env.REACT_APP_YOUTUBEKEY],
+    queryFn: () =>
+      fetch(
+        `https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=25&channelId=UCqS31wLnpnl_O2M7kfnuGiw&type=video&key=${process.env.REACT_APP_YOUTUBEKEY}`
+      ).then((res) => res.json()),
+    staleTime: 1000 * 60 * 5,
+  });
+  if (isLoading) return <Loading />;
+
+  if (error || !data || !data.items) return <YoutubeError err={error} />;
   return (
-    // <div className={classes.BannerDiv}>
-    <div className={`${classes.BannerDiv} max-w-[1200px] flex-wrap `}>
-      <div className={classes.videoDiv}>
-        <img
-          className={classes.thumbImg}
-          src="https://i.ytimg.com/vi/MJyadEmZVJ8/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLAfBxUH_J9WpSnHNl15TqM0dFsg_w"
-          alt="123"
-        />
-        <p className="text-"></p>
-        <p className={classes.thumbTitle}>
-          Study! 새해 첫 히든풋볼, 옛날 감성으로 시작합니다! ㅣ히든풋볼ㅣ월요일
-        </p>
-        <p className={classes.thumbWatch}>조회수 없음 1분 전</p>
-      </div>
-      <div className={classes.videoDiv}>
-        <img
-          className={classes.thumbImg}
-          src="https://i.ytimg.com/vi/MJyadEmZVJ8/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLAfBxUH_J9WpSnHNl15TqM0dFsg_w"
-          alt="123"
-        />
-        <p className="text-"></p>
-        <p className={classes.thumbTitle}>
-          Study! 새해 첫 히든풋볼, 옛날 감성으로 시작합니다! ㅣ히든풋볼ㅣ월요일
-        </p>
-        <p className={classes.thumbWatch}>조회수 없음 1분 전</p>
+    <div
+      className={`${classes.BannerDiv} max-w-[1200px] w-[1200px] flex-wrap `}
+    >
+      <div>
+        {data.items.map((item, idx) => (
+          <div key={idx}>
+            <a
+              href={`https://www.youtube.com/watch?v=${item.id.videoId}`}
+              target="_blank"
+              rel="noreferrer"
+            >
+              <div className={classes.videoDiv}>
+                <img
+                  className={classes.thumbImg}
+                  src={item.snippet.thumbnails.medium.url}
+                  alt={item.snippet.thumbnails.medium.url}
+                />
+                <p className={classes.thumbTitle}>{item.snippet.title}</p>
+                <p className={classes.thumbWatch}>조회수 356회 1분 전</p>
+              </div>
+            </a>
+          </div>
+        ))}
       </div>
     </div>
   );

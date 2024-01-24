@@ -1,37 +1,14 @@
 import React, { useState } from "react";
-// import { CssVarsProvider } from "@mui/joy/styles";
-// import CssBaseline from "@mui/joy/CssBaseline";
-// import Autocomplete from "@mui/joy/Autocomplete";
 import Avatar from "@mui/joy/Avatar";
 import Box from "@mui/joy/Box";
 import Chip from "@mui/joy/Chip";
-// import ChipDelete from "@mui/joy/ChipDelete";
 import Typography from "@mui/joy/Typography";
-// import Button from "@mui/joy/Button";
 import List from "@mui/joy/List";
-// import Stack from "@mui/joy/Stack";
 import Divider from "@mui/joy/Divider";
 import ListItem from "@mui/joy/ListItem";
 import ListItemDecorator from "@mui/joy/ListItemDecorator";
 import ListItemContent from "@mui/joy/ListItemContent";
-// import RadioGroup from "@mui/joy/RadioGroup";
-// import Radio from "@mui/joy/Radio";
-// import Slider from "@mui/joy/Slider";
 import Sheet from "@mui/joy/Sheet";
-// import AccordionGroup from "@mui/joy/AccordionGroup";
-// import Accordion from "@mui/joy/Accordion";
-// import AccordionDetails, {
-// accordionDetailsClasses,
-// } from "@mui/joy/AccordionDetails";
-// import AccordionSummary, {
-// accordionSummaryClasses,
-// } from "@mui/joy/AccordionSummary";
-
-// import KeyboardArrowRightRoundedIcon from "@mui/icons-material/KeyboardArrowRightRounded";
-// import EmailRoundedIcon from '@mui/icons-material/EmailRounded';
-// import PeopleAltRoundedIcon from "@mui/icons-material/PeopleAltRounded";
-// import FolderRoundedIcon from "@mui/icons-material/FolderRounded";
-// import PersonRoundedIcon from "@mui/icons-material/PersonRounded";
 import Layout from "./Layout";
 import myIcon from "../Image/myIcon.jpeg";
 
@@ -65,13 +42,6 @@ const IntroduceDetail = () => {
             "...",
           ],
         },
-        // {
-        //   role: "Designer",
-        //   name: "Pinterest",
-        //   logo:
-        //     "https://www.vectorlogo.zone/logos/pinterest/pinterest-icon.svg",
-        //   years: "2012-2015",
-        // },
       ],
     },
   ];
@@ -149,7 +119,6 @@ const IntroduceDetail = () => {
                         </Typography>
                       </List>
                     </List>
-                    {/* ======================== */}
                     <Box sx={{}}>
                       <Typography level="title-sm">Skills tags:</Typography>
                       <Box sx={{ width: 250, mt: 1.5 }}>
@@ -170,31 +139,6 @@ const IntroduceDetail = () => {
                   </ListItem>
                 ))}
               </List>
-
-              {/* <Button
-                size="sm"
-                variant="plain"
-                endDecorator={
-                  <KeyboardArrowRightRoundedIcon fontSize="small" />
-                }
-                sx={{ px: 1, mt: 1 }}
-              >
-                Expand
-              </Button> */}
-              {/* <Divider component="div" sx={{ mt: 5, mb: 2 }} />
-              <Typography level="title-sm">Skills tags:</Typography>
-              <Box sx={{ mt: 1.5, display: "flex", gap: 1 }}>
-                {person.skills.map((skill, skillIndex) => (
-                  <Chip
-                    key={skillIndex}
-                    variant="outlined"
-                    color="neutral"
-                    size="sm"
-                  >
-                    {skill}
-                  </Chip>
-                ))}
-              </Box> */}
             </Sheet>
           ))}
         </List>

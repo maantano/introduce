@@ -87,19 +87,9 @@ const SlideWrap = styled.div`
 const Box = styled(motion.img)`
   position: absolute;
   width: 500px;
-  height: 500px; /* 높이를 원하는 비율로 조절할 수 있습니다. */
+  height: 500px;
   object-fit: cover;
   border-radius: 20px;
-  text-align: center;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-shrink: 0;
-  background-color: transparent;
-  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.1), 0 10px 20px rgba(0, 0, 0, 0.06);
-`;
-const Box2 = styled(motion.div)`
-  position: absolute;
   text-align: center;
   display: flex;
   justify-content: center;
@@ -327,7 +317,7 @@ const Platform = () => {
                     )
                   )}
                 </ul>
-                {itemDescription[imageIndex].link ? ( // Check if link is defined
+                {itemDescription[imageIndex].link ? (
                   <a
                     href={itemDescription[imageIndex].link}
                     target="_blank"

@@ -22,7 +22,7 @@ import five from "../../../asset/career/5.png";
 
 const Career = () => {
   return (
-    <div className="flex flex-col m-14 text-white">
+    <div className="flex flex-col p-14 text-white max-w-[1200px] w-[1200px]">
       <div className="text-5xl  font-semibold">민경언</div>
       <div className="pt-20">
         <div className="text-3xl font-semibold pb-7">Education</div>

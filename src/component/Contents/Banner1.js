@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import styled from "@emotion/styled";
 import "./Main.css";
 import "./Banner1.css";
@@ -47,7 +47,6 @@ const UnderLine = styled(motion.div)`
 `;
 
 const Banner1 = () => {
-  // ================================================================
   const tabs = ["포트폴리오", "개인공부", "인생 그래프", "경력 한눈에 보기"];
   const dispatch = useDispatch();
   const [selectedIndex, setIndex] = useState(0);
@@ -70,30 +69,6 @@ const Banner1 = () => {
         );
       })}
     </Wrap>
-
-    // <div className="banner-block" ref={bannerRef}>
-    //   <div className="banner-mx banner-menu">
-    //     {tabs.map((item, idx) => {
-    //       return (
-    //         <div
-    //           key={idx}
-    //           className={`banner-item tab ${
-    //             selectTab === idx ? "tab-selected" : ""
-    //           } `}
-    //           onClick={() => handleSelectTab(idx)}
-    //         >
-    //           {item}
-
-    //           <div
-    //             className={`tab-bar ${
-    //               selectTab === idx ? "tab-bar-selected" : ""
-    //             } `}
-    //           ></div>
-    //         </div>
-    //       );
-    //     })}
-    //   </div>
-    // </div>
   );
 };
 

@@ -14,12 +14,7 @@ const store = configureStore({
     inputReducer,
     currentReducer,
     chatbotReducer,
-
-    // [userApi.reducerPath]: userApi.reducer,
   },
-  //   devTools: process.env.NODE_ENV !== "production",
-  //   middleware: (getDefaultMiddleware) =>
-  //     getDefaultMiddleware({}).concat([userApi.middleware]),
 });
 setupListeners(store.dispatch);
 export default store;

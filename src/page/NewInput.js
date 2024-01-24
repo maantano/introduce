@@ -1,16 +1,12 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { db } from "../firebase-config";
 import {
   addDoc,
   collection,
-  deleteDoc,
-  doc,
   getDocs,
   orderBy,
   query,
 } from "firebase/firestore";
-import classes from "./Home.module.css";
-import { redirect, useNavigate } from "react-router-dom";
 
 const NewInput = () => {
   const [users, setUsers] = useState([]);
@@ -19,7 +15,6 @@ const NewInput = () => {
   const [description, setDescription] = useState();
   const usersCollectionRef = collection(db, "users");
   const createUsers = async (e) => {
-    // addDoc을 이용해서 내가 원하는 collection에 내가 원하는 key로 값을 추가한다.
     e.preventDefault();
     const currentDate = new Date();
     await addDoc(usersCollectionRef, {
@@ -39,19 +34,13 @@ const NewInput = () => {
       }))
     );
 
-    // 폼 입력값 초기화
     setTitle("");
     setAuthor("");
     setDescription("");
   };
   return (
-    //   <div className="fixed inset-0 bg-gray-200 bg-opacity-50 flex items-center justify-center">
-    // <div className="p-5 fixed border rounded-md w-2/5 border-white ">
-    // <div className="p-5 fixed border-blue-100 rounded-md w-2/5">
     <div className="m-28 p-5 border border-solid fixed border-gray-500 rounded-md w-2/5">
       <form className=" flex flex-col gap-4 md:gap-6">
-        {/* <form className="flex flex-col gap-4 md:gap-6"> */}
-
         <div className="grid gap-2 ">
           <label
             className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70 text-gray-300"

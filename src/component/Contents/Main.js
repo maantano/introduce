@@ -3,13 +3,7 @@ import thumb from "./thumb3.JPG";
 const Main = () => {
   return (
     <div className="banner-mx">
-      <div>
-        <img
-          className="banner-img"
-          src="https://yt3.googleusercontent.com/p2ZIcHzBIMFBLqhAZJ8pGHc1c2F1BzKxFPpUtaAMMSC7xlNFWabSLVbi_w0B5wmP6gKDIZ6NbQ=w2560-fcrop64=1,00005a57ffffa5a8-k-c0xffffffff-no-nd-rj"
-          alt="avatar"
-        />
-      </div>
+      <div></div>
       <div className="mt-10 flex flex-row">
         <div className="thumb-container">
           <img className="thumb-nail object-cover" src={thumb} alt="avatar" />

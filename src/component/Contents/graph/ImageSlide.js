@@ -24,7 +24,7 @@ const SlideWrap = styled.div`
 const Box = styled(motion.img)`
   position: absolute;
   width: 250px;
-  height: 250px; /* 높이를 원하는 비율로 조절할 수 있습니다. */
+  height: 250px;
   object-fit: cover;
   border-radius: 20px;
   text-align: center;
@@ -71,7 +71,6 @@ const ImageSlide = ({ data }) => {
   const [visible, setVisible] = useState(0);
   const imageIndex = wrap(0, data.length, visible);
   const [back, setBack] = useState(false);
-  const [fileItem, setFileItem] = useState([]);
   const nextPlease = () => {
     setBack(false);
     setVisible((prev) =>
@@ -83,7 +82,6 @@ const ImageSlide = ({ data }) => {
     setVisible((prev) => (prev === 0 ? 0 : prev - 1));
   };
 
-  console.log("imageIndex ---->", imageIndex);
   return (
     <div>
       <Wrapper>

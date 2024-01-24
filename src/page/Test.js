@@ -14,10 +14,7 @@ const Test = () => {
   const usersCollectionRef = collection(db, "users");
 
   useEffect(() => {
-    // 비동기로 데이터 받을준비
     const getUsers = async () => {
-      // getDocs로 컬렉션안에 데이터 가져오기
-      // const data = await getDocs(usersCollectionRef);
       const data = await getDocs(
         query(usersCollectionRef, orderBy("date", "desc"))
       );
@@ -25,7 +22,7 @@ const Test = () => {
         data.docs.map((doc) => ({
           ...doc.data(),
           id: doc.id,
-          date: doc.data().date.toDate(), // 변환
+          date: doc.data().date.toDate(),
         }))
       );
     };
@@ -36,7 +33,6 @@ const Test = () => {
   const [author, setAuthor] = useState();
   const [description, setDescription] = useState();
   const createUsers = async (e) => {
-    // addDoc을 이용해서 내가 원하는 collection에 내가 원하는 key로 값을 추가한다.
     e.preventDefault();
     const currentDate = new Date();
     await addDoc(usersCollectionRef, {
@@ -55,8 +51,6 @@ const Test = () => {
         date: doc.data().date.toDate(),
       }))
     );
-
-    // 폼 입력값 초기화
     setTitle("");
     setAuthor("");
     setDescription("");
@@ -129,7 +123,6 @@ const Test = () => {
           </label>
           <textarea
             className={`flex min-h-[120px] w-full rounded-md border px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none  bg-white bg-opacity-15 text-gray-300`}
-            // className={`${classes.noneOutline} flex min-h-[80px] w-full rounded-md border px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 bg-white bg-opacity-15 text-gray-300`}
             onChange={(e) => setDescription(e.target.value)}
             id="description"
             required=""
@@ -138,7 +131,6 @@ const Test = () => {
         <div className="flex items-center justify-center">
           <button
             className="inline-flex items-center justify-center rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none disabled:pointer-events-none disabled:opacity-50 h-10 px-4 py-2 w-40 bg-white bg-opacity-15 text-gray-300"
-            // type="submit"
             onClick={createUsers}
           >
             Add Task

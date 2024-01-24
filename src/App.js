@@ -1,14 +1,8 @@
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import "./App.css";
 import Root from "./page/Root";
-import Test from "./page/Test";
 
 import Home from "./page/Home";
-import { firestore } from "./firebase-config.js";
-import UserRead from "./page/UserRead";
-import UserCreat from "./page/UserCreat";
-import UserUpdate from "./page/UserUpdate";
-import UserDelete from "./page/UserDelete";
 import TestList, { loader as testDetailLoader } from "./page/TestList";
 import NewInput from "./page/NewInput";
 import DescriptDetail from "./page/DescriptDetail";
@@ -17,11 +11,13 @@ import Webuilder from "./page/portfolio/Webuilder";
 import PorterZone from "./page/portfolio/PorterZone";
 import Platform from "./page/portfolio/Platform";
 import CardRecommend from "./page/portfolio/CardRecommend";
-import MyLife from "./page/graph/MyLife";
+import MyLife from "./component/Contents/graph/MyLife";
 import Chungsol from "./page/portfolio/Chungsol";
 import Feedback from "./page/Feedback";
 import FeedbackDetail from "./page/FeedbackDetail";
+import { QueryClient, QueryClientProvider } from "react-query";
 
+const queryClient = new QueryClient();
 const router = createBrowserRouter([
   {
     path: "/",
@@ -55,7 +51,6 @@ const router = createBrowserRouter([
           },
         ],
       },
-
       { path: "testwrite", element: <NewInput /> },
       { path: "/lifegraph", element: <MyLife /> },
       { path: "/webuilder", element: <Webuilder /> },
@@ -63,15 +58,15 @@ const router = createBrowserRouter([
       { path: "/platform", element: <Platform /> },
       { path: "/cardrecommend", element: <CardRecommend /> },
       { path: "/chungsol", element: <Chungsol /> },
-      // { path: "/delete", element: <UserDelete /> },
-      // { path: "/read", element: <UserRead /> },
-      // { path: "/update", element: <UserUpdate /> },
-      // { path: "/create", element: <UserCreat /> },
     ],
   },
 ]);
 function App() {
-  return <RouterProvider router={router} />;
+  return (
+    <QueryClientProvider client={queryClient}>
+      <RouterProvider router={router} />
+    </QueryClientProvider>
+  );
 }
 
 export default App;

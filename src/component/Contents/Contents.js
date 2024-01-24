@@ -5,7 +5,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { reset } from "../../redux/feature/inputSlice";
 import { useEffect } from "react";
 import Portfolio from "./portfolio/Portfolio";
-import MyLife from "../../page/graph/MyLife";
+import MyLife from "./graph/MyLife";
 import Career from "./career/Carrer";
 
 const Contents = () => {

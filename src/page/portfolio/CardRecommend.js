@@ -15,7 +15,6 @@ import motion2 from "../../asset/cardRecommend/motionVariants.png";
 import motion3 from "../../asset/cardRecommend/motionComponent2.png";
 import motion1 from "../../asset/cardRecommend/motionComponent.png";
 
-import cardBanner1 from "../../asset/cardRecommend/cardP1.png";
 import cardBanner2 from "../../asset/cardRecommend/cardP2.png";
 import cardlogo from "../../asset/cardRecommend/cardPicker.png";
 import styled from "styled-components";
@@ -47,7 +46,7 @@ const SlideWrap = styled.div`
 const Box = styled(motion.img)`
   position: absolute;
   width: 70%;
-  height: 500px; /* 높이를 원하는 비율로 조절할 수 있습니다. */
+  height: 500px;
   object-fit: contain;
   border-radius: 20px;
   text-align: center;

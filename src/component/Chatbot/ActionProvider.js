@@ -1,20 +1,3 @@
-// import React from "react";
-
-// const ActionProvider = ({ createChatBotMessage, setState, children }) => {
-//   return (
-//     <div>
-//       {React.Children.map(children, (child) => {
-//         return React.cloneElement(child, {
-//           actions: {},
-//         });
-//       })}
-//     </div>
-//   );
-// };
-
-// export default ActionProvider;
-
-// in ActionProvider.jsx
 import React from "react";
 
 import Typography from "@mui/joy/Typography";
@@ -143,13 +126,3 @@ const ActionProvider = ({ createChatBotMessage, setState, children }) => {
 };
 
 export default ActionProvider;
-
-// class ActionProvider {
-//   constructor(createChatbotMessage, setStateFunc, createClientMessage) {
-//     this.createChatbotMessage = createChatbotMessage;
-//     this.setState = setStateFunc;
-//     this.createClientMessage = createClientMessage;
-//   }
-// }
-
-// export default ActionProvider;

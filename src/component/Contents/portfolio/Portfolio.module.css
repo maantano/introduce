@@ -31,7 +31,6 @@
 }
 
 .thumbWatch {
-  /* margin-top: 7px; */
   font-family: "Roboto", "Arial", sans-serif;
   font-size: 11px;
   line-height: 1.5rem;
@@ -40,8 +39,6 @@
   display: flex;
   max-height: 4rem;
   -webkit-line-clamp: 2;
-  /* display: box; */
-  /* display: -webkit-box; */
   -webkit-box-orient: vertical;
   text-overflow: ellipsis;
   white-space: normal;

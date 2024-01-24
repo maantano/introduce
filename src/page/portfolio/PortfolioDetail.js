@@ -1,7 +1,6 @@
 import React from "react";
 import Main from "../../component/Contents/Main";
-import Banner1 from "../../component/Contents/Banner1";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { reset } from "../../redux/feature/inputSlice";
 import NavMenu from "../../component/Nav/NavMenu";
 import PortfolioItem from "./PortfolioItem";

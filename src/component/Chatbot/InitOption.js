@@ -1,9 +1,7 @@
 import React from "react";
-
 import "./Options.css";
 import Typography from "@mui/joy/Typography";
 import Button from "@mui/joy/Button";
-// import { wrap } from "module";
 const InitOption = (props) => {
   const options = [
     {
@@ -16,7 +14,6 @@ const InitOption = (props) => {
       handler: props.actionProvider.handleIntroduceDetail,
       id: 2,
     },
-    // { text: "인생 그래프", handler: () => {}, id: 3 },
     {
       text: "포트폴리오",
       handler: props.actionProvider.handlePortfolio,

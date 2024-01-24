@@ -20,8 +20,6 @@ const Center = () => {
   const [description, setDescription] = useState();
   const usersCollectionRef = collection(db, "feedback");
   const createUsers = async () => {
-    // addDoc을 이용해서 내가 원하는 collection에 내가 원하는 key로 값을 추가한다.
-    // e.preventDefault();
     const currentDate = new Date();
     await addDoc(usersCollectionRef, {
       description,

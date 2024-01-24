@@ -23,7 +23,7 @@ const Feedback = () => {
         data.docs.map((doc) => ({
           ...doc.data(),
           id: doc.id,
-          date: doc.data().date.toDate(), // 변환
+          date: doc.data().date.toDate(),
         }))
       );
     };
@@ -78,9 +78,6 @@ const Feedback = () => {
                 <th className="h-12 px-4 text-center align-middle font-medium text-muted-foreground pr-0 hidden md:table-cell">
                   Created At
                 </th>
-                {/* <th className="h-12 px-4 text-center align-middle font-medium text-muted-foreground pr-0">
-                  Actions
-                </th> */}
               </tr>
             </thead>
             <tbody className={`text-center border-0 ${classes.tableBody}`}>
@@ -89,23 +86,16 @@ const Feedback = () => {
                   key={item.id}
                   className={`border-b transition-colors ${classes.tableListItem}`}
                 >
-                  {/* <td className="p-4 align-middle pr-0 font-medium">
-                    {item.title}
-                  </td> */}
-                  {/* </NavLink> */}
-                  {/* <td className="p-4 align-middle pr-0">{item.author}</td> */}
                   <td className="p-4 align-middle pr-0 hidden md:table-cell">
                     {item.date.toLocaleString()}
                   </td>
                   <td className="p-4 align-middle pr-0">
-                    {/* <NavLink to={`/edit/${item.id}`}> */}
                     <button
                       onClick={onClickEditHandler}
                       className={`${classes.editBtn} inline-flex items-center justify-center text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border bg-background hover:bg-accent hover:text-accent-foreground h-9 rounded-md px-3 text-gray-300 border-gray-300`}
                     >
                       Edit
                     </button>
-                    {/* </NavLink> */}
                     <button
                       className={`${classes.deleteBtn} inline-flex items-center justify-center text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border bg-background hover:bg-accent hover:text-accent-foreground h-9 rounded-md px-3 ml-2 text-gray-300 border-gray-300`}
                       type="button"

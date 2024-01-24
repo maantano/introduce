@@ -119,12 +119,10 @@ const VisibleTrue = styled.div`
   width: 100%;
   transition: top 0.5s cubic-bezier(0.66, 0, 0.12, 1) 0s;
   top: ${(props) => (props.chatbotvisible === "true" ? "0px" : "100%")};
-  /* top: 100%; */
 `;
 const Root = () => {
   const dispatch = useDispatch();
   const chatbotvisible = useSelector((state) => state.chatbotReducer.visible);
-  console.log("root  | chatbotvisible ===>", chatbotvisible);
 
   return (
     <>

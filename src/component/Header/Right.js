@@ -7,7 +7,7 @@ const Right = () => {
         <div className="flex flex-row items-center">
           <div className="mr-2">
             <div>
-              <a>
+              <div>
                 <div className="end-box">
                   <button>
                     <div
@@ -31,12 +31,12 @@ const Right = () => {
                     </div>
                   </button>
                 </div>
-              </a>
+              </div>
             </div>
           </div>
           <div className="mr-2">
             <div>
-              <a>
+              <div>
                 <div className="end-box">
                   <button>
                     <div
@@ -61,12 +61,12 @@ const Right = () => {
                     </div>
                   </button>
                 </div>
-              </a>
+              </div>
             </div>
           </div>
           <div className="mr-2">
             <div>
-              <a>
+              <div>
                 <div className="end-box">
                   <button className="items-center justify-center">
                     <div
@@ -85,7 +85,7 @@ const Right = () => {
                     </div>
                   </button>
                 </div>
-              </a>
+              </div>
             </div>
           </div>
         </div>

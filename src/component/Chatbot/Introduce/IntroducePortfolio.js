@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import Avatar from "@mui/joy/Avatar";
 import Box from "@mui/joy/Box";
 import Typography from "@mui/joy/Typography";
@@ -13,16 +13,12 @@ import Sheet from "@mui/joy/Sheet";
 import webuilderLogo from "../../../asset/webuilder/main_visual_text_01.png";
 import proterzoneLogo from "../../../asset/porterzone/porterzoneLogo.png";
 import platformLogo from "../../../asset/platform/platform-logo.png";
-// import proterzoneLogo from "../../../asset/poterzone/porterzoneLogo.png";
 
 import Layout from "./Layout";
 import myIcon from "../Image/myIcon.jpeg";
 import { Link, useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
-import {
-  chatbotReset,
-  chatbotTogle,
-} from "../../../redux/feature/chatbotSlice";
+import { chatbotTogle } from "../../../redux/feature/chatbotSlice";
 
 const IntroducePortfolio = () => {
   const navigate = useNavigate();
@@ -39,7 +35,6 @@ const IntroducePortfolio = () => {
     event.preventDefault();
     scrollToTop();
     navigate(to);
-    console.log("dispatch(chatbotTogle()) ===>");
     dispatch(chatbotTogle());
   };
 
@@ -87,7 +82,7 @@ const IntroducePortfolio = () => {
         },
         {
           role: "개인 프로젝트",
-          name: "카드 추천 서비스",
+          name: "Card Picker🍒",
 
           years: "2023.09~2023.10",
           skills: [
@@ -99,6 +94,14 @@ const IntroducePortfolio = () => {
             "...",
           ],
           link: "cardrecommend",
+        },
+        {
+          role: "개인 프로젝트",
+          name: "청솔 노인재가복지센터",
+
+          years: "2024.01.19~2024.01.20",
+          skills: ["html", "css", "react", "redux-toolkit", "firebase", "..."],
+          link: "chungsol",
         },
       ],
     },
@@ -139,7 +142,6 @@ const IntroducePortfolio = () => {
               <Divider component="div" />
               <List sx={{ "--ListItemDecorator-size": "60px" }}>
                 {person.companyData.map((company, companyIndex) => (
-                  //   <Link to={company.link}>
                   <Link
                     href={company.link}
                     onClick={handleLinkClick(company.link)}
@@ -189,16 +191,6 @@ const IntroducePortfolio = () => {
                               개인
                             </Typography>
                           )}
-                          {/* <Avatar
-                             src={company.logo}
-                             sx={{
-                               bgcolor: "black",
-                               "--Avatar-size": "50px",
-                               img: {
-                                 objectFit: "contain",
-                               },
-                             }}
-                           /> */}
                         </ListItemDecorator>
                         <List sx={{ flexDirection: "column", ml: 4, mt: 2 }}>
                           <ListItemContent sx={{ mt: 0 }}>
@@ -214,7 +206,6 @@ const IntroducePortfolio = () => {
                           </Typography>
                         </List>
                       </List>
-                      {/* ======================== */}
                       <Box sx={{}}>
                         <Typography level="title-sm">Skills tags:</Typography>
                         <Box sx={{ width: 250, mt: 1.5 }}>
@@ -236,31 +227,6 @@ const IntroducePortfolio = () => {
                   </Link>
                 ))}
               </List>
-
-              {/* <Button
-					size="sm"
-					variant="plain"
-					endDecorator={
-					  <KeyboardArrowRightRoundedIcon fontSize="small" />
-					}
-					sx={{ px: 1, mt: 1 }}
-				  >
-					Expand
-				  </Button> */}
-              {/* <Divider component="div" sx={{ mt: 5, mb: 2 }} />
-				  <Typography level="title-sm">Skills tags:</Typography>
-				  <Box sx={{ mt: 1.5, display: "flex", gap: 1 }}>
-					{person.skills.map((skill, skillIndex) => (
-					  <Chip
-						key={skillIndex}
-						variant="outlined"
-						color="neutral"
-						size="sm"
-					  >
-						{skill}
-					  </Chip>
-					))}
-				  </Box> */}
             </Sheet>
           ))}
         </List>

@@ -1,22 +1,18 @@
 import React, { useState } from "react";
-import { ResponsiveLine } from "@nivo/line";
 import Graph from "./Graph";
 
-import img0 from "../../asset/myLife/0.JPG";
-import img2013 from "../../asset/myLife/2013.jpeg";
-import img2016 from "../../asset/myLife/2017.JPG";
-import img2017 from "../../asset/myLife/2017.JPG";
-import img2018 from "../../asset/myLife/2018.JPG";
-import img2019 from "../../asset/myLife/2019.JPG";
-import img2023 from "../../asset/myLife/2023.JPG";
+import img0 from "../../../asset/myLife/0.JPG";
+import img2013 from "../../../asset/myLife/2013.jpeg";
 
-import newImg2021 from "../../asset/myLife/newImg2021.png";
-import newImg2022 from "../../asset/myLife/newImg2022.png";
-import newImg2023 from "../../asset/myLife/newImg2023.png";
-import img2024 from "../../asset/myLife/2024.png";
-import myDevLife from "../../asset/myLife/myDevLife.png";
-import america from "../../asset/myLife/america.JPG";
-import certifi from "../../asset/myLife/certificate.png";
+import img2018 from "../../../asset/myLife/2018.JPG";
+import img2019 from "../../../asset/myLife/2019.JPG";
+import img2023 from "../../../asset/myLife/2023.JPG";
+import newImg2022 from "../../../asset/myLife/newImg2022.png";
+import newImg2023 from "../../../asset/myLife/newImg2023.png";
+import img2024 from "../../../asset/myLife/2024.png";
+import myDevLife from "../../../asset/myLife/myDevLife.png";
+import america from "../../../asset/myLife/america.JPG";
+import certifi from "../../../asset/myLife/certificate.png";
 
 const data = {
   id: "myLife",
@@ -131,7 +127,7 @@ const MyLife = () => {
   const [tempData, setTempData] = useState([data]);
 
   return (
-    <div className="flex mt-8 flex-col">
+    <div className="flex mt-8 flex-col max-w-[1200px]">
       <div className="text-gray-300 text-3xl">민경언의 인생곡선</div>
       <Graph data={tempData} />
       <img className="ml-4" src={myDevLife} alt="myDevLife" />
