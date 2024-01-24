@@ -12,17 +12,15 @@ import UserDelete from "./page/UserDelete";
 import TestList, { loader as testDetailLoader } from "./page/TestList";
 import NewInput from "./page/NewInput";
 import DescriptDetail from "./page/DescriptDetail";
-
 import Chatbot from "./component/Contents/ChatbotPage";
-// import PortfolioDetail from "./page/portfolio/PortfolioDetail";
-// import PortfolioItem from "./page/portfolio/PortfolioItem";
 import Webuilder from "./page/portfolio/Webuilder";
 import PorterZone from "./page/portfolio/PorterZone";
 import Platform from "./page/portfolio/Platform";
 import CardRecommend from "./page/portfolio/CardRecommend";
 import MyLife from "./page/graph/MyLife";
 import Chungsol from "./page/portfolio/Chungsol";
-// import CardRecommend from "./asset/webuilder/CardRecommend";
+import Feedback from "./page/Feedback";
+import FeedbackDetail from "./page/FeedbackDetail";
 
 const router = createBrowserRouter([
   {
@@ -44,19 +42,31 @@ const router = createBrowserRouter([
           },
         ],
       },
-      { path: "testwrite", element: <NewInput /> },
+      {
+        path: "feedback",
+        element: <Feedback />,
+        children: [
+          { index: true, element: <Feedback /> },
+          {
+            path: ":detailId",
+            element: <FeedbackDetail />,
+            id: "feedback-detail",
+            loader: testDetailLoader,
+          },
+        ],
+      },
 
+      { path: "testwrite", element: <NewInput /> },
       { path: "/lifegraph", element: <MyLife /> },
       { path: "/webuilder", element: <Webuilder /> },
       { path: "/porterzone", element: <PorterZone /> },
       { path: "/platform", element: <Platform /> },
       { path: "/cardrecommend", element: <CardRecommend /> },
       { path: "/chungsol", element: <Chungsol /> },
-
-      { path: "/delete", element: <UserDelete /> },
-      { path: "/read", element: <UserRead /> },
-      { path: "/update", element: <UserUpdate /> },
-      { path: "/create", element: <UserCreat /> },
+      // { path: "/delete", element: <UserDelete /> },
+      // { path: "/read", element: <UserRead /> },
+      // { path: "/update", element: <UserUpdate /> },
+      // { path: "/create", element: <UserCreat /> },
     ],
   },
 ]);

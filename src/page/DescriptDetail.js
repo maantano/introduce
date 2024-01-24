@@ -5,9 +5,8 @@ import { db } from "../firebase-config";
 
 const DescriptDetail = () => {
   const { detailData } = useRouteLoaderData("test-detail");
-  console.log("data????? ===>", detailData);
   const { title, author, description, date } = detailData;
-  console.log("date !!!!", date);
+
   //   console.log(detailData.date.toDate());
 
   //   const params = useParams();

@@ -1,5 +1,5 @@
 import React from "react";
-import thumb2 from "./thumb2.JPG";
+import thumb from "./thumb3.JPG";
 const Main = () => {
   return (
     <div className="banner-mx">
@@ -12,7 +12,7 @@ const Main = () => {
       </div>
       <div className="mt-10 flex flex-row">
         <div className="thumb-container">
-          <img className="thumb-nail object-cover" src={thumb2} alt="avatar" />
+          <img className="thumb-nail object-cover" src={thumb} alt="avatar" />
         </div>
         <div className="flex flex-col justify-start my-data">
           <div className="flex flex-row items-center flex-co">
@@ -36,8 +36,8 @@ const Main = () => {
             </div>
           </div>
 
-          <p className="thumb-nail-sub">maantano@google.co.kr</p>
-          <div className="flex flex-type items-center">
+          <p className="thumb-nail-sub">maaantano@gmail.com</p>
+          <div className="flex flex-type items-center ">
             <span className="thumb-nail-sub w-auto">
               #Frontend #Developer #IT
             </span>
@@ -48,7 +48,7 @@ const Main = () => {
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 height="24"
-                viewBox="0 0 24 24"
+                viewBox="0 0 24 26"
                 width="24"
                 focusable="false"
                 style={{
@@ -62,18 +62,31 @@ const Main = () => {
               </svg>
             </div>
           </div>
-          <div className="flex flex-type justify-center items-center flex-row">
+          <div className="flex justify-center flex-col">
             <a
               className="thumb-nail-sub w-auto email"
               href="https://velog.io/@maantano"
               target="_blank"
+              rel="noreferrer"
             >
-              https://velog.io/@maantano
+              velog.io/@maantano
             </a>
-            <a className="other-link" role="button" href="#">
-              외 링크 1개
+            <a
+              className="thumb-nail-sub w-auto email"
+              href="https://maantano.tistory.com"
+              target="_blank"
+              rel="noreferrer"
+            >
+              maantano.tistory.com (이사 예정)
             </a>
-            {/* <div className="other-link">외 링크 1개</div> */}
+            <a
+              className="thumb-nail-sub w-auto email"
+              href="https://github.com/maantano"
+              target="_blank"
+              rel="noreferrer"
+            >
+              github.com/maantano
+            </a>
           </div>
         </div>
       </div>

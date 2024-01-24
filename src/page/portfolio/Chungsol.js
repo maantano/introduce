@@ -1,10 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "./Portfolio.css";
 
-import refact1 from "../../asset/webuilder/refact1.png";
-import refact2 from "../../asset/webuilder/refact2.png";
-import proxy from "../../asset/webuilder/proxy.png";
-
 import chungsolMain from "../../asset/etc/chungsolMain.png";
 import chungsolLogo from "../../asset/etc/chungsol.png";
 import chungsolLogoB from "../../asset/etc/chungsolBlack.png";

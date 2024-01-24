@@ -12,10 +12,7 @@ import {
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
 } from "firebase/auth";
-// TODO: Add SDKs for Firebase products that you want to use
-// https://firebase.google.com/docs/web/setup#available-libraries
 
-// Your web app's Firebase configuration
 const firebaseConfig = {
   apiKey: process.env.REACT_APP_apiKey,
   authDomain: process.env.REACT_APP_authDomain,
@@ -25,19 +22,8 @@ const firebaseConfig = {
   appId: process.env.REACT_APP_appId,
 };
 
-// const firebaseConfig = {
-//   apiKey: "AIzaSyDD3dovvG7g67pxB42Sw-PYfOXqrsAQKHo",
-//   authDomain: "introduce-bd0f2.firebaseapp.com",
-//   projectId: "introduce-bd0f2",
-//   storageBucket: "introduce-bd0f2.appspot.com",
-//   messagingSenderId: "213181128144",
-//   appId: "1:213181128144:web:3c04b50b4baae26b646dd5",
-// };
-
-// Initialize Firebase
 export const app = initializeApp(firebaseConfig);
 export default firebase.initializeApp(firebaseConfig);
-// export const authService = firebase.auth();
 const firebaseAuth = getAuth(app);
 
 export const storage = getStorage(app);
@@ -48,9 +34,3 @@ export {
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
 };
-
-// export const db = getFirestore(app);
-
-// firebase.initializeApp(firebaseConfig);
-// const firestore = firebase.firestore();
-// export { firestore };

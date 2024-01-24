@@ -19,7 +19,7 @@
 }
 
 .input-box .inputShow {
-  height: 384px;
+  height: 450px;
   background-color: #222222;
   width: 100%;
   border-radius: 10px;
@@ -62,4 +62,39 @@
 }
 .input-box .inputShow ul li:hover {
   background: #303030;
+}
+.inputBtn {
+  background-color: #3b434d;
+  border: 1px solid #3f3f3f;
+  opacity: 0.8;
+}
+.inputBtn:hover {
+  background-color: #4b5664;
+  opacity: 1;
+}
+
+.toast-container {
+  transform: translateX(-50%);
+  background-color: rgba(255, 255, 255);
+  color: black;
+  font-weight: 500;
+  font-size: 20px;
+  padding: 15px;
+  border-radius: 8px;
+  opacity: 0;
+  animation: fadeInOut 2s ease; /* Add animation for fade-in and fade-out */
+}
+
+@keyframes fadeInOut {
+  0%,
+  100% {
+    opacity: 0;
+    transform: translateY(
+      20px
+    ); /* 토스트가 아래로 이동하면서 사라지도록 설정 */
+  }
+  50% {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }

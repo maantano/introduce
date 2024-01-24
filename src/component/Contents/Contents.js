@@ -11,7 +11,7 @@ import Career from "./career/Carrer";
 const Contents = () => {
   const dispatch = useDispatch();
   const currentIdx = useSelector((state) => state.currentReducer.index);
-  console.log("currentIdx ===>", currentIdx);
+
   const components = {
     0: <Portfolio />,
     1: <Study />,

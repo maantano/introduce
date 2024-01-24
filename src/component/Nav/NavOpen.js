@@ -1,100 +1,77 @@
-import React from "react";
+import React, { useState } from "react";
 import "./navOpen.css";
+import { navi } from "../../redux/feature/currentSlice";
+import { useDispatch } from "react-redux";
 const NavOpen = () => {
+  // const tabs = ["포트폴리오", "개인공부", "인생 그래프", "경력 한눈에 보기"];
+  const tabs = [
+    {
+      title: "포트폴리오",
+      path:
+        "m12 4.44 7 6.09V20h-4v-6H9v6H5v-9.47l7-6.09m0-1.32-8 6.96V21h6v-6h4v6h6V10.08l-8-6.96z",
+    },
+    {
+      title: "개인공부",
+      path:
+        "M10 18v-6l5 3-5 3zm7-15H7v1h10V3zm3 3H4v1h16V6zm2 3H2v12h20V9zM3 10h18v10H3V10z",
+    },
+    {
+      title: "인생 그래프",
+      path:
+        "M10 14.65v-5.3L15 12l-5 2.65zm7.77-4.33-1.2-.5L18 9.06c1.84-.96 2.53-3.23 1.56-5.06s-3.24-2.53-5.07-1.56L6 6.94c-1.29.68-2.07 2.04-2 3.49.07 1.42.93 2.67 2.22 3.25.03.01 1.2.5 1.2.5L6 14.93c-1.83.97-2.53 3.24-1.56 5.07.97 1.83 3.24 2.53 5.07 1.56l8.5-4.5c1.29-.68 2.06-2.04 1.99-3.49-.07-1.42-.94-2.68-2.23-3.25zm-.23 5.86-8.5 4.5c-1.34.71-3.01.2-3.72-1.14-.71-1.34-.2-3.01 1.14-3.72l2.04-1.08v-1.21l-.69-.28-1.11-.46c-.99-.41-1.65-1.35-1.7-2.41-.05-1.06.52-2.06 1.46-2.56l8.5-4.5c1.34-.71 3.01-.2 3.72 1.14.71 1.34.2 3.01-1.14 3.72L15.5 9.26v1.21l1.8.74c.99.41 1.65 1.35 1.7 2.41.05 1.06-.52 2.06-1.46 2.56z",
+    },
+    {
+      title: "경력 한눈에 보기",
+      path:
+        "M10 9.35 15 12l-5 2.65zM12 7a5 5 0 105 5 5 5 0 00-5-5m0-1a6 6 0 11-6 6 6 6 0 016-6zm0-3a9 9 0 109 9 9 9 0 00-9-9m0-1A10 10 0 112 12 10 10 0 0112 2z",
+    },
+  ];
+
+  const dispatch = useDispatch();
+  const [selectedIndex, setIndex] = useState(0);
+  const onClickIndx = (idx) => {
+    setIndex(idx);
+    dispatch(navi(idx));
+  };
+
   return (
     <div className="left-0 bottom-0 box-border top-0">
       <div id="contentContainer" className="navOpen flex">
-        <div className="flex-col navSection">
-          <div className="flex px-4 menu-item">
-            <div className="mr-5 icon">
-              <div style={{ width: "24px", height: "18px", fill: "white" }}>
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  enableBackground="new 0 0 24 24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                  width="24"
-                  focusable="false"
-                  style={{
-                    pointerEvents: "none",
-                    display: "block",
-                    width: "100%",
-                    height: "100%",
-                  }}
-                >
-                  <path d="m12 4.44 7 6.09V20h-4v-6H9v6H5v-9.47l7-6.09m0-1.32-8 6.96V21h6v-6h4v6h6V10.08l-8-6.96z"></path>
-                </svg>
+        <div className="flex-col navSection mt-2">
+          {tabs.map((item, idx) => {
+            return (
+              // <div key={idx}>
+              //   <Item onClick={() => onClickIndx(idx)}>
+              <div
+                className="flex px-4 menu-item"
+                key={idx}
+                onClick={() => onClickIndx(idx)}
+              >
+                <div className="mr-5 icon">
+                  <div style={{ width: "24px", height: "18px", fill: "white" }}>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      enableBackground="new 0 0 24 24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      width="24"
+                      focusable="false"
+                      style={{
+                        pointerEvents: "none",
+                        display: "block",
+                        width: "100%",
+                        height: "100%",
+                      }}
+                    >
+                      <path d={item.path}></path>
+                    </svg>
+                  </div>
+                </div>
+                <div className="title">{item.title}</div>
               </div>
-            </div>
-            <div className="title">홈</div>
-          </div>
-          <div className="flex px-4 menu-item">
-            <div className="mr-5 icon">
-              <div style={{ width: "24px", height: "18px", fill: "white" }}>
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  height="24"
-                  viewBox="0 0 24 24"
-                  width="24"
-                  focusable="false"
-                  style={{
-                    pointerEvents: "none",
-                    display: "block",
-                    width: "100%",
-                    height: "100%",
-                  }}
-                >
-                  <path d="M10 14.65v-5.3L15 12l-5 2.65zm7.77-4.33-1.2-.5L18 9.06c1.84-.96 2.53-3.23 1.56-5.06s-3.24-2.53-5.07-1.56L6 6.94c-1.29.68-2.07 2.04-2 3.49.07 1.42.93 2.67 2.22 3.25.03.01 1.2.5 1.2.5L6 14.93c-1.83.97-2.53 3.24-1.56 5.07.97 1.83 3.24 2.53 5.07 1.56l8.5-4.5c1.29-.68 2.06-2.04 1.99-3.49-.07-1.42-.94-2.68-2.23-3.25zm-.23 5.86-8.5 4.5c-1.34.71-3.01.2-3.72-1.14-.71-1.34-.2-3.01 1.14-3.72l2.04-1.08v-1.21l-.69-.28-1.11-.46c-.99-.41-1.65-1.35-1.7-2.41-.05-1.06.52-2.06 1.46-2.56l8.5-4.5c1.34-.71 3.01-.2 3.72 1.14.71 1.34.2 3.01-1.14 3.72L15.5 9.26v1.21l1.8.74c.99.41 1.65 1.35 1.7 2.41.05 1.06-.52 2.06-1.46 2.56z"></path>
-                </svg>
-              </div>
-            </div>
-            <div className="title">Shorts</div>
-          </div>
-          <div className="flex px-4 menu-item">
-            <div className="mr-5 icon">
-              <div style={{ width: "24px", height: "18px", fill: "white" }}>
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  enableBackground="new 0 0 24 24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                  width="24"
-                  focusable="false"
-                  style={{
-                    pointerEvents: "none",
-                    display: "block",
-                    width: "100%",
-                    height: "100%",
-                  }}
-                >
-                  <path d="M10 18v-6l5 3-5 3zm7-15H7v1h10V3zm3 3H4v1h16V6zm2 3H2v12h20V9zM3 10h18v10H3V10z"></path>
-                </svg>
-              </div>
-            </div>
-            <div className="title">구독</div>
-          </div>
-          <div className="flex px-4 menu-item">
-            <div className="mr-5 icon">
-              <div style={{ width: "24px", height: "18px", fill: "white" }}>
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  height="24"
-                  viewBox="0 0 24 24"
-                  width="24"
-                  focusable="false"
-                  style={{
-                    pointerEvents: "none",
-                    display: "block",
-                    width: "100%",
-                    height: "100%",
-                  }}
-                >
-                  <path d="M10 9.35 15 12l-5 2.65zM12 7a5 5 0 105 5 5 5 0 00-5-5m0-1a6 6 0 11-6 6 6 6 0 016-6zm0-3a9 9 0 109 9 9 9 0 00-9-9m0-1A10 10 0 112 12 10 10 0 0112 2z"></path>
-                </svg>
-              </div>
-            </div>
-            <div className="title">YouTube Music</div>
-          </div>
+            );
+          })}
+
           <div className="navOpen-mine">
             <div className="border"></div>
             <div className="px-4 flex">
@@ -119,7 +96,7 @@ const NavOpen = () => {
                 </div>
               </div>
             </div>
-            <div className="flex px-4 menu-item">
+            <div className="flex px-4">
               <div className="mr-5 icon">
                 <div style={{ width: "24px", height: "18px", fill: "white" }}>
                   <svg
@@ -137,9 +114,9 @@ const NavOpen = () => {
                   </svg>
                 </div>
               </div>
-              <div className="title">내 채널</div>
+              <div className="title">민경언</div>
             </div>
-            <div className="flex px-4 menu-item">
+            <div className="flex px-4">
               <div className="mr-5 icon">
                 <div style={{ width: "24px", height: "18px", fill: "white" }}>
                   <svg
@@ -161,9 +138,9 @@ const NavOpen = () => {
                   </svg>
                 </div>
               </div>
-              <div className="title">시청 기록</div>
+              <div className="title">1993.12.31</div>
             </div>
-            <div className="flex px-4 menu-item">
+            <div className="flex px-4">
               <div className="mr-5 icon">
                 <div style={{ width: "24px", height: "18px", fill: "white" }}>
                   <svg
@@ -184,10 +161,10 @@ const NavOpen = () => {
                   </svg>
                 </div>
               </div>
-              <div className="title">내 동영상</div>
+              <div className="title">컴퓨터공학과 졸업</div>
             </div>
 
-            <div className="flex px-4 menu-item">
+            <div className="flex px-4">
               <div className="mr-5 icon">
                 <div style={{ width: "24px", height: "18px", fill: "white" }}>
                   <svg
@@ -207,10 +184,10 @@ const NavOpen = () => {
                   </svg>
                 </div>
               </div>
-              <div className="title">나중에 볼 동영상</div>
+              <div className="title">자격증 3개 취득 </div>
             </div>
 
-            <div className="flex px-4 menu-item">
+            <div className="flex px-4">
               <div className="mr-5 icon">
                 <div style={{ width: "24px", height: "18px", fill: "white" }}>
                   <svg
@@ -230,9 +207,9 @@ const NavOpen = () => {
                   </svg>
                 </div>
               </div>
-              <div className="title">오프라인 저장 동영상</div>
+              <div className="title">일상 회회 가능(영어)</div>
             </div>
-            <div className="flex px-4 menu-item">
+            <div className="flex px-4">
               <div className="mr-5 icon">
                 <div style={{ width: "24px", height: "18px", fill: "white" }}>
                   <svg
@@ -253,9 +230,9 @@ const NavOpen = () => {
                   </svg>
                 </div>
               </div>
-              <div className="title">내 클립</div>
+              <div className="title">병역 만기 전역</div>
             </div>
-            <div className="flex px-4 menu-item">
+            {/* <div className="flex px-4 menu-item">
               <div className="mr-5 icon">
                 <div style={{ width: "24px", height: "18px", fill: "white" }}>
                   <svg
@@ -276,9 +253,11 @@ const NavOpen = () => {
                 </div>
               </div>
               <div className="title">더보기</div>
-            </div>
+            </div> */}
+            <div className="border"></div>
           </div>
-          <div className="navOpen-mine">
+
+          {/* <div className="navOpen-mine">
             <div className="border"></div>
             <div className="px-4 flex">
               <div className="navOpen-div">구독</div>
@@ -378,7 +357,7 @@ const NavOpen = () => {
               </div>
               <div className="title">알 간지</div>
             </div>
-          </div>
+          </div> */}
         </div>
       </div>
     </div>

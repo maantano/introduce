@@ -1,20 +1,51 @@
-import React from "react";
+import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { toggle } from "../../redux/feature/inputSlice";
+import { reset, toggle } from "../../redux/feature/inputSlice";
 import "./center.css";
+import Toast from "./Toast";
+import {
+  addDoc,
+  collection,
+  getDocs,
+  orderBy,
+  query,
+} from "firebase/firestore";
+import { db } from "../../firebase-config";
 const Center = () => {
   const dispatch = useDispatch();
   const inputShow = useSelector((state) => state.inputReducer.value);
-  // const { value: inputOpen, onClickInput, reset } = useInput();
-  // const router = useRouter();
-  // const goTo = () => {
-  //   router.push("/board/:1000");
-  //   console.log("onclick!!!!");
-  // };
-  // const navigateRoute = () => {
-  //   router.push("/routerTest");
-  //   dispatch(reset());
-  // };
+  const [toast, setToast] = useState(false);
+  const [users, setUsers] = useState([]);
+
+  const [description, setDescription] = useState();
+  const usersCollectionRef = collection(db, "feedback");
+  const createUsers = async () => {
+    // addDoc을 이용해서 내가 원하는 collection에 내가 원하는 key로 값을 추가한다.
+    // e.preventDefault();
+    const currentDate = new Date();
+    await addDoc(usersCollectionRef, {
+      description,
+      date: currentDate,
+    });
+    const updatedData = await getDocs(
+      query(usersCollectionRef, orderBy("date", "desc"))
+    );
+    setUsers(
+      updatedData.docs.map((doc) => ({
+        ...doc.data(),
+        id: doc.id,
+        date: doc.data().date.toDate(),
+      }))
+    );
+    setDescription("");
+  };
+
+  const onClickBtn = (e) => {
+    e.preventDefault();
+    dispatch(reset());
+    setToast(true);
+    createUsers();
+  };
 
   return (
     <div>
@@ -68,11 +99,10 @@ const Center = () => {
                       autoCorrect="off"
                       name="search_query"
                       tabIndex={0}
-                      // type="none"
                       readOnly
                       spellCheck="false"
-                      placeholder="저에 대해서 궁금하신 점은?"
-                      aria-label="저에 대해서 궁금하신 점은?"
+                      placeholder="이력서 피드백 부탁드려도 될까요?"
+                      aria-label="이력서 피드백 부탁드려도 될까요??"
                       aria-haspopup="false"
                       aria-autocomplete="list"
                       className="ytd-searchbox"
@@ -81,39 +111,45 @@ const Center = () => {
 
                     {inputShow && (
                       <div className="inputShow">
-                        <ul className="">
-                          <li className="">
-                            <div>
-                              <span className="searchItem">
-                                제 인생 그래프입니다.
-                              </span>
-                            </div>
-                          </li>
-                          {/* <Link href={`/board/1000`}> */}
-                          {/* <Link href={"/routerTest"}> */}
-                          <li className="">
-                            {/* <li className="" onClick={navigateRoute}> */}
-                            <div>
-                              <span className="searchItem">1234</span>
-                            </div>
-                          </li>
-                          {/* </Link> */}
-
-                          <li className="">
-                            <div>
-                              <span className="searchItem">1234</span>
-                            </div>
-                          </li>
-
-                          <li className="">
-                            <div>
-                              <span className="searchItem">1234</span>
-                            </div>
-                          </li>
-                        </ul>
+                        <div
+                          className="rounded-lg border bg-card text-card-foreground shadow-sm"
+                          data-v0-t="card"
+                        >
+                          <div className="flex flex-col space-y-1.5 p-6 pt-10">
+                            <h3 className="text-2xl font-semibold whitespace-nowrap leading-none tracking-tight">
+                              이력서의 피드백을 부탁드립니다.
+                            </h3>
+                            <p className="text-sm text-muted-foreground">
+                              이력서 형식, 개발 가이드, 쓴소리, 맛집, 영화 추천,
+                              뭐든지 감사히 받겠습니다!
+                            </p>
+                          </div>
+                          <div className="p-6 pt-3 pb-5">
+                            <form className="flex flex-col gap-4">
+                              <textarea
+                                onChange={(e) => setDescription(e.target.value)}
+                                className="text-black flex w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none disabled:cursor-not-allowed disabled:opacity-50 min-h-[250px]"
+                                placeholder=":)"
+                              ></textarea>
+                            </form>
+                          </div>
+                          <button
+                            onClick={onClickBtn}
+                            className="inputBtn bg-slate-700 bg-opacity-70 inline-flex items-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground hover:bg-primary/90 h-10 px-4 py-2 ml-[80%]"
+                          >
+                            전송
+                          </button>
+                        </div>
                       </div>
                     )}
                   </div>
+                  {toast && (
+                    <Toast
+                      className="show flex justify-center items-center"
+                      setToast={setToast}
+                      text="큰힘이 되었습니다. 정말 감사합니다!💪😀"
+                    />
+                  )}
                 </div>
               </div>
             </div>

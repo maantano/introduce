@@ -15,6 +15,9 @@ import motion2 from "../../asset/cardRecommend/motionVariants.png";
 import motion3 from "../../asset/cardRecommend/motionComponent2.png";
 import motion1 from "../../asset/cardRecommend/motionComponent.png";
 
+import cardBanner1 from "../../asset/cardRecommend/cardP1.png";
+import cardBanner2 from "../../asset/cardRecommend/cardP2.png";
+import cardlogo from "../../asset/cardRecommend/cardPicker.png";
 import styled from "styled-components";
 import { wrap } from "popmotion";
 import { AnimatePresence, motion } from "framer-motion";
@@ -168,11 +171,18 @@ const CardRecommend = () => {
   return (
     <div className="mt-24 bg-black text-white flex flex-col justify-center items-center">
       <section className="w-full h-[300px] relative bg-white overflow-hidden flex justify-center items-center">
-        <div className="text-8xl text-black ">Card Recommend</div>
+        <img
+          src={cardBanner2}
+          className="w-[500px] h-[150px]"
+          alt="cardPicker banner"
+        />
       </section>
 
-      <section className="container mx-auto px-4 pt-16 pb-12">
-        <div className="h-20 w-56 text-3xl">Personal Project</div>
+      <section className="container mx-auto px-4 pt-8">
+        <div className="h-20 w-56 mb-6">
+          <img src={cardlogo} alt="cardlogo" />
+        </div>
+
         <div className="flex items-center pb-6">
           <div className="h-2 rounded-sm bg-white w-20"></div>
           <div className="h-[1px] rounded-sm bg-white w-full"></div>
@@ -530,19 +540,6 @@ const CardRecommend = () => {
                   "URL/robots.txt" 형식으로 쉽게 확인할 수 있다.
                 </p>
               </div>
-            </div>
-          </div>
-          <div>
-            <p className="text-2xl mt-10 mb-8">4. 배포 경험</p>
-            <p className="text-xl mt-10 mb-8">jQuery로 개발이 되었고,</p>
-            <div>
-              <ul className="text-xl">
-                <li className="py-1">
-                  <a href={fileItem[0]} target="_blank" rel="noreferrer">
-                    - Trouble shooting History
-                  </a>
-                </li>
-              </ul>
             </div>
           </div>
         </div>
