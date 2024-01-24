@@ -24,8 +24,8 @@ yarn-error.log*
 /.env
 
 /src/asset
-/src/logo.png
-/src/main_visual_text_03.png
+# /src/logo.png
+# /src/main_visual_text_03.png
 /src/component/Contents/myProfile.PNG
 /src/component/Contents/thumb.JPG
 /src/component/Contents/thumb1.JPG
