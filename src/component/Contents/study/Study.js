@@ -31,27 +31,25 @@ const Study = () => {
     <div
       className={`${classes.BannerDiv} max-w-[1200px] w-[1200px] flex-wrap `}
     >
-      <div>
-        {data.items.map((item, idx) => (
-          <div key={idx}>
-            <a
-              href={`https://www.youtube.com/watch?v=${item.id.videoId}`}
-              target="_blank"
-              rel="noreferrer"
-            >
-              <div className={classes.videoDiv}>
-                <img
-                  className={classes.thumbImg}
-                  src={item.snippet.thumbnails.medium.url}
-                  alt={item.snippet.thumbnails.medium.url}
-                />
-                <p className={classes.thumbTitle}>{item.snippet.title}</p>
-                <p className={classes.thumbWatch}>조회수 356회 1분 전</p>
-              </div>
-            </a>
-          </div>
-        ))}
-      </div>
+      {data.items.map((item, idx) => (
+        <div key={idx}>
+          <a
+            href={`https://www.youtube.com/watch?v=${item.id.videoId}`}
+            target="_blank"
+            rel="noreferrer"
+          >
+            <div className={classes.videoDiv}>
+              <img
+                className={classes.thumbImg}
+                src={item.snippet.thumbnails.medium.url}
+                alt={item.snippet.thumbnails.medium.url}
+              />
+              <p className={classes.thumbTitle}>{item.snippet.title}</p>
+              <p className={classes.thumbWatch}>조회수 356회 1분 전</p>
+            </div>
+          </a>
+        </div>
+      ))}
     </div>
   );
 };
