@@ -13,7 +13,7 @@ import myIcon from "../Image/myIcon.jpeg";
 
 const IntroduceMyself = () => {
   return (
-    <div className="text-black mb-16">
+    <div className="text-black pb-3">
       <Layout.Main>
         <List
           sx={{
@@ -65,7 +65,8 @@ const IntroduceMyself = () => {
                   <List sx={{ flexDirection: "column", ml: 4, mt: 2 }}>
                     <ListItemContent sx={{ mt: 0 }}>
                       <Typography level="title-sm" sx={{ mb: 1 }}>
-                        {"경력 3년차 (2019.07.01 - 2023.03.24)"}
+                        {"경력 3년차"}
+                        <br /> {"(2019.07.01 - 2023.03.24)"}
                       </Typography>
                       <Typography level="body-xs" sx={{ mb: 1 }}>
                         {"SQLD 자격증 취득"}

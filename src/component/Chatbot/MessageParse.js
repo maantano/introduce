@@ -6,15 +6,8 @@ const MessageParser = ({ children, actions }) => {
     if (message.includes("hello")) {
       actions.handleHello();
     }
-
-    if (message.includes("dog")) {
-      actions.handleDog();
-    }
     if (message.includes("다시 시작")) {
       actions.optionShow();
-    }
-    if (lowercase.includes("javascript") || lowercase.includes("js")) {
-      actions.handleJavascriptQuiz();
     }
   };
 

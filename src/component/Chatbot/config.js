@@ -36,20 +36,40 @@ const config = {
     },
     {
       widgetName: "introduceMySelf",
-      widgetFunc: (props) => <IntroduceMyself {...props} />,
+      widgetFunc: (props) => (
+        <div className="mb-24">
+          <IntroduceMyself {...props} />
+          <InitOption {...props} />
+        </div>
+      ),
     },
     {
       widgetName: "introducePortfolio",
-      widgetFunc: (props) => <IntroducePortfolio {...props} />,
+      widgetFunc: (props) => (
+        <div className="mb-24">
+          <IntroducePortfolio {...props} />,
+          <InitOption {...props} />
+        </div>
+      ),
     },
 
     {
       widgetName: "introduceDetail",
-      widgetFunc: (props) => <IntroduceDetail {...props} />,
+      widgetFunc: (props) => (
+        <div className="mb-24">
+          <IntroduceDetail {...props} />,
+          <InitOption {...props} />
+        </div>
+      ),
     },
     {
       widgetName: "moreQuestion",
-      widgetFunc: (props) => <MoreQuestion {...props} ops />,
+      widgetFunc: (props) => (
+        <div className="mb-24">
+          <MoreQuestion {...props} ops />,
+          <InitOption {...props} />
+        </div>
+      ),
     },
     {
       widgetName: "showOption",

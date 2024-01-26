@@ -43,7 +43,7 @@ const MoreQuestion = () => {
   };
   return (
     <div
-      className="p-5 border border-solid rounded-md w-full mb-24"
+      className="p-5 border border-solid rounded-md w-full pb-3"
       style={{ borderColor: "#CED7E1" }}
     >
       <form className=" flex flex-col gap-4 md:gap-6">

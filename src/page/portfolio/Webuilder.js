@@ -121,7 +121,7 @@ const boxVariants2 = {
   }),
 };
 const ImageTitle = [
-  "WEBUILDER",
+  "WEBUILDER (웹 편집기)",
   "Admin (상품 관리)",
   "Admin (주문 관리)",
   "Easy 에디터",

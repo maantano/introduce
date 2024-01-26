@@ -46,7 +46,7 @@ const IntroduceDetail = () => {
     },
   ];
   return (
-    <div className="text-black mb-16">
+    <div className="text-black pb-3">
       {" "}
       <Layout.Main>
         <List
