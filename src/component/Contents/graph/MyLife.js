@@ -128,7 +128,7 @@ const MyLife = () => {
 
   return (
     <div className="flex mt-8 flex-col max-w-[1200px]">
-      <div className="text-gray-300 text-3xl">민경언의 인생곡선</div>
+      <div className="text-gray-300 text-3xl mb-5">민경언의 인생곡선</div>
       <img className="ml-4" src={myDevLife} alt="myDevLife" />
       <Graph data={tempData} />
     </div>
