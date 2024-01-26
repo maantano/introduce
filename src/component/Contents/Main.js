@@ -1,5 +1,6 @@
 import React from "react";
-import thumb from "./thumb3.JPG";
+import thumb from "./thumb4.png";
+
 const Main = () => {
   return (
     <div className="banner-mx">

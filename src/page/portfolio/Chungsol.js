@@ -54,44 +54,46 @@ const Chungsol = () => {
           </div>
           <div className="grid grid-cols-2 gap-4 p-2">
             <div className="flex items-center">
-              <div className="flex justify-center items-center text-2xl bg-gray-300 bg-opacity-20 rounded-md text-center w-32 p-[7px]">
+              <div className="flex justify-center items-center text-2xl bg-gray-300 bg-opacity-20 rounded-md text-center w-1/4 p-[7px]">
                 기간
               </div>
-              <p className="flex items-center text-2xl ml-3">
+              <p className="flex items-center text-2xl ml-3 w-4/5">
                 2024.01.19~2024.01.20
               </p>
             </div>
             <div className="flex">
-              <div className="flex justify-center items-center text-2xl bg-gray-300 bg-opacity-20 rounded-md text-center w-32 p-[7px]">
+              <div className="flex justify-center items-center text-2xl bg-gray-300 bg-opacity-20 rounded-md text-center w-1/4 p-[7px]">
                 담당 파트
               </div>
-              <p className="flex items-center ml-3 text-2xl">
+              <p className="flex items-center ml-3 text-2xl w-4/5">
                 Front 개발 및 서버리스 아키텍쳐
               </p>
             </div>
             <div className="flex">
-              <div className="flex justify-center items-center text-2xl bg-gray-300 bg-opacity-20 rounded-md text-center w-32 p-[7px]">
+              <div className="flex justify-center items-center text-2xl bg-gray-300 bg-opacity-20 rounded-md text-center w-1/4 p-[7px]">
                 현황
               </div>
-              <p className="flex items-center text-2xl ml-3">서비스 운영중</p>
+              <p className="flex items-center text-2xl ml-3 w-4/5">
+                서비스 운영중
+              </p>
             </div>
             <div className="flex">
-              <div className="flex justify-center items-center text-2xl bg-gray-300 bg-opacity-20 rounded-md text-center w-32 p-[7px]">
+              <div className="flex justify-center items-center text-2xl bg-gray-300 bg-opacity-20 rounded-md text-center w-1/4 p-[7px]">
                 참가인원
               </div>
-              <p className="ml-3 flex items-center text-2xl">민경언</p>
+              <p className="ml-3 flex items-center text-2xl w-4/5">민경언</p>
             </div>
             <div className="flex">
-              <div className="flex justify-center items-center text-2xl bg-gray-300 bg-opacity-20 rounded-md text-center w-32 p-[7px]">
+              <div className="flex justify-center items-center text-2xl bg-gray-300 bg-opacity-20 rounded-md text-center w-1/4 p-[7px]">
                 기여도
               </div>
-              <p className="flex items-center text-2xl ml-3">100%</p>
+              <p className="flex items-center text-2xl ml-3 w-4/5">100%</p>
             </div>
             <div className="flex">
-              <div className="flex justify-center items-center text-2xl bg-gray-300 bg-opacity-20 rounded-md text-center w-44 p-[7px]">
+              <div className="flex justify-center items-center text-2xl bg-gray-300 bg-opacity-20 rounded-md text-center w-1/4 p-[7px]">
                 개발 환경
               </div>
-              <p className="flex items-center text-2xl ml-3">
+              <p className="flex items-center text-2xl ml-3 w-4/5">
                 react, javascript, html, css, tailwind, styled-components,
                 firebase
               </p>
@@ -152,7 +154,7 @@ const Chungsol = () => {
             </Wrapper>
           </div>
         </div>
-        <div className="flex flex-col mt-[130px]">
+        <div className="flex flex-col mt-[200px]">
           <p className="text-lg">링크(URL)</p>
           <a className="p-4" href="http://chungsol.site" target="_black">
             - www.chungsol.site

@@ -193,42 +193,44 @@ const CardRecommend = () => {
           </div>
           <div className="grid grid-cols-2 gap-4 p-2">
             <div className="flex items-center">
-              <div className="flex justify-center items-center text-2xl bg-gray-300 bg-opacity-20 rounded-md text-center w-32 p-[7px]">
+              <div className="flex justify-center items-center text-2xl bg-gray-300 bg-opacity-20 rounded-md text-center w-1/4 p-[7px]">
                 기간
               </div>
-              <p className="flex items-center text-2xl ml-3">2023.08~2023.09</p>
+              <p className="flex items-center text-2xl ml-3 w-4/5">
+                2023.08~2023.09
+              </p>
             </div>
             <div className="flex">
-              <div className="flex justify-center items-center text-2xl bg-gray-300 bg-opacity-20 rounded-md text-center w-36 p-[7px]">
+              <div className="flex justify-center items-center text-2xl bg-gray-300 bg-opacity-20 rounded-md text-center w-1/4 p-[7px]">
                 담당 파트
               </div>
-              <p className="flex items-center ml-3 text-2xl">개발</p>
+              <p className="flex items-center ml-3 text-2xl w-4/5">개발</p>
             </div>
             <div className="flex">
-              <div className="flex justify-center items-center text-2xl bg-gray-300 bg-opacity-20 rounded-md text-center w-32 p-[7px]">
+              <div className="flex justify-center items-center text-2xl bg-gray-300 bg-opacity-20 rounded-md text-center w-1/4 p-[7px]">
                 현황
               </div>
-              <p className="flex items-center text-2xl ml-3">배포 완료</p>
+              <p className="flex items-center text-2xl ml-3 w-4/5">배포 완료</p>
             </div>
             <div className="flex">
-              <div className="flex justify-center items-center text-2xl bg-gray-300 bg-opacity-20 rounded-md text-center w-36 p-[7px]">
+              <div className="flex justify-center items-center text-2xl bg-gray-300 bg-opacity-20 rounded-md text-center w-1/4 p-[7px]">
                 참가인원
               </div>
-              <p className="ml-3 flex items-center text-2xl">민경언</p>
+              <p className="flex items-center text-2xl ml-3 w-4/5">민경언</p>
             </div>
             <div className="flex">
-              <div className="flex justify-center items-center text-2xl bg-gray-300 bg-opacity-20 rounded-md text-center w-32 p-[7px]">
+              <div className="flex justify-center items-center text-2xl bg-gray-300 bg-opacity-20 rounded-md text-center w-1/4 p-[7px]">
                 기여도
               </div>
-              <p className="flex items-center text-2xl ml-3">
+              <p className="flex items-center text-2xl ml-3 w-4/5">
                 Front, Back , Design - 100%
               </p>
             </div>
             <div className="flex">
-              <div className="flex justify-center items-center text-2xl bg-gray-300 bg-opacity-20 rounded-md text-center w-80 p-[7px]">
+              <div className="flex justify-center items-center text-2xl bg-gray-300 bg-opacity-20 rounded-md text-center w-1/4 p-[7px]">
                 개발 환경
               </div>
-              <p className="flex items-center text-2xl ml-3">
+              <p className="flex items-center text-2xl ml-3 w-4/5">
                 javascript, react, redux-toolkit, javascript, styled-compoent,
                 tailwind, html, css, firebase, node, mysql, python
               </p>

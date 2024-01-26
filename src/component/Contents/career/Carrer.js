@@ -248,7 +248,7 @@ const Career = () => {
                   <span className="text-3xl">·</span> 기여도: 100%
                 </p>
                 <p className="flex items-center gap-4">
-                  ㅋ<span className="text-3xl">·</span> 투어 및 단체 예약 개발
+                  <span className="text-3xl">·</span> 투어 및 단체 예약 개발
                 </p>
                 <p className="flex items-center gap-4">
                   <span className="text-3xl">·</span>UI/UX 구축 개발
@@ -346,7 +346,7 @@ const Career = () => {
                 src={four}
                 alt="4 번 아이콘  제작자: rizal2109 - Flaticon"
               />
-              <span>프로젝트를 진두지휘 한다.</span>
+              <span>프로젝트를 도메인을 담당하고 리딩할수 있다.</span>
             </div>
             <div className="flex items-center gap-2">
               <img
@@ -373,7 +373,7 @@ const Career = () => {
           <p className="flex items-center gap-4">
             <img
               className="w-5 h-5"
-              src={three}
+              src={four}
               alt="3 번 아이콘  제작자: rizal2109 - Flaticon"
             />
             <span className="text-3xl">·</span> React, Redux(React-redux,

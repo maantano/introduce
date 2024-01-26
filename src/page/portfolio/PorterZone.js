@@ -202,45 +202,52 @@ const PorterZone = () => {
           </div>
           <div className="grid grid-cols-2 gap-4 p-2">
             <div className="flex items-center">
-              <div className="flex justify-center items-center text-2xl bg-gray-300 bg-opacity-20 rounded-md text-center w-32 p-[7px]">
+              <div className="flex justify-center items-center text-2xl bg-gray-300 bg-opacity-20 rounded-md text-center w-1/4 p-[7px]">
                 기간
               </div>
-              <p className="flex items-center text-2xl ml-3">2021.02~2023.03</p>
+              <p className="flex items-center text-2xl ml-3 w-4/5">
+                2021.02~2023.03
+              </p>
             </div>
             <div className="flex">
-              <div className="flex justify-center items-center text-2xl bg-gray-300 bg-opacity-20 rounded-md text-center w-32 p-[7px]">
+              <div className="flex justify-center items-center text-2xl bg-gray-300 bg-opacity-20 rounded-md text-center w-1/4 p-[7px]">
+                {/* <div className="flex justify-center items-center text-2xl bg-gray-300 bg-opacity-20 rounded-md text-center w-32 p-[7px]"> */}
                 담당 파트
               </div>
-              <p className="flex items-center ml-3 text-2xl">프론트엔드 개발</p>
+              <p className="flex items-center ml-3 text-2xl w-4/5">
+                프론트엔드 개발
+              </p>
             </div>
             <div className="flex">
-              <div className="flex justify-center items-center text-2xl bg-gray-300 bg-opacity-20 rounded-md text-center w-32 p-[7px]">
+              <div className="flex justify-center items-center text-2xl bg-gray-300 bg-opacity-20 rounded-md text-center w-1/4 p-[7px]">
                 현황
               </div>
-              <p className="flex items-center text-2xl ml-3">서비스 운영중</p>
+              <p className="flex items-center text-2xl ml-3 w-4/5">
+                서비스 운영중
+              </p>
             </div>
             <div className="flex">
-              <div className="flex justify-center items-center text-2xl bg-gray-300 bg-opacity-20 rounded-md text-center w-72 p-[7px]">
+              <div className="flex justify-center items-center text-2xl bg-gray-300 bg-opacity-20 rounded-md text-center w-1/4 p-[7px]">
                 참가인원
               </div>
-              <p className="ml-3 flex items-center text-2xl">
+              <p className="ml-3 flex items-center text-2xl w-4/5">
                 총 23명- PM: 1명, 프론트엔드: 7명, 백엔드: 9명, 퍼블리셔: 2명,
                 기획: 6명, 운영 및 QA: 3 명, 디자인: 디자인 센터
               </p>
             </div>
             <div className="flex">
-              <div className="flex justify-center items-center text-2xl bg-gray-300 bg-opacity-20 rounded-md text-center w-32 p-[7px]">
+              <div className="flex justify-center items-center text-2xl bg-gray-300 bg-opacity-20 rounded-md text-center w-1/4 p-[7px]">
                 기여도
               </div>
-              <p className="flex items-center text-2xl ml-3">
+              <p className="flex items-center text-2xl ml-3 w-4/5">
                 프론트 개발 - 35%
               </p>
             </div>
             <div className="flex">
-              <div className="flex justify-center items-center text-2xl bg-gray-300 bg-opacity-20 rounded-md text-center w-44 p-[7px]">
+              <div className="flex justify-center items-center text-2xl bg-gray-300 bg-opacity-20 rounded-md text-center w-1/4 p-[7px]">
                 개발 환경
               </div>
-              <p className="flex items-center text-2xl ml-3">
+              <p className="flex items-center text-2xl ml-3 w-4/5">
                 react, redux-toolkit, javascript ,html, css, styled-component
               </p>
             </div>
@@ -261,7 +268,7 @@ const PorterZone = () => {
                 서비스를 제공합니다.
               </div>
               <br />
-              기업에서 제품생산에 필요한 원부ㅏ재와 소모성 자재등 기업에 필요한
+              기업에서 제품생산에 필요한 원부자재와 소모성 자재등 기업에 필요한
               모든것을 관리합니다.
             </div>
           </div>

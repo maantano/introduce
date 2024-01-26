@@ -194,47 +194,51 @@ const Webuilder = () => {
           </div>
           <div className="grid grid-cols-2 gap-4 p-2">
             <div className="flex items-center">
-              <div className="flex justify-center items-center text-2xl bg-gray-300 bg-opacity-20 rounded-md text-center w-32 p-[7px]">
+              <div className="flex justify-center items-center text-2xl bg-gray-300 bg-opacity-20 rounded-md text-center w-1/4 p-[7px]">
                 기간
               </div>
-              <p className="flex items-center text-2xl ml-3">2021.02~2023.03</p>
+              <p className="flex items-center text-2xl ml-3 w-4/5">
+                2021.02~2023.03
+              </p>
             </div>
             <div className="flex">
-              <div className="flex justify-center items-center text-2xl bg-gray-300 bg-opacity-20 rounded-md text-center w-32 p-[7px]">
+              <div className="flex justify-center items-center text-2xl bg-gray-300 bg-opacity-20 rounded-md text-center w-1/4 p-[7px]">
                 담당 파트
               </div>
-              <p className="flex items-center ml-3 text-2xl">
+              <p className="flex items-center ml-3 text-2xl w-4/5">
                 프론트엔드 개발 및 운영, 서버관리 및 트러블 슈팅
               </p>
             </div>
             <div className="flex">
-              <div className="flex justify-center items-center text-2xl bg-gray-300 bg-opacity-20 rounded-md text-center w-32 p-[7px]">
+              <div className="flex justify-center items-center text-2xl bg-gray-300 bg-opacity-20 rounded-md text-center w-1/4 p-[7px]">
                 현황
               </div>
-              <p className="flex items-center text-2xl ml-3">서비스 운영중</p>
+              <p className="flex items-center text-2xl ml-3 w-4/5">
+                서비스 운영중
+              </p>
             </div>
             <div className="flex">
-              <div className="flex justify-center items-center text-2xl bg-gray-300 bg-opacity-20 rounded-md text-center w-72 p-[7px]">
+              <div className="flex justify-center items-center text-2xl bg-gray-300 bg-opacity-20 rounded-md text-center w-1/4 p-[7px]">
                 참가인원
               </div>
-              <p className="ml-3 flex items-center text-2xl">
+              <p className="ml-3 flex items-center text-2xl w-4/5">
                 총 21명- PM: 1명, 프론트엔드: 4명, 백엔드: 3명, 퍼블리셔: 2명,
                 디자인: 2명, 기획: 4명, 운영: 3 명, QA: 2명
               </p>
             </div>
             <div className="flex">
-              <div className="flex justify-center items-center text-2xl bg-gray-300 bg-opacity-20 rounded-md text-center w-32 p-[7px]">
+              <div className="flex justify-center items-center text-2xl bg-gray-300 bg-opacity-20 rounded-md text-center w-1/4 p-[7px]">
                 기여도
               </div>
-              <p className="flex items-center text-2xl ml-3">
+              <p className="flex items-center text-2xl ml-3 w-4/5">
                 프론트 - 50%, 서버 관리 및 트러블 슈팅 - 30%
               </p>
             </div>
             <div className="flex">
-              <div className="flex justify-center items-center text-2xl bg-gray-300 bg-opacity-20 rounded-md text-center w-44 p-[7px]">
+              <div className="flex justify-center items-center text-2xl bg-gray-300 bg-opacity-20 rounded-md text-center w-1/4 p-[7px]">
                 개발 환경
               </div>
-              <p className="flex items-center text-2xl ml-3">
+              <p className="flex items-center text-2xl ml-3 w-4/5">
                 javascript, jquery, html, css, php, mysql, linux, docker,
                 docker-swarm
               </p>

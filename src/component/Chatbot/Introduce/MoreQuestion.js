@@ -52,12 +52,12 @@ const MoreQuestion = () => {
             className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70 text-black"
             htmlFor="title"
           >
-            제목
+            답변 받을 이메일
           </label>
           <input
             className={`flex h-10 w-full rounded-md border-solid border border-input px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none disabled:cursor-not-allowed disabled:opacity-50 bg-white bg-opacity-15 text-black border-gray-400`}
             id="title"
-            placeholder="제목"
+            placeholder="답변 받을 이메일"
             onChange={(e) => setTitle(e.target.value)}
             value={title}
             required=""
@@ -66,12 +66,12 @@ const MoreQuestion = () => {
             className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70 text-black"
             htmlFor="author"
           >
-            작성자
+            제목
           </label>
           <input
             className={`flex h-10 w-full rounded-md border border-input px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none disabled:cursor-not-allowed disabled:opacity-50 bg-white bg-opacity-15 text-black border-gray-400`}
             id="author"
-            placeholder="작성자"
+            placeholder="제목"
             onChange={(e) => setAuthor(e.target.value)}
             required=""
             value={author}
@@ -82,12 +82,12 @@ const MoreQuestion = () => {
             className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70 text-black"
             htmlFor="description"
           >
-            내용
+            질문
           </label>
           <textarea
             className={`flex min-h-[120px] w-full rounded-md border px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none  bg-white bg-opacity-15 text-black border-gray-400`}
             onChange={(e) => setDescription(e.target.value)}
-            placeholder="내용"
+            placeholder="질문"
             id="description"
             value={description}
             required=""
