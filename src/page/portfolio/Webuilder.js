@@ -5,7 +5,7 @@ import logo from "../../logo.png";
 
 import webuilderAdmin1 from "../../asset/webuilder/webuilderAdmin1.png";
 import webuilderAdmin2 from "../../asset/webuilder/webuilderAdmin2.png";
-
+import webuilderAdmin3 from "../../asset/webuilder/webuilderAdmin3.png";
 import webuilderMain from "../../asset/webuilder/webuilderMain.png";
 import easyEditor from "../../asset/webuilder/easyEditor.png";
 import proEditor from "../../asset/webuilder/proEditor.png";
@@ -27,6 +27,7 @@ const images = [
   webuilderMain,
   webuilderAdmin1,
   webuilderAdmin2,
+  webuilderAdmin3,
   easyEditor,
   proEditor,
 ];
@@ -124,6 +125,7 @@ const ImageTitle = [
   "WEBUILDER (웹 편집기)",
   "Admin (상품 관리)",
   "Admin (주문 관리)",
+  "Admin (용량 모니터링)",
   "Easy 에디터",
   "Pro 에디터",
 ];
