@@ -24,11 +24,11 @@ const Portfolio = () => {
   };
 
   return (
-    <div className={`${classes.BannerDiv} max-w-[1200px] flex-wrap `}>
+    <div className={`${classes.BannerDiv} max-w-[1500px] flex-wrap `}>
       <Link href="/webuilder" onClick={handleLinkClick("/webuilder")}>
         <div className={`${classes.HomeDiv}`}>
           <img
-            className={`${classes.thumbImg} p-8 object-contain flex justify-center items-center border border-solid border-gray-500 border-opacity-30`}
+            className={`${classes.thumbImg} p-8 object-contain flex justify-center items-center border border-solid border-gray-100 border-opacity-30`}
             src={webuilder}
             alt="123"
           />
@@ -39,10 +39,11 @@ const Portfolio = () => {
           <p className={classes.thumbWatch}>조회수 3만회 2개월전</p>
         </div>
       </Link>
+
       <Link href="/porterzone" onClick={handleLinkClick("/porterzone")}>
         <div className={classes.HomeDiv}>
           <img
-            className={`${classes.thumbImg} p-8 object-contain flex justify-center items-center border border-solid border-gray-500 border-opacity-30`}
+            className={`${classes.thumbImg} p-8 object-contain flex justify-center items-center border border-solid border-gray-100 border-opacity-30`}
             src={poterzone}
             alt="123"
           />
@@ -57,7 +58,7 @@ const Portfolio = () => {
       <Link href="/platform" onClick={handleLinkClick("/platform")}>
         <div className={classes.HomeDiv}>
           <img
-            className={`${classes.thumbImg} p-14 object-contain flex justify-center items-center border border-solid border-gray-500 border-opacity-30`}
+            className={`${classes.thumbImg} p-14 object-contain flex justify-center items-center border border-solid border-gray-100 border-opacity-30`}
             src={wehago}
             alt="123"
           />
@@ -69,7 +70,7 @@ const Portfolio = () => {
       <Link href="/cardrecommend" onClick={handleLinkClick("/cardrecommend")}>
         <div className={classes.HomeDiv}>
           <img
-            className={`${classes.thumbImg} p-8 object-contain flex justify-center items-center border border-solid border-gray-500 border-opacity-30`}
+            className={`${classes.thumbImg} p-8 object-contain flex justify-center items-center border border-solid border-gray-100 border-opacity-30`}
             src={cardPicker}
             alt="123"
           />
@@ -84,7 +85,7 @@ const Portfolio = () => {
       <Link href="/chungsol" onClick={handleLinkClick("/chungsol")}>
         <div className={classes.HomeDiv}>
           <img
-            className={`${classes.thumbImg} p-8 object-contain flex justify-center items-center border border-solid border-gray-500 border-opacity-30`}
+            className={`${classes.thumbImg} p-8 object-contain flex justify-center items-center border border-solid border-gray-100 border-opacity-30`}
             src={chungsol}
             alt="123"
           />

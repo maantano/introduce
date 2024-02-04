@@ -29,7 +29,7 @@ const Study = () => {
   if (error || !data || !data.items) return <YoutubeError err={error} />;
   return (
     <div
-      className={`${classes.BannerDiv} max-w-[1200px] w-[1200px] flex-wrap `}
+      className={`${classes.BannerDiv} max-w-[1500px] w-[1500px] flex-wrap `}
     >
       {data.items.map((item, idx) => (
         <div key={idx}>
