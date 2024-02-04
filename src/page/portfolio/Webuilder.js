@@ -62,6 +62,7 @@ const Box = styled(motion.img)`
   box-shadow: 0 2px 3px rgba(0, 0, 0, 0.1), 0 10px 20px rgba(0, 0, 0, 0.06);
 `;
 const Box2 = styled(motion.div)`
+  margin-bottom: 160px;
   position: absolute;
   text-align: center;
   display: flex;
@@ -316,7 +317,7 @@ const Webuilder = () => {
           <div className="h-2 rounded-sm bg-white w-40"></div>
           <div className="h-[1px] rounded-sm bg-white w-full"></div>
         </div>
-        <div className="p-2">
+        <div className="p-2 flex flex-col mb-36">
           <div className="text-white text-2xl mb-20 ">
             <Box2
               custom={back}
@@ -329,7 +330,7 @@ const Webuilder = () => {
               {ImageTitle[imageIndex]}
             </Box2>
           </div>
-          <div className="flex items-center justify-center">
+          <div className="flex items-center justify-center mt-20">
             <Wrapper>
               <PrevNextBtn
                 onClick={prevPlease}

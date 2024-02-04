@@ -399,7 +399,7 @@ const PorterZone = () => {
             </Wrapper>
           </div>
         </div>
-        <div className="flex flex-col text-xl">
+        <div className="flex flex-col text-xl mt-28">
           <p>링크(URL)</p>
           <a
             className="py-2 pl-4"
