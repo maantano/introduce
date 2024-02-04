@@ -4,7 +4,7 @@ import "./Main.css";
 import "./Banner1.css";
 import { motion } from "framer-motion";
 
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { navi } from "../../redux/feature/currentSlice";
 
 const Wrap = styled.div`
@@ -49,9 +49,8 @@ const UnderLine = styled(motion.div)`
 const Banner1 = () => {
   const tabs = ["포트폴리오", "개인공부", "인생 그래프", "경력 한눈에 보기"];
   const dispatch = useDispatch();
-  const [selectedIndex, setIndex] = useState(0);
+  const selectIndex = useSelector((state) => state.currentReducer.selectIndex);
   const onClickIndx = (idx) => {
-    setIndex(idx);
     dispatch(navi(idx));
   };
   return (
@@ -60,10 +59,10 @@ const Banner1 = () => {
         return (
           <div key={idx}>
             <Item onClick={() => onClickIndx(idx)}>
-              <Text className={selectedIndex === idx ? "tab-selected" : ""}>
+              <Text className={selectIndex === idx ? "tab-selected" : ""}>
                 {item}
               </Text>
-              {selectedIndex === idx && <UnderLine layoutId="underline" />}
+              {selectIndex === idx && <UnderLine layoutId="underline" />}
             </Item>
           </div>
         );

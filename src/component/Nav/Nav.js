@@ -27,9 +27,7 @@ const Nav = () => {
     },
   ];
   const dispatch = useDispatch();
-  const [selectedIndex, setIndex] = useState(0);
   const onClickIndx = (idx) => {
-    setIndex(idx);
     dispatch(navi(idx));
   };
   return (
