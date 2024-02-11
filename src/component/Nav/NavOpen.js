@@ -204,7 +204,7 @@ const NavOpen = () => {
                   </svg>
                 </div>
               </div>
-              <div className="title">일상 회회 가능(영어)</div>
+              <div className="title">일상 회화 가능(영어)</div>
             </div>
             <div className="flex px-4">
               <div className="mr-5 icon">
