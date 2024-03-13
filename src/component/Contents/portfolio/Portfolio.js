@@ -93,7 +93,7 @@ const Portfolio = () => {
           <p className={classes.thumbWatch}>조회수 6천회 2주전</p>
         </div>
       </Link>
-      <Link href={"http://drag-event.vercel.app"} target="_blank">
+      <a href={"http://drag-event.vercel.app"} target="_blank">
         <div className={classes.HomeDiv}>
           <div
             className={`${classes.thumbImg} p-8 object-contain flex justify-center items-center border border-solid border-gray-100 border-opacity-30 text-xl`}
@@ -105,7 +105,7 @@ const Portfolio = () => {
           <p className={classes.thumbTitle}>Drag Event(react-beautiful-dnd)</p>
           <p className={classes.thumbWatch}>조회수 1천회 하루전</p>
         </div>
-      </Link>
+      </a>
     </div>
   );
 };
