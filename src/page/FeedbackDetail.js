@@ -1,7 +1,5 @@
-import { doc, getDoc } from "firebase/firestore";
-import React, { useEffect, useState } from "react";
-import { useParams, useRouteLoaderData } from "react-router-dom";
-import { db } from "../firebase-config";
+import React from "react";
+import { useRouteLoaderData } from "react-router-dom";
 
 const FeedbackDetail = () => {
   const { detailData } = useRouteLoaderData("feedback-detail");

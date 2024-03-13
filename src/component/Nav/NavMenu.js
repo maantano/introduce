@@ -1,6 +1,6 @@
-import React, { useEffect, useMemo, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
-import { throttle, debounce } from "lodash"; // lodash의 throttle 함수 사용
+import { throttle } from "lodash"; // lodash의 throttle 함수 사용
 import Nav from "./Nav";
 import NavOpen from "./NavOpen";
 const NavMenu = () => {

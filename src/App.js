@@ -16,6 +16,7 @@ import Chungsol from "./page/portfolio/Chungsol";
 import Feedback from "./page/Feedback";
 import FeedbackDetail from "./page/FeedbackDetail";
 import { QueryClient, QueryClientProvider } from "react-query";
+import RouteChangeTracker from "./RouteChangeTracker";
 
 const queryClient = new QueryClient();
 const router = createBrowserRouter([
@@ -62,9 +63,12 @@ const router = createBrowserRouter([
   },
 ]);
 function App() {
+  // RouteChangeTracker();
   return (
     <QueryClientProvider client={queryClient}>
-      <RouterProvider router={router} />
+      <RouterProvider router={router}>
+        <RouteChangeTracker />
+      </RouterProvider>
     </QueryClientProvider>
   );
 }
