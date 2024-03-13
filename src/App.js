@@ -66,9 +66,9 @@ function App() {
   // RouteChangeTracker();
   return (
     <QueryClientProvider client={queryClient}>
-      <RouterProvider router={router}>
-        <RouteChangeTracker />
-      </RouterProvider>
+      <RouterProvider router={router} />
+      {/* <RouteChangeTracker /> */}
+      {/* </RouterProvider> */}
     </QueryClientProvider>
   );
 }
