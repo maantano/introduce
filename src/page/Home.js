@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useRef, useState } from "react";
 import NavMenu from "../component/Nav/NavMenu";
 import Contents from "../component/Contents/Contents";
 
