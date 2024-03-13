@@ -16,8 +16,6 @@ import Chungsol from "./page/portfolio/Chungsol";
 import Feedback from "./page/Feedback";
 import FeedbackDetail from "./page/FeedbackDetail";
 import { QueryClient, QueryClientProvider } from "react-query";
-import ReactGA from "react-ga";
-// import RouteChangeTracker from "./RouteChangeTracker";
 
 const queryClient = new QueryClient();
 const router = createBrowserRouter([
@@ -65,11 +63,7 @@ const router = createBrowserRouter([
 ]);
 function App() {
   // RouteChangeTracker();
-  useEffect(() => {
-    ReactGA.initialize(process.env.REACT_APP_GOOGLE_ANALYTICS);
-    ReactGA.set({ page: window.location.pathname });
-    ReactGA.pageview(window.location.pathname + window.location.search);
-  }, []);
+
   return (
     <QueryClientProvider client={queryClient}>
       <RouterProvider router={router} />
