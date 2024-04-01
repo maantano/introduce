@@ -102,19 +102,24 @@ const Portfolio = () => {
             Drag Event Practice
           </div>
           <p className="text-"></p>
-          <p className={classes.thumbTitle}>Drag Event(react-beautiful-dnd)</p>
+          <p className={classes.thumbTitle}>Drag Event (react-beautiful-dnd)</p>
           <p className={classes.thumbWatch}>조회수 1천회 2주전</p>
         </div>
       </a>
       <Link href="/slack" onClick={handleLinkClick("/slack")}>
         <div className={classes.HomeDiv}>
-          <img
+          {/* <img
             className={`${classes.thumbImg} p-8 object-contain flex justify-center items-center border border-solid border-gray-100 border-opacity-30`}
             src={chungsol}
             alt="123"
-          />
+          /> */}
+          <div
+            className={`${classes.thumbImg} p-8 object-contain flex justify-center items-center border border-solid border-gray-100 border-opacity-30 text-2xl`}
+          >
+            SLACK Messenger
+          </div>
           <p className="text-"></p>
-          <p className={classes.thumbTitle}>Slack 메신저 </p>
+          <p className={classes.thumbTitle}>Slack Messenger (Socket) </p>
           <p className={classes.thumbWatch}>조회수 3천회 1주전</p>
         </div>
       </Link>
