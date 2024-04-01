@@ -16,6 +16,9 @@ import Chungsol from "./page/portfolio/Chungsol";
 import Feedback from "./page/Feedback";
 import FeedbackDetail from "./page/FeedbackDetail";
 import { QueryClient, QueryClientProvider } from "react-query";
+import Join from "./component/Chat/Join";
+import Chat from "./component/Chat/Chat";
+import Slack from "./page/portfolio/Slack";
 
 const queryClient = new QueryClient();
 const router = createBrowserRouter([
@@ -52,8 +55,11 @@ const router = createBrowserRouter([
         ],
       },
       { path: "testwrite", element: <NewInput /> },
+      { path: "/chat", element: <Chat /> },
+      { path: "/join", element: <Join /> },
       { path: "/lifegraph", element: <MyLife /> },
       { path: "/webuilder", element: <Webuilder /> },
+      { path: "/slack", element: <Slack /> },
       { path: "/porterzone", element: <PorterZone /> },
       { path: "/platform", element: <Platform /> },
       { path: "/cardrecommend", element: <CardRecommend /> },
