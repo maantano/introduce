@@ -170,7 +170,7 @@ const Chungsol = () => {
         <div className="p-2">
           <div>
             <h2 className="text-3xl font-bold mb-4">회고</h2>
-            <p className="text-2xl mt-10 mb-8">1. 리팩토링</p>
+            <p className="text-2xl mt-10 mb-8">1. 하루 작업량</p>
             <p className="text-xl mt-10 mb-8">
               <br />
               제가 하루만에 얼마만큼의 일을할 수 있는지 알수있었습니다. 간단한
