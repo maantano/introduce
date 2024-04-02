@@ -111,7 +111,7 @@ const Chungsol = () => {
           <div className="p-2">
             <div className="text-lg">
               <div className="inline-block font-bold mb-4 p-3 bg-red-600 rounded-lg">
-                약 10시간 정도 걸려서 제작한 어머님의 사이트제작을 진행했습니다.
+                어머님의 사이트제작을 진행했습니다(약 7시간 작업)
               </div>
               <br />웹 페이지 제작과 파이어베이스를 통해 이미지나 파일들을
               불러오게 제작했습니다.
@@ -174,7 +174,7 @@ const Chungsol = () => {
             <p className="text-xl mt-10 mb-8">
               <br />
               제가 하루만에 얼마만큼의 일을할 수 있는지 알수있었습니다. 간단한
-              사이트이지만 약 10시간동안 사이트 제작을 완료했다는것에
+              사이트이지만 약 7시간동안 사이트 제작을 완료했다는것에
               좋은경험이었습니다.
             </p>
           </div>
