@@ -1,0 +1,242 @@
+.performance-chart {
+  background: white;
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin: 20px 0;
+}
+
+.performance-chart h3 {
+  margin: 0 0 20px 0;
+  color: #1f2937;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.calculating {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+  color: #6b7280;
+}
+
+.spinner {
+  width: 40px;
+  height: 40px;
+  border: 4px solid #e5e7eb;
+  border-top: 4px solid #3b82f6;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin-bottom: 16px;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.chart-container {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.bar-chart {
+  display: flex;
+  align-items: end;
+  justify-content: space-around;
+  height: 250px;
+  padding: 20px 0;
+  background: #f9fafb;
+  border-radius: 8px;
+  border: 1px solid #e5e7eb;
+}
+
+.chart-bar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 120px;
+  position: relative;
+}
+
+.bar-fill {
+  width: 100%;
+  border-radius: 6px 6px 0 0;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.bar-label {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 8px;
+  text-align: center;
+}
+
+.algorithm-name {
+  font-size: 12px;
+  font-weight: 600;
+  color: #374151;
+  margin-bottom: 4px;
+  line-height: 1.2;
+}
+
+.execution-time {
+  font-size: 11px;
+  color: #6b7280;
+  font-family: "Courier New", monospace;
+}
+
+.complexity-table {
+  background: #f8fafc;
+  border-radius: 8px;
+  padding: 20px;
+  border: 1px solid #e2e8f0;
+}
+
+.complexity-table h4 {
+  margin: 0 0 16px 0;
+  color: #334155;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.complexity-table table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+
+.complexity-table th,
+.complexity-table td {
+  padding: 12px;
+  text-align: left;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.complexity-table th {
+  background: #f1f5f9;
+  font-weight: 600;
+  color: #475569;
+}
+
+.complexity-table td {
+  color: #64748b;
+}
+
+.complexity {
+  font-family: "Courier New", monospace;
+  font-weight: 600;
+  color: #059669;
+  background: #d1fae5;
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-size: 12px;
+}
+
+.performance-insights {
+  background: #f0f9ff;
+  border: 1px solid #bae6fd;
+  border-radius: 8px;
+  padding: 20px;
+}
+
+.performance-insights h4 {
+  margin: 0 0 16px 0;
+  color: #0369a1;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.insights-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 16px;
+}
+
+.insight-card {
+  background: white;
+  border-radius: 8px;
+  padding: 16px;
+  border: 1px solid #bae6fd;
+  text-align: center;
+}
+
+.insight-card h5 {
+  margin: 0 0 8px 0;
+  color: #0369a1;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.insight-card p {
+  margin: 0;
+  color: #0c4a6e;
+  font-size: 16px;
+  font-weight: 600;
+  font-family: "Courier New", monospace;
+}
+
+/* 반응형 디자인 */
+@media (max-width: 768px) {
+  .performance-chart {
+    padding: 16px;
+  }
+
+  .bar-chart {
+    flex-direction: column;
+    height: auto;
+    align-items: center;
+    gap: 16px;
+  }
+
+  .chart-bar {
+    width: 100%;
+    max-width: 200px;
+  }
+
+  .bar-fill {
+    height: 40px !important;
+    width: 100%;
+  }
+
+  .insights-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .complexity-table {
+    overflow-x: auto;
+  }
+
+  .complexity-table table {
+    min-width: 500px;
+  }
+}
+
+@media (max-width: 480px) {
+  .chart-bar {
+    max-width: 150px;
+  }
+
+  .algorithm-name {
+    font-size: 11px;
+  }
+
+  .execution-time {
+    font-size: 10px;
+  }
+
+  .complexity-table th,
+  .complexity-table td {
+    padding: 8px;
+    font-size: 12px;
+  }
+}
