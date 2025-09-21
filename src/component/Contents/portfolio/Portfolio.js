@@ -137,7 +137,7 @@ const Portfolio = () => {
           />
           <p className="text-"></p>
           <p className={classes.thumbTitle}>
-            Pattern Matching Mode - AI 기반 비트 편집 자동화
+            Pattern Matching Mode - AI 기반 ECG 데이터 편집
           </p>
           <p className={classes.thumbWatch}>조회수 5천회 1주전</p>
         </div>
@@ -151,7 +151,7 @@ const Portfolio = () => {
           />
           <p className="text-"></p>
           <p className={classes.thumbTitle}>
-            Shape Review - 형태 기반 ECG 이벤트 분류 도구
+            Shape Review - 파형 기반 ECG 데이터 편집
           </p>
           <p className={classes.thumbWatch}>조회수 4천회 1주전</p>
         </div>
