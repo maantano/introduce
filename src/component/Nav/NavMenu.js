@@ -17,7 +17,11 @@ const NavMenu = () => {
       window.removeEventListener("resize", handleResize);
     };
   }, [width]);
-  return <div>{naviStatus || width < 810 ? <Nav /> : <NavOpen />}</div>;
+  return (
+    <div className="bg-black">
+      {naviStatus || width < 810 ? <Nav /> : <NavOpen />}
+    </div>
+  );
 };
 
 export default NavMenu;

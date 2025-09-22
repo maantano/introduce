@@ -6,6 +6,8 @@ import poterzone from "../../../asset/porterzone/porterzoneLogo.png";
 import wehago from "../../../asset/platform/platform-logo.png";
 import cardPicker from "../../../asset/etc/cardPicker.png";
 import chungsol from "../../../asset/etc/chungsol.png";
+import patternLogo from "../../../asset/patternMatching/patternLogo.png";
+import shapeReviewLogo from "../../../asset/shapeReview/shapeReviewLogo.png";
 const Portfolio = () => {
   const navigate = useNavigate();
 
@@ -93,7 +95,7 @@ const Portfolio = () => {
           <p className={classes.thumbWatch}>조회수 6천회 2주전</p>
         </div>
       </Link>
-      <a href={"http://drag-event.vercel.app"} target="_blank">
+      <a href={"http://drag-event.vercel.app"} target="_blank" rel="noreferrer">
         <div className={classes.HomeDiv}>
           <div
             className={`${classes.thumbImg} p-8 object-contain flex justify-center items-center border border-solid border-gray-100 border-opacity-30 text-xl`}
@@ -121,6 +123,37 @@ const Portfolio = () => {
           <p className="text-"></p>
           <p className={classes.thumbTitle}>Slack Messenger (Socket) </p>
           <p className={classes.thumbWatch}>조회수 3천회 1주전</p>
+        </div>
+      </Link>
+      <Link
+        href="/patternmatching"
+        onClick={handleLinkClick("/patternmatching")}
+      >
+        <div className={classes.HomeDiv}>
+          <img
+            className={`${classes.thumbImg} p-8 object-contain flex justify-center items-center border border-solid border-gray-100 border-opacity-30`}
+            src={patternLogo}
+            alt="PatternMatching"
+          />
+          <p className="text-"></p>
+          <p className={classes.thumbTitle}>
+            Pattern Matching Mode - AI 기반 ECG 데이터 편집
+          </p>
+          <p className={classes.thumbWatch}>조회수 5천회 1주전</p>
+        </div>
+      </Link>
+      <Link href="/shapereview" onClick={handleLinkClick("/shapereview")}>
+        <div className={classes.HomeDiv}>
+          <img
+            className={`${classes.thumbImg} p-8 object-contain flex justify-center items-center border border-solid border-gray-100 border-opacity-30`}
+            src={shapeReviewLogo}
+            alt="ShapeReview"
+          />
+          <p className="text-"></p>
+          <p className={classes.thumbTitle}>
+            Shape Review - 파형 기반 ECG 데이터 편집
+          </p>
+          <p className={classes.thumbWatch}>조회수 4천회 1주전</p>
         </div>
       </Link>
     </div>

@@ -19,6 +19,8 @@ import { QueryClient, QueryClientProvider } from "react-query";
 import Join from "./component/Chat/Join";
 import Chat from "./component/Chat/Chat";
 import Slack from "./page/portfolio/Slack";
+import PatternMatching from "./page/portfolio/PatternMatching";
+import ShapeReview from "./page/portfolio/ShapeReview";
 
 const queryClient = new QueryClient();
 const router = createBrowserRouter([
@@ -64,6 +66,8 @@ const router = createBrowserRouter([
       { path: "/platform", element: <Platform /> },
       { path: "/cardrecommend", element: <CardRecommend /> },
       { path: "/chungsol", element: <Chungsol /> },
+      { path: "/patternmatching", element: <PatternMatching /> },
+      { path: "/shapereview", element: <ShapeReview /> },
     ],
   },
 ]);

@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "Read(//Users/mingyeong-eon/Downloads/**)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}
