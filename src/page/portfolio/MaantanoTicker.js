@@ -23,15 +23,15 @@ const SlideWrap = styled.div`
   align-items: center;
   justify-content: center;
   width: 100%;
-  height: 500px;
+  height: 700px;
 `;
 
 const Box = styled(motion.img)`
   position: absolute;
-  width: 1000px;
+  width: 800px;
   height: auto;
-  max-height: 600px;
-  object-fit: cover;
+  max-height: 700px;
+  object-fit: contain;
 
   text-align: center;
   display: flex;
