@@ -14,11 +14,6 @@ import amaranth from "../../../asset/career/amaranth.png";
 import krinruck from "../../../asset/career/krinruck.png";
 import dforest from "../../../asset/career/dforest.png";
 // --------
-import one from "../../../asset/career/1.png";
-import two from "../../../asset/career/2.png";
-import three from "../../../asset/career/3.png";
-import four from "../../../asset/career/4.png";
-import five from "../../../asset/career/5.png";
 
 const Career = () => {
   const [openSections, setOpenSections] = useState({
@@ -50,78 +45,67 @@ const Career = () => {
         <div className="text-3xl font-semibold pb-7">Introduce</div>
         <div className="leading-relaxed w-[620px]">
           <p className="pb-3">
-            안녕하세요,
+            jQuery 기반 5년 된 레거시 시스템에서 시작해, B2C 웹 에디터(고객 유치
+            1위) → B2B 이커머스 플랫폼 → AI 기반 의료 데이터 편집기까지, 약
+            6년간 다양한 도메인과 템포 속에서 프론트엔드를 개발해왔습니다.
             <br />
-            사용자 경험 향상을 최우선으로 생각하는 5년 5개월차 프론트엔드 개발자
-            민경언입니다.
             <br />
-            저는 다양한 규모와 성격의 B2C·B2B 플랫폼 개발 프로젝트에 참여하며,
-            기획부터 설계, 운영까지의 전 과정을 경험하며 성장해왔습니다. 단순한
-            기능 구현을 넘어서, 사용자의 실제 행동과 니즈를 반영하는 데이터
-            기반의 UI/UX 개발을 추구합니다.
+            그 과정에서 어떤 환경이든 빠르게 적응하는 힘을 얻었고, 동시에 각
+            환경에서 "왜 이렇게 하는가"를 고민하는 습관을 키웠습니다.
+            <br />
+            <br />
+            요즘은 리팩터링과 컴포넌트 추상화에 깊은 관심을 갖고 있으며,
+            "how"보다 "why"를 먼저 묻습니다. 3개월 뒤에 봐도 편하게 읽히는 코드,
+            새로 합류하는 동료가 봐도 맥락 파악이 어렵지 않은 코드를 만드는 것이
+            목표입니다. 기술적 기여와 함께 팀 분위기 조율 역할을 자청하며, 갈등
+            상황에서는 먼저 다가가 대화를 시도하고 구조적 개선까지 이끌어내는
+            사람입니다.
           </p>
         </div>
 
         <div className="leading-relaxed w-[620px] pt-10">
-          <div className="text-2xl font-semibold pb-3">주요 역량</div>
+          <div className="text-2xl font-semibold pb-3">핵심 역량</div>
           <div className="pb-3">
             <div className="text-lg font-semibold pb-2">
-              • 기획 이해와 기능 단위 설계 역량
+              • B2C · B2B · 의료 도메인을 아우르는 플랫폼 개발 경험
             </div>
             <p className="pb-3 pl-4">
-              명확한 기능 단위 분할과 스펙 문서화로 팀 간 원활한 커뮤니케이션을
-              돕고, 마감일을 철저히 지키는 개발을 수행합니다.
+              웹 에디터 런칭부터 쇼핑몰 관리자, 주문/견적 도메인, AI 기반 의료
+              데이터 편집기까지 — 도메인별 복잡도와 이해관계가 다른 플랫폼을
+              설계·구현·운영한 경험이 있습니다.
             </p>
           </div>
           <div className="pb-3">
             <div className="text-lg font-semibold pb-2">
-              • B2C 서비스 런칭 및 운영 경험
+              • 레거시 → 모던 스택 마이그레이션 및 리팩터링
             </div>
             <p className="pb-3 pl-4">
-              웹 에디터 서비스 런칭부터 유지보수, 고객 피드백 대응까지 직접
-              주도하며, 고객 맞춤형 자동 웹사이트 생성 기능 등을 구현하였습니다.
-              <br />
-              특히 템플릿 추천 기능은 실제 고객 인터뷰와 CS 응대를 기반으로
-              도출된 문제를 직접 해결한 경험입니다.
+              jQuery 레거시에서 React/TypeScript로의 전환, React 17→18
+              업그레이드 등 기존 코드베이스를 점진적으로 개선해온 경험이
+              있습니다. 오토 배칭, 렌더링 타이밍 변경 등 마이그레이션 이슈를
+              식별·해결하고 팀 문서로 공유했습니다.
             </p>
           </div>
           <div className="pb-3">
             <div className="text-lg font-semibold pb-2">
-              • B2B 플랫폼 특성에 대한 깊은 이해
+              • 컴포넌트 설계와 코드 품질에 대한 깊은 고민
             </div>
             <p className="pb-3 pl-4">
-              주문/견적 도메인, 관리자/유저 시스템 등 복잡한 이해관계가 얽힌 B2B
-              플랫폼의 도메인 설계와 UI 구현을 경험하며, 구조적 사고 능력을
-              키웠습니다.
+              UI와 코드의 1:1 대응, God Object 지양, 추상화 레벨 통일을 원칙으로
+              설계합니다. "이 단위에 이름을 붙였을 때 한 문장으로 설명되는가"를
+              추상화 경계의 기준으로 삼습니다.
             </p>
           </div>
           <div className="pb-3">
             <div className="text-lg font-semibold pb-2">
-              • 헬스케어 AI 기반 시스템 개발 경험
+              • 커뮤니케이션 및 팀 중재
             </div>
             <p className="pb-3 pl-4">
-              최근에는 AI 기반 ECG 차트 편집기인 'Shape Review' 및 'Pattern
-              Matching Mode' 개발에 참여하여, 의료 데이터 편집 자동화와 대규모
-              편집 도구 구현을 담당했습니다.
-              <br />
-              복잡한 의료 데이터와 AI의 예외 케이스를 유연하게 다루며, 성능과
-              사용성을 모두 고려한 프론트 구현에 집중했습니다.
+              회의가 과열되면 긴장을 풀고, 의견 충돌 시 각자가 납득할 수 있는
+              지점을 찾습니다. 갈등 해소 후에는 감정적 화해에서 끝내지 않고 재발
+              방지를 위한 팀 프로세스 개선까지 이끌어냅니다.
             </p>
           </div>
-        </div>
-
-        <div className="leading-relaxed w-[620px] pt-10">
-          <div className="text-2xl font-semibold pb-3">
-            제가 생각하는 좋은 프론트엔드 개발자란?
-          </div>
-          <p className="pb-3">
-            사용자의 흐름을 읽고, 작은 행동에서도 직관적으로 기능을 이해할 수
-            있도록 돕는 인터페이스를 설계하고 구현하는 개발자라고 생각합니다.
-          </p>
-          <p className="pb-3">
-            서비스의 본질과 사용자 관점에서의 사용성을 항상 고민하며, 기능이
-            아닌 가치 전달 중심의 개발을 지향합니다.
-          </p>
         </div>
       </div>
 
@@ -154,148 +138,114 @@ const Career = () => {
 
                 <div className="p-3 leading-loose">
                   <div className="text-xl font-semibold py-5">
-                    프로젝트 : Shape Review
+                    1. Pattern Matching Mode
+                    <span className="text-base font-normal ml-3">
+                      (7개월, 기획~개발)
+                    </span>
                   </div>
+                  <p className="pl-4 pb-3">
+                    AI 기반 패턴 편집 자동화 도구. 심전도 데이터에서 특정 구간과
+                    유사한 파형을 AI로 자동 탐색해 일괄 편집하는 기능.
+                  </p>
                   <div className="pl-4">
-                    <div className="text-lg font-semibold pb-2">목표</div>
-                    <p className="flex items-center gap-4 pb-2">
-                      <span className="text-3xl">·</span> 이벤트 데이터를
-                      형태(Shape) 기반으로 시각화·분류하여, 유사한 이벤트 패턴을
-                      빠르게 식별하고 효율적으로 편집/관리할 수 있도록 돕기 위함
-                    </p>
-
                     <div className="text-lg font-semibold pb-2 pt-3">
-                      기능 설명
+                      담당 업무
                     </div>
                     <p className="flex items-center gap-4 pb-2">
-                      <span className="text-3xl">·</span> 이벤트 타입별로 유사한
-                      **모양(형태)**과 시간 간격을 가진 이벤트들을 자동으로
-                      그룹화하여 보여줍니다.
+                      <span className="text-3xl">·</span> Highcharts 기반 차트
+                      인터랙션 레이어 설계 및 구현 담당
                     </p>
                     <p className="flex items-center gap-4 pb-2">
-                      <span className="text-3xl">·</span> 사용자는 그룹화된
-                      이벤트들을 한눈에 비교하고, 필요 시 개별 또는 일괄 편집할
-                      수 있습니다.
+                      <span className="text-3xl">·</span> 마우스 드래그 구간
+                      선택, 키보드 단축키, 선택 영역 상태 관리 구현
                     </p>
                     <p className="flex items-center gap-4 pb-2">
-                      <span className="text-3xl">·</span> 다수의 이벤트를 분석할
-                      때, 특정 패턴이 반복되는지 파악하거나 이상치를 찾는 데
-                      유용합니다.
-                    </p>
-
-                    <div className="text-lg font-semibold pb-2 pt-3">달성</div>
-                    <p className="flex items-center gap-4 pb-2">
-                      <span className="text-3xl">·</span> 기존에는 14일치 ECG
-                      데이터를 수동 편집하는 데 2~3시간 이상 소요되었으나, Shape
-                      Review 화면을 통해 형태 기반으로 시각적 구분이
-                      가능해지면서 편집 시간을 약 30분 수준으로 단축
+                      <span className="text-3xl">·</span> 마우스 이벤트 · 키보드
+                      액션 · 상태 관리를 분리된 레이어로 추상화하는 리팩터링
+                      주도
                     </p>
                     <p className="flex items-center gap-4 pb-2">
-                      <span className="text-3xl">·</span> 약 75~85% 이상의 편집
-                      시간 절감 효과를 거두며, 작업 피로도 감소 및 리포트 생산성
-                      향상에 기여
+                      <span className="text-3xl">·</span> validation 로직에 전략
+                      패턴 도입 — 새 규칙 추가 시 기존 코드 수정 없이 확장
+                      가능한 구조
                     </p>
 
-                    <div className="text-lg font-semibold pb-2 pt-3">
-                      Lesson learned
-                    </div>
+                    <div className="text-lg font-semibold pb-2 pt-3">성과</div>
                     <p className="flex items-center gap-4 pb-2">
-                      <span className="text-3xl">·</span> **Optimistic Update
-                      with Redux**: Redux를 사용한 프로젝트에서 사용자 경험을
-                      개선하기 위해 옵티미스틱 업데이트를 직접 구현. 서버 응답을
-                      기다리지 않고 클라이언트에서 먼저 상태를 갱신함으로써,
-                      즉각적인 UI 피드백을 제공하고 응답 지연에 따른 체감 속도를
-                      줄일 수 있었던 경험
+                      <span className="text-3xl">·</span> 기존 약 13,000회 이상
+                      필요했던 API 호출을 20~30회로 최적화 (90% 이상 감소)
                     </p>
                     <p className="flex items-center gap-4 pb-2">
-                      <span className="text-3xl">·</span> **Origin Private
-                      FileSystem (OPFS) 캐싱**: 최초에 호출되는 편집할 데이터를
-                      OPFS에 저장할 수 있는 편의 기능을 통해, 서버 요청 전 이를
-                      우선 참조하는 로직을 구성하면서 클라이언트 기반 캐싱
-                      전략에 대한 경험을 쌓음. 이를 통해 네트워크 호출을 줄이고
-                      렌더링 지연 없이 빠른 응답성을 확보하여 대용량 데이터의
-                      초기 로딩 시간을 약 80% 이상 단축
+                      <span className="text-3xl">·</span> 리팩터링 후 새 편집
+                      모드 추가 시간이 기존 대비 절반 이하로 단축
                     </p>
                   </div>
 
                   <div className="text-xl font-semibold py-5">
-                    프로젝트 : Pattern Matching Mode
+                    2. Shape Review
                   </div>
+                  <p className="pl-4 pb-3">
+                    이벤트 데이터를 형태(Shape) 기반으로 시각화·분류하여, 유사
+                    패턴을 빠르게 식별하고 일괄 편집할 수 있는 기능.
+                  </p>
                   <div className="pl-4">
-                    <div className="text-lg font-semibold pb-2">목표</div>
-                    <p className="flex items-center gap-4 pb-2">
-                      <span className="text-3xl">·</span> AI 기반 패턴 편집
-                      자동화 도구로, 반복적인 비트 편집 작업을 줄여 편집자의
-                      리포트 생산 효율을 극대화하기 위함
-                    </p>
-                    <p className="flex items-center gap-4 pb-2">
-                      <span className="text-3xl">·</span> Shape Review로
-                      커버되지 않는 특이 케이스의 수작업 편집 시간을 단축하여
-                      전체적인 편집 리소스 절감을
-                    </p>
-
                     <div className="text-lg font-semibold pb-2 pt-3">
-                      기능 설명
+                      담당 업무
                     </div>
                     <p className="flex items-center gap-4 pb-2">
-                      <span className="text-3xl">·</span> 반복적으로 나타나는
-                      **유사 파형(Shape)**을 자동으로 식별하고,
+                      <span className="text-3xl">·</span> 유사 모양과 시간
+                      간격을 가진 이벤트를 자동 그룹화하여 한눈에 비교·편집
+                      가능하도록 구현
                     </p>
                     <p className="flex items-center gap-4 pb-2">
-                      <span className="text-3xl">·</span> 사용자가 설정한 대표
-                      비트를 기반으로 유사 비트를 찾아 일괄 수정/추가/삭제할 수
-                      있는 기능
+                      <span className="text-3xl">·</span> Optimistic Update
+                      (Redux) 직접 구현 — 서버 응답 전 클라이언트 상태
+                      선반영으로 즉각적인 UI 피드백 제공
                     </p>
                     <p className="flex items-center gap-4 pb-2">
-                      <span className="text-3xl">·</span> 빠르고 정확한 비트
-                      편집을 통해 리포트 품질과 생산성을 동시에 향상시킬 수 있음
-                    </p>
-
-                    <div className="text-lg font-semibold pb-2 pt-3">달성</div>
-                    <p className="flex items-center gap-4 pb-2">
-                      <span className="text-3xl">·</span> 반복적인 비트 편집을
-                      위한 API 성능을 개선하여, 기존 약 13,000회 이상 필요했던
-                      작업을 20~30회 수준으로 최적화하였습니다. 이를 통해 API
-                      호출 수를 90% 이상 감소시켜, 대량 편집의 효율을 획기적으로
-                      개선했습니다.
+                      <span className="text-3xl">·</span> OPFS 캐싱 전략 도입 —
+                      대용량 데이터 초기 로딩 시간 약 80% 이상 단축
                     </p>
 
-                    <div className="text-lg font-semibold pb-2 pt-3">
-                      Lesson learned
-                    </div>
+                    <div className="text-lg font-semibold pb-2 pt-3">성과</div>
                     <p className="flex items-center gap-4 pb-2">
-                      <span className="text-3xl">·</span> **전략 패턴과 커스텀
-                      훅 분리를 통한 구조 개선**: 프로젝트 초기에는 하나의
-                      커스텀 훅 안에 30~40개의 함수가 포함되어 있어, 코드의
-                      가독성 저하, 역할 불분명, 유지보수 어려움 등의 문제가
-                      있었습니다. 이를 해결하기 위해 전략 패턴을 도입하고, 기능
-                      단위로 역할이 명확한 커스텀 훅을 분리했습니다.
+                      <span className="text-3xl">·</span> 14일치 ECG 데이터 수동
+                      편집 시간을 2~3시간에서 약 30분으로 단축 (75~85% 절감)
                     </p>
                   </div>
 
                   <div className="text-xl font-semibold py-5">
-                    그외 프로젝트
+                    3. React 17→18 마이그레이션
                   </div>
                   <div className="pl-4">
                     <p className="flex items-center gap-4 pb-2">
-                      <span className="text-3xl">·</span> 택배 운영 서비스 개선,
-                      Custom API 호출 UI, CS 플랫폼 내재화 개발 등
+                      <span className="text-3xl">·</span> 오토 배칭 변경으로
+                      인한 타이밍 의존 코드 사이드 이펙트 대량 발생 — 트러블
+                      슈팅 및 해결
                     </p>
+                    <p className="flex items-center gap-4 pb-2">
+                      <span className="text-3xl">·</span> useRef를 useEffect
+                      내부에서 참조하던 패턴들의 렌더링 타이밍 차이 이슈 수정
+                    </p>
+                    <p className="flex items-center gap-4 pb-2">
+                      <span className="text-3xl">·</span> 마이그레이션 이슈와
+                      해결 패턴을 팀 문서로 정리·공유
+                    </p>
+                  </div>
 
-                    <div className="text-lg font-semibold pb-2 pt-3">
-                      Lesson learned
-                    </div>
+                  <div className="text-xl font-semibold py-5">
+                    그 외 프로젝트
+                  </div>
+                  <div className="pl-4">
                     <p className="flex items-center gap-4 pb-2">
-                      <span className="text-3xl">·</span> 하나의 시스템이더라도
-                      사용자 유형, 도메인 목적, 업무 흐름에 따라 세분화된
-                      요구사항과 각기 다른 커스터마이징이 필요하다는 것을
-                      체감했습니다.
+                      <span className="text-3xl">·</span> 택배 운영 서비스 개선
                     </p>
                     <p className="flex items-center gap-4 pb-2">
-                      <span className="text-3xl">·</span> 결과적으로 "요구사항이
-                      명확하지 않더라도 유연하고 견고한 구조"를 설계하는 법을
-                      익히게 되었고, 사용자 중심의 제품 설계와 도메인별 특화
-                      기능의 설계 감각이 크게 향상되었습니다.
+                      <span className="text-3xl">·</span> Custom API 사용자 직접
+                      호출 UI
+                    </p>
+                    <p className="flex items-center gap-4 pb-2">
+                      <span className="text-3xl">·</span> CS 플랫폼 내재화 개발
                     </p>
                   </div>
                 </div>
@@ -606,36 +556,128 @@ const Career = () => {
             <>
               <div>
                 <div className="text-2xl font-normal pb-3">
-                  Slack (2024.03.28~2024.03.30)
+                  RAG Document Search — 문서 기반 AI 질의응답 시스템
                 </div>
                 <div className="leading-relaxed w-[620px] pb-5">
-                  <p className="pb-3">
-                    소개 : 웹소켓을 이용하여 실시간 통신이 가능한 메신저
-                    프로젝트를 진행했습니다. 다양한 라이브러리 사용과 babel,
-                    webpack 설정을 진행하여 빌드하였습니다.
+                  <p className="pb-3 pl-4 text-sm text-gray-400">
+                    Stack - React, TypeScript, Tailwind CSS, Vite, Python,
+                    FastAPI, OpenAI API (GPT-4o-mini), ChromaDB
                   </p>
-                  <p className="pb-3">
-                    Stack - react, javascript, typescript, babel, webpack, swr,
-                    sass, styled-components, socket
-                  </p>
+                  <div className="pl-4">
+                    <p className="flex items-center gap-4 pb-2">
+                      <span className="text-3xl">·</span> 업로드한 문서(PDF,
+                      HWP, HWPX)를 기반으로 자연어 질문에 AI가 근거 있는 답변을
+                      생성하는 RAG 문서 검색 시스템
+                    </p>
+                    <p className="flex items-center gap-4 pb-2">
+                      <span className="text-3xl">·</span> HWP(OLE 바이너리),
+                      HWPX(ZIP+XML) 등 한국 문서 포맷 파싱을 직접 구현하여 외부
+                      서비스 없이 텍스트 추출
+                    </p>
+                    <p className="flex items-center gap-4 pb-2">
+                      <span className="text-3xl">·</span> 벡터 저장소를 추상
+                      클래스(ABC) + 팩토리 패턴으로 설계 — ChromaDB 외
+                      Pinecone/Qdrant 등으로 확장 가능한 구조
+                    </p>
+                    <p className="flex items-center gap-4 pb-2">
+                      <span className="text-3xl">·</span> asyncio.to_thread()로
+                      동기 작업을 비동기 처리하여 FastAPI 이벤트 루프 블로킹
+                      방지
+                    </p>
+                    <p className="flex items-center gap-4 pb-2">
+                      <span className="text-3xl">·</span> React Custom
+                      Hook(useChat, useDocuments)으로 채팅/문서 상태 분리 관리
+                      및 타입 안전한 API 클라이언트 구축
+                    </p>
+                    <p className="flex items-center gap-4 pb-2">
+                      <span className="text-3xl">·</span>{" "}
+                      <a
+                        href="https://github.com/maantano/rag-project"
+                        target="_blank"
+                        rel="noreferrer"
+                      >
+                        github.com/maantano/rag-project
+                      </a>
+                    </p>
+                  </div>
                 </div>
 
                 <div className="text-2xl font-normal pb-3">
-                  Card Picker (2023.08~2023.09)
+                  Maantano Ticker — 실시간 주식 Ticker 앱
                 </div>
                 <div className="leading-relaxed w-[620px] pb-5">
-                  <p className="pb-3">
-                    소개 : 카드 추천 및 소비 패턴 분석 서비스. 카드 목록을
-                    조회합니다. 카테고리 별 카드 들을 조회하고, 해당 카드들의
-                    상세 정보를 노출하고, 카드 발급 페이지로 이동시킵니다.
-                    고객의 카드 사용 파일을 업로드 하고 본인이 사용한 내역들을
-                    분석하고 가장 할인 혜택이 많은 카드를 추천해줍니다.
+                  <p className="pb-3 pl-4 text-sm text-gray-400">
+                    Stack - Electron, JavaScript, Node.js, CSS3, axios, cheerio,
+                    electron-store
                   </p>
-                  <p className="pb-3">
-                    Stack - javascript, react, redux-toolkit, javascript,
-                    styled-component, tailwind, html, css, firebase, node,
-                    mysql, python
+                  <div className="pl-4">
+                    <p className="flex items-center gap-4 pb-2">
+                      <span className="text-3xl">·</span> macOS 메뉴바에서 한국
+                      및 미국 주식 실시간 시세를 확인하는 경량 데스크톱 앱
+                    </p>
+                    <p className="flex items-center gap-4 pb-2">
+                      <span className="text-3xl">·</span> 바이브 코딩을 활용한
+                      빠른 프로토타이핑 → 오픈소스 배포
+                    </p>
+                    <p className="flex items-center gap-4 pb-2">
+                      <span className="text-3xl">·</span> "완벽한 v1"보다 "빠른
+                      v0.1 + 반복 개선" 접근으로 사용자 피드백 기반 방향 설정
+                    </p>
+                    <p className="flex items-center gap-4 pb-2">
+                      <span className="text-3xl">·</span>{" "}
+                      <a
+                        href="https://github.com/maantano/maantano-ticker"
+                        target="_blank"
+                        rel="noreferrer"
+                      >
+                        github.com/maantano/maantano-ticker
+                      </a>
+                    </p>
+                  </div>
+                </div>
+
+                <div className="text-2xl font-normal pb-3">Slack Messenger</div>
+                <div className="leading-relaxed w-[620px] pb-5">
+                  <p className="pb-3 pl-4 text-sm text-gray-400">
+                    Stack - React, TypeScript, JavaScript, Babel, Webpack, SWR,
+                    Sass, styled-components, Socket.io
                   </p>
+                  <div className="pl-4">
+                    <p className="flex items-center gap-4 pb-2">
+                      <span className="text-3xl">·</span> WebSocket을 이용한
+                      실시간 통신이 가능한 메신저 클론 프로젝트
+                    </p>
+                    <p className="flex items-center gap-4 pb-2">
+                      <span className="text-3xl">·</span> Babel, Webpack 직접
+                      설정으로 CRA 없이 빌드 환경 구성
+                    </p>
+                    <p className="flex items-center gap-4 pb-2">
+                      <span className="text-3xl">·</span> SWR을 활용한 서버 상태
+                      관리 및 실시간 데이터 동기화
+                    </p>
+                  </div>
+                </div>
+
+                <div className="text-2xl font-normal pb-3">Card Picker</div>
+                <div className="leading-relaxed w-[620px] pb-5">
+                  <p className="pb-3 pl-4 text-sm text-gray-400">
+                    Stack - React, Redux Toolkit, JavaScript, styled-components,
+                    Tailwind CSS, Firebase, Node.js, MySQL, Python
+                  </p>
+                  <div className="pl-4">
+                    <p className="flex items-center gap-4 pb-2">
+                      <span className="text-3xl">·</span> 카드 추천 및 소비 패턴
+                      분석 서비스
+                    </p>
+                    <p className="flex items-center gap-4 pb-2">
+                      <span className="text-3xl">·</span> 카테고리별 카드 조회,
+                      상세 정보 노출, 카드 발급 페이지 연동
+                    </p>
+                    <p className="flex items-center gap-4 pb-2">
+                      <span className="text-3xl">·</span> 카드 사용 내역 파일
+                      업로드 → 소비 패턴 분석 → 최적 할인 카드 추천
+                    </p>
+                  </div>
                 </div>
               </div>
             </>
@@ -656,21 +698,93 @@ const Career = () => {
             <>
               <div className="leading-relaxed w-[620px]">
                 <div className="mt-3">
-                  <p className="text-xl">1. 서비스 런칭 경험</p>
+                  <p className="text-xl font-semibold">
+                    1. 레거시에서 시작해 모던 스택까지 — 환경이 바뀔 때마다
+                    배운 것
+                  </p>
                   <p className="pb-3 font-normal">
-                    첫 회사에서 웹 편집기 서비스 런칭 및 맞춤형 웹사이트 구축을
-                    했습니다. 서비스가 어떻게 런칭되고 운영되는지 체계적인
-                    프로세스들을 경험할 수 있는 감사한 경험이었습니다.
+                    첫 직장에서 jQuery 기반 5년 된 레거시 코드를 물려받았습니다.
+                    처음엔 "왜 이렇게 짰지?"라는 생각뿐이었지만, 운영 중인
+                    서비스를 건드리면서 레거시에도 이유가 있다는 걸 배웠습니다.
+                    이후 이커머스 팀에서 React + Redux로 전환하면서 모던
+                    스택의 장점을 체감했고, 휴이노에서는 TypeScript 도입과
+                    React 17→18 마이그레이션까지 경험했습니다. 이 과정에서 얻은
+                    건 특정 기술이 아니라, "기존 코드를 존중하면서 점진적으로
+                    개선하는 감각"이었습니다. 레거시를 겪어봤기에 새 기술을
+                    도입할 때도 "왜 바꿔야 하는지"를 먼저 묻게 됐습니다.
                   </p>
                 </div>
-                <div>
-                  <p className="text-xl">2. 커뮤니케이션 능력</p>
+
+                <div className="mt-3">
+                  <p className="text-xl font-semibold">
+                    2. 서비스 런칭부터 운영까지 — 고객 접점에서 배운 것
+                  </p>
                   <p className="pb-3 font-normal">
-                    서비스 런칭 후 개선을 해나가면서 기획, 디자인 팀과 다양한
-                    프로젝트들의 협업을 진행하였습니다. 의견을 전달할 때에는
-                    인과관계를 확인하거나 문서화하여 기록하고 기능 단위 별로
-                    진행상황들을 공유하는 등의 효과적인 커뮤니케이션 능력을 배울
-                    수 있었습니다.
+                    더존에서 WE빌더 서비스를 런칭부터 운영까지 경험했습니다.
+                    위하고 플랫폼 내 고객 유치 1위를 달성했지만, 그보다 값진 건
+                    CS 응대와 고객 인터뷰를 직접 하면서 "사용자가 실제로 어디서
+                    막히는지"를 체감한 것입니다. 템플릿 추천 기능은 고객이
+                    반복적으로 겪는 불편을 직접 관찰한 데서 출발했습니다. 이
+                    경험 이후 기능을 만들 때 "기획서에 적힌 요구사항" 너머에
+                    있는 실제 사용 맥락을 의식하게 됐고, 이후 B2B 플랫폼이나
+                    의료 도메인에서도 도메인 전문가의 워크플로우를 먼저
+                    관찰하는 습관이 생겼습니다.
+                  </p>
+                </div>
+
+                <div className="mt-3">
+                  <p className="text-xl font-semibold">
+                    3. 추상화와 코드 설계 — "how"보다 "why"를 먼저 묻기
+                  </p>
+                  <p className="pb-3 font-normal">
+                    더존 시절에는 "돌아가면 된다"는 마인드로 코드를
+                    작성했습니다. 휴이노에서 패턴매칭 프로젝트를 7개월간
+                    진행하면서 처음으로 설계에 충분한 시간을 쏟았고, 그제서야
+                    추상화의 트레이드오프를 체감했습니다. 이벤트 처리를 한
+                    곳에서 관리하면 God Object가 되고, 너무 세밀하게 쪼개면
+                    흐름이 파편화됩니다. 저만의 기준은 "이 단위에 이름을 붙였을
+                    때 한 문장으로 설명되는가"입니다. 안 되면 책임이 섞인
+                    신호이고, 이름이 너무 추상적이면 분리가 과한 것입니다.
+                    돌이켜보면 레거시 코드에서 느꼈던 "왜 이렇게 짰지?"의
+                    답을, 이제는 조금씩 스스로 만들어가고 있다고 느낍니다.
+                  </p>
+                </div>
+
+                <div className="mt-3">
+                  <p className="text-xl font-semibold">
+                    4. 갈등 해소 → 프로세스 개선
+                  </p>
+                  <p className="pb-3 font-normal">
+                    더존에서는 기획·디자인 팀과의 협업에서 의견을 전달할 때
+                    인과관계를 문서화하고 기능 단위로 진행상황을 공유하는 법을
+                    배웠습니다. 휴이노에서는 한 단계 더 나아간 경험을 했습니다.
+                    BE 동료가 AI로 FE 코드를 작성해 "바로 배포하자"고 제안했고,
+                    회고에서 솔직하게 피드백했더니 동료가 크게 상처받았습니다.
+                    제가 먼저 대화를 요청해 문제 삼은 건 '노력'이 아니라
+                    '프로세스'라는 점을 전달하면서, 제가 컨벤션을 사전 공유하지
+                    않은 부분도 인정했습니다. 감정 해소 후에는 "AI 활용 시 사전
+                    합의 프로세스"를 제안해 팀 규칙으로 정착시켰습니다. 갈등에서
+                    "누가 맞냐"보다 "왜 이런 오해가 생겼나"에 집중하고, 감정적
+                    화해에서 끝내지 않고 재발 방지 구조를 만드는 것이 진짜
+                    해결이라는 걸 배웠습니다.
+                  </p>
+                </div>
+
+                <div className="mt-3">
+                  <p className="text-xl font-semibold">
+                    5. 우선순위 판단과 맥락에 따른 실행
+                  </p>
+                  <p className="pb-3 font-normal">
+                    피처 3개와 React 버전 업그레이드가 겹치면서 동시다발 이슈가
+                    터졌을 때, 이슈를 긴급도와 영향 범위로 분류하고 피처 2개는
+                    동료에게 인수인계하는 판단을 했습니다. 당시엔 자책도 했지만,
+                    이후 비슷한 상황에서 우선순위 판단이 훨씬 빨라졌습니다.
+                    한편 사이드 프로젝트에서는 "완벽한 v1"보다 "빠른 v0.1 +
+                    반복 개선"이 효과적이었습니다. 같은 "빠른 실행"이라도 현업과
+                    사이드 프로젝트에서 적절한 수준이 다르다는 걸 느꼈고, 다양한
+                    아티클이나 기술 트렌드를 접할 때도 무조건 수용하기보다 내가
+                    속한 조직과 맥락에 맞게 로컬라이제이션해서 받아들여야 한다고
+                    생각합니다.
                   </p>
                 </div>
               </div>

@@ -13,6 +13,8 @@ import Sheet from "@mui/joy/Sheet";
 import webuilderLogo from "../../../asset/webuilder/main_visual_text_01.png";
 import proterzoneLogo from "../../../asset/porterzone/porterzoneLogo.png";
 import platformLogo from "../../../asset/platform/platform-logo.png";
+import patternLogo from "../../../asset/patternMatching/patternLogo.png";
+import shapeReviewLogo from "../../../asset/shapeReview/shapeReviewLogo.png";
 
 import Layout from "./Layout";
 import myIcon from "../Image/myIcon.jpeg";
@@ -44,11 +46,27 @@ const IntroducePortfolio = () => {
       position: "Frontend Developer",
       companyData: [
         {
+          role: "Pattern Matching",
+          name: "AI 기반 ECG 데이터 차트 편집 에디터",
+          logo: patternLogo,
+          years: "2024.05~현재",
+          skills: ["React", "TypeScript", "Redux", "styled-components", "..."],
+          link: "patternmatching",
+        },
+        {
+          role: "Shape Review",
+          name: "파형 기반 ECG 데이터 편집",
+          logo: shapeReviewLogo,
+          years: "2024.05~현재",
+          skills: ["React", "TypeScript", "Redux", "styled-components", "..."],
+          link: "shapereview",
+        },
+        {
           role: "WE빌더서비스",
           name: "홈페이지 & 쇼핑몰 사이트 제작 웹 에디터(B2C)",
           logo: webuilderLogo,
           years: "2021.02~2023.03",
-          skills: ["javascript", "jquery", "html", "css", "php", "..."],
+          skills: ["JavaScript", "jQuery", "HTML", "CSS", "PHP", "..."],
           link: "webuilder",
         },
         {
@@ -56,13 +74,7 @@ const IntroducePortfolio = () => {
           name: "이커머스 플랫폼(B2B) & MRO",
           logo: proterzoneLogo,
           years: "2021.02~2023.03",
-          skills: [
-            "react",
-            "redux-toolkit",
-            "javascript",
-            "styled-component",
-            "...",
-          ],
+          skills: ["React", "Redux", "JavaScript", "styled-components", "..."],
           link: "porterzone",
         },
         {
@@ -70,38 +82,22 @@ const IntroducePortfolio = () => {
           name: "구축",
           logo: platformLogo,
           years: "2019.07~2021.02",
-          skills: [
-            "react",
-            "redux-toolkit",
-            "javascript",
-            "html",
-            "css",
-            "...",
-          ],
+          skills: ["React", "JavaScript", "HTML", "CSS", "..."],
           link: "platform",
         },
         {
           role: "개인 프로젝트",
-          name: "Card Picker🍒",
-
-          years: "2023.09~2023.10",
-          skills: [
-            "react",
-            "redux-toolkit",
-            "node",
-            "firebase",
-            "python",
-            "...",
-          ],
-          link: "cardrecommend",
+          name: "RAG Document Search",
+          years: "2025.01",
+          skills: ["React", "TypeScript", "FastAPI", "OpenAI", "ChromaDB", "..."],
+          link: "ragproject",
         },
         {
           role: "개인 프로젝트",
-          name: "청솔 노인재가복지센터",
-
-          years: "2024.01.19~2024.01.20",
-          skills: ["html", "css", "react", "redux-toolkit", "firebase", "..."],
-          link: "chungsol",
+          name: "Maantano Ticker",
+          years: "2024~현재",
+          skills: ["Electron", "JavaScript", "Node.js", "..."],
+          link: "maantanoticker",
         },
       ],
     },

@@ -21,6 +21,8 @@ import Chat from "./component/Chat/Chat";
 import Slack from "./page/portfolio/Slack";
 import PatternMatching from "./page/portfolio/PatternMatching";
 import ShapeReview from "./page/portfolio/ShapeReview";
+import RagProject from "./page/portfolio/RagProject";
+import MaantanoTicker from "./page/portfolio/MaantanoTicker";
 
 const queryClient = new QueryClient();
 const router = createBrowserRouter([
@@ -68,6 +70,8 @@ const router = createBrowserRouter([
       { path: "/chungsol", element: <Chungsol /> },
       { path: "/patternmatching", element: <PatternMatching /> },
       { path: "/shapereview", element: <ShapeReview /> },
+      { path: "/ragproject", element: <RagProject /> },
+      { path: "/maantanoticker", element: <MaantanoTicker /> },
     ],
   },
 ]);

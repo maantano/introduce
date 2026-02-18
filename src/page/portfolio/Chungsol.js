@@ -111,7 +111,7 @@ const Chungsol = () => {
           <div className="p-2">
             <div className="text-lg">
               <div className="inline-block font-bold mb-4 p-3 bg-red-600 rounded-lg">
-                어머님의 사이트제작을 진행했습니다(약 3시간 작업)
+                어머님의 사이트제작을 진행했습니다(약 1시간 작업)
               </div>
               <br />웹 페이지 제작과 파이어베이스를 통해 이미지나 파일들을
               불러오게 제작했습니다.

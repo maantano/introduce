@@ -142,6 +142,39 @@ const Portfolio = () => {
           <p className={classes.thumbWatch}>조회수 5천회 1주전</p>
         </div>
       </Link>
+      <Link href="/ragproject" onClick={handleLinkClick("/ragproject")}>
+        <div className={classes.HomeDiv}>
+          <div
+            className={`${classes.thumbImg} p-8 object-contain flex justify-center items-center border border-solid border-gray-100 border-opacity-30 text-xl`}
+            alt="RAG Project"
+          >
+            RAG Document Search
+          </div>
+          <p className="text-"></p>
+          <p className={classes.thumbTitle}>
+            RAG Document Search - 문서 기반 AI 질의응답 시스템
+          </p>
+          <p className={classes.thumbWatch}>조회수 2천회 1주전</p>
+        </div>
+      </Link>
+      <Link
+        href="/maantanoticker"
+        onClick={handleLinkClick("/maantanoticker")}
+      >
+        <div className={classes.HomeDiv}>
+          <div
+            className={`${classes.thumbImg} p-8 object-contain flex justify-center items-center border border-solid border-gray-100 border-opacity-30 text-xl`}
+            alt="Maantano Ticker"
+          >
+            Maantano Ticker
+          </div>
+          <p className="text-"></p>
+          <p className={classes.thumbTitle}>
+            Maantano Ticker - macOS 메뉴바 실시간 주식 시세
+          </p>
+          <p className={classes.thumbWatch}>조회수 3천회 1주전</p>
+        </div>
+      </Link>
       <Link href="/shapereview" onClick={handleLinkClick("/shapereview")}>
         <div className={classes.HomeDiv}>
           <img

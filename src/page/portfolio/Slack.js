@@ -113,7 +113,6 @@ const Slack = () => {
   const [visible, setVisible] = useState(0);
   const imageIndex = wrap(0, images.length, visible);
   const [back, setBack] = useState(false);
-  const [fileItem, setFileItem] = useState([]);
   const nextPlease = () => {
     setBack(false);
     setVisible((prev) =>

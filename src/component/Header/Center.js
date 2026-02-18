@@ -6,17 +6,12 @@ import Toast from "./Toast";
 import {
   addDoc,
   collection,
-  getDocs,
-  orderBy,
-  query,
 } from "firebase/firestore";
 import { db } from "../../firebase-config";
 const Center = () => {
   const dispatch = useDispatch();
   const inputShow = useSelector((state) => state.inputReducer.value);
   const [toast, setToast] = useState(false);
-  const [users, setUsers] = useState([]);
-
   const [description, setDescription] = useState();
   const usersCollectionRef = collection(db, "feedback");
   const createUsers = async () => {
@@ -25,16 +20,6 @@ const Center = () => {
       description,
       date: currentDate,
     });
-    const updatedData = await getDocs(
-      query(usersCollectionRef, orderBy("date", "desc"))
-    );
-    setUsers(
-      updatedData.docs.map((doc) => ({
-        ...doc.data(),
-        id: doc.id,
-        date: doc.data().date.toDate(),
-      }))
-    );
     setDescription("");
   };
 
@@ -84,9 +69,9 @@ const Center = () => {
               <div className="search-input">
                 <div className="input-box">
                   <div className="input-box-b flex justify-center items-center">
-                    <a className="gsst_a" href="#">
+                    <span className="gsst_a">
                       <span className="gsok_a gsst_e"></span>
-                    </a>
+                    </span>
                   </div>
                   <div className="input-box-c">
                     <input

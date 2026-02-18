@@ -12,6 +12,7 @@ function Main(props) {
   );
 }
 
-export default {
+const Layout = {
   Main,
 };
+export default Layout;
