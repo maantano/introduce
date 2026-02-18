@@ -14,11 +14,6 @@ import amaranth from "../../../asset/career/amaranth.png";
 import krinruck from "../../../asset/career/krinruck.png";
 import dforest from "../../../asset/career/dforest.png";
 // --------
-import one from "../../../asset/career/1.png";
-import two from "../../../asset/career/2.png";
-import three from "../../../asset/career/3.png";
-import four from "../../../asset/career/4.png";
-import five from "../../../asset/career/5.png";
 
 const Career = () => {
   const [openSections, setOpenSections] = useState({

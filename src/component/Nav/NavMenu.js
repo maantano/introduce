@@ -16,7 +16,8 @@ const NavMenu = () => {
     return () => {
       window.removeEventListener("resize", handleResize);
     };
-  }, [width]);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [handleResize]);
   return (
     <div className="bg-black">
       {naviStatus || width < 810 ? <Nav /> : <NavOpen />}

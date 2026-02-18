@@ -28,6 +28,7 @@ const Feedback = () => {
       );
     };
     getUsers();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
   const deleteUser = async (id) => {
     const userDoc = doc(db, "users", id);

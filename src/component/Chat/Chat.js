@@ -114,7 +114,8 @@ const Chat = ({ location }) => {
         alert(error);
       }
     });
-  }, [ENDPOINT, window.location.search]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   useEffect(() => {
     socket.on("message", (message) => {

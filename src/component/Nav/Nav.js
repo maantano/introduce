@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 
 import "./nav.css";
 import { useDispatch } from "react-redux";
@@ -41,7 +41,7 @@ const Nav = () => {
               onClick={() => onClickIndx(idx)}
             >
               <div className="item">
-                <a>
+                <div>
                   <div className="icon">
                     <div className="icon-box">
                       <div
@@ -69,7 +69,7 @@ const Nav = () => {
                     </div>
                   </div>
                   <span className="title ">{item.title}</span>
-                </a>
+                </div>
               </div>
             </div>
           );

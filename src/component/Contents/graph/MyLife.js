@@ -124,7 +124,7 @@ const data = {
 };
 
 const MyLife = () => {
-  const [tempData, setTempData] = useState([data]);
+  const [tempData] = useState([data]);
 
   return (
     <div className="flex mt-8 flex-col max-w-[1200px]">

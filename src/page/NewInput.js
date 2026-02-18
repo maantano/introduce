@@ -3,13 +3,9 @@ import { db } from "../firebase-config";
 import {
   addDoc,
   collection,
-  getDocs,
-  orderBy,
-  query,
 } from "firebase/firestore";
 
 const NewInput = () => {
-  const [users, setUsers] = useState([]);
   const [title, setTitle] = useState();
   const [author, setAuthor] = useState();
   const [description, setDescription] = useState();
@@ -23,17 +19,6 @@ const NewInput = () => {
       description,
       date: currentDate,
     });
-    const updatedData = await getDocs(
-      query(usersCollectionRef, orderBy("date", "desc"))
-    );
-    setUsers(
-      updatedData.docs.map((doc) => ({
-        ...doc.data(),
-        id: doc.id,
-        date: doc.data().date.toDate(),
-      }))
-    );
-
     setTitle("");
     setAuthor("");
     setDescription("");
