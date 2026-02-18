@@ -19,28 +19,39 @@ const IntroduceDetail = () => {
       position: "Frontend Developer",
       companyData: [
         {
-          role: "구축 및 운영",
-          name: "더존 비즈온",
-          logo:
-            "https://logo-resources.thevc.kr/organizations/80x80/eec710925266514764e07ce4b1602ae03cf2dbbc199fee65cf34b13c16f79d57_1569838816888626.jpg",
-          years: "2019-2022",
-          skills: ["html5", "css3", "js", "jquery", "php", "..."],
+          role: "프론트엔드 개발",
+          name: "휴이노 (HUINNO)",
+          logo: null,
+          years: "2024.05 ~ 현재",
+          skills: [
+            "React",
+            "TypeScript",
+            "Redux",
+            "styled-components",
+            "...",
+          ],
         },
         {
           role: "프론트엔드 개발 및 운영",
-          name: "더존 비엔에프",
+          name: "더존비엔에프 이커머스개발 Unit",
           logo:
             "https://logo-resources.thevc.kr/organizations/80x80/eec710925266514764e07ce4b1602ae03cf2dbbc199fee65cf34b13c16f79d57_1569838816888626.jpg",
-          years: "2022-2023",
+          years: "2021.02 ~ 2023.03",
           skills: [
-            "js",
-            "react",
+            "React",
+            "Redux",
+            "JavaScript",
             "styled-components",
-            "redux",
-            "linux",
-            "docker",
             "...",
           ],
+        },
+        {
+          role: "구축 및 운영",
+          name: "더존비즈온 플랫폼개발 Unit",
+          logo:
+            "https://logo-resources.thevc.kr/organizations/80x80/eec710925266514764e07ce4b1602ae03cf2dbbc199fee65cf34b13c16f79d57_1569838816888626.jpg",
+          years: "2019.07 ~ 2021.02",
+          skills: ["React", "JavaScript", "jQuery", "HTML", "CSS", "..."],
         },
       ],
     },
@@ -100,10 +111,27 @@ const IntroduceDetail = () => {
                           },
                         }}
                       >
-                        <Avatar
-                          src={company.logo}
-                          sx={{ "--Avatar-size": "50px" }}
-                        />
+                        {company.logo ? (
+                          <Avatar
+                            src={company.logo}
+                            sx={{ "--Avatar-size": "50px" }}
+                          />
+                        ) : (
+                          <Typography
+                            level="title-sm"
+                            sx={{
+                              width: "50px",
+                              height: "50px",
+                              display: "flex",
+                              alignItems: "center",
+                              justifyContent: "center",
+                              fontWeight: "bold",
+                              color: "black",
+                            }}
+                          >
+                            휴이노
+                          </Typography>
+                        )}
                       </ListItemDecorator>
                       <List sx={{ flexDirection: "column", ml: 4, mt: 2 }}>
                         <ListItemContent sx={{ mt: 0 }}>

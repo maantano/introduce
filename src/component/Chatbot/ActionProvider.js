@@ -42,9 +42,9 @@ const ActionProvider = ({ createChatBotMessage, setState, children }) => {
   const handleIntroduceDetail = () => {
     const botMessage = createChatBotMessage(
       <Typography level="title-md">
-        2019.07 ~2023.03까지
+        2019.07 ~ 현재까지
         <br />
-        3년9개월의 경력이 있습니다.
+        약 6년차 프론트엔드 개발자입니다.
         <br />
         <br />
         ⌛️처음으로 돌아가길 원하시면 '다시 시작'을 입력해 주세요.

@@ -14,10 +14,16 @@ const Contents = () => {
 
   const components = {
     0: <Portfolio />,
-    1: <Study />,
-    2: <MyLife />,
-    3: <Career />,
+    1: <MyLife />,
+    2: <Career />,
   };
+
+  // const components = {
+  //   0: <Portfolio />,
+  //   1: <Study />,
+  //   2: <MyLife />,
+  //   3: <Career />,
+  // };
   return (
     <div onClick={() => dispatch(reset())}>
       <Main />

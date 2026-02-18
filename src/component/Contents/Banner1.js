@@ -47,7 +47,8 @@ const UnderLine = styled(motion.div)`
 `;
 
 const Banner1 = () => {
-  const tabs = ["포트폴리오", "개인공부", "인생 그래프", "경력 한눈에 보기"];
+  // const tabs = ["포트폴리오", "개인공부", "인생 그래프", "경력 한눈에 보기"];
+  const tabs = ["포트폴리오", "인생 그래프", "경력 한눈에 보기"];
   const dispatch = useDispatch();
   const selectIndex = useSelector((state) => state.currentReducer.selectIndex);
   const onClickIndx = (idx) => {

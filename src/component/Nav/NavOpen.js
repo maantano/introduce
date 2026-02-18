@@ -9,11 +9,11 @@ const NavOpen = () => {
       path:
         "m12 4.44 7 6.09V20h-4v-6H9v6H5v-9.47l7-6.09m0-1.32-8 6.96V21h6v-6h4v6h6V10.08l-8-6.96z",
     },
-    {
-      title: "개인공부",
-      path:
-        "M10 18v-6l5 3-5 3zm7-15H7v1h10V3zm3 3H4v1h16V6zm2 3H2v12h20V9zM3 10h18v10H3V10z",
-    },
+    // {
+    //   title: "개인공부",
+    //   path:
+    //     "M10 18v-6l5 3-5 3zm7-15H7v1h10V3zm3 3H4v1h16V6zm2 3H2v12h20V9zM3 10h18v10H3V10z",
+    // },
     {
       title: "인생 그래프",
       path:

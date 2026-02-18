@@ -65,8 +65,8 @@ const IntroduceMyself = () => {
                   <List sx={{ flexDirection: "column", ml: 4, mt: 2 }}>
                     <ListItemContent sx={{ mt: 0 }}>
                       <Typography level="title-sm" sx={{ mb: 1 }}>
-                        {"경력 3년차"}
-                        <br /> {"(2019.07.01 - 2023.03.24)"}
+                        {"약 6년차 프론트엔드 개발자"}
+                        <br /> {"(2019.07 ~ 현재)"}
                       </Typography>
                       <Typography level="body-xs" sx={{ mb: 1 }}>
                         {"SQLD 자격증 취득"}
