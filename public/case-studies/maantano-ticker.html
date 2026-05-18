@@ -1,0 +1,655 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Maantano Ticker — Case Study</title>
+<style>
+  :root {
+    --bg: #0a0c11;
+    --bg-elev: #11141b;
+    --bg-elev-2: #181c25;
+    --panel: #141821;
+    --border: #232936;
+    --border-strong: #2e3545;
+    --text: #e8eaf0;
+    --text-dim: #a8aebd;
+    --text-mute: #6b7388;
+    --accent: #5b8cff;
+    --accent-2: #7a6bff;
+    --kr: #ef4444;
+    --us: #3b82f6;
+    --ok: #22c55e;
+    --warn: #f59e0b;
+    --mono: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+    --sans: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", system-ui, sans-serif;
+    --shadow: 0 8px 30px rgba(0,0,0,0.35);
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--sans);
+    font-size: 15px;
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+  }
+  a { color: var(--accent); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+
+  .layout { max-width: 980px; margin: 0 auto; padding: 56px 28px 96px; }
+
+  /* Hero */
+  .hero {
+    display: flex; flex-direction: column; gap: 18px;
+    margin-bottom: 56px;
+  }
+  .eyebrow { color: var(--text-mute); font-size: 12px; letter-spacing: 0.18em; text-transform: uppercase; }
+  h1.title {
+    margin: 0;
+    font-size: 44px; line-height: 1.15; letter-spacing: -0.02em;
+    font-weight: 700;
+  }
+  h1.title .accent {
+    background: linear-gradient(135deg, var(--accent), var(--accent-2));
+    -webkit-background-clip: text; background-clip: text; color: transparent;
+  }
+  .lede {
+    color: var(--text-dim); font-size: 18px; line-height: 1.6; max-width: 720px;
+  }
+  .meta-row {
+    display: flex; flex-wrap: wrap; gap: 10px; margin-top: 4px;
+  }
+  .chip {
+    display: inline-flex; align-items: center; gap: 6px;
+    padding: 5px 11px; font-size: 12px; font-weight: 600;
+    border-radius: 999px; background: var(--bg-elev-2);
+    color: var(--text-dim); border: 1px solid var(--border);
+  }
+  .chip.kr { color: #fecaca; border-color: rgba(239,68,68,0.3); background: rgba(239,68,68,0.06); }
+  .chip.us { color: #bfdbfe; border-color: rgba(59,130,246,0.3); background: rgba(59,130,246,0.06); }
+  .chip.ver { color: #c7d2fe; border-color: rgba(99,102,241,0.3); background: rgba(99,102,241,0.06); }
+
+  /* Hero preview window */
+  .hero-preview {
+    margin-top: 8px;
+    display: flex; gap: 28px; align-items: flex-start; flex-wrap: wrap;
+    min-width: 0;
+  }
+  .hero-preview > * { min-width: 0; }
+  .mock-window {
+    width: 280px;
+    background: rgba(40, 40, 40, 0.95);
+    border: 1px solid #48484a;
+    border-radius: 10px;
+    box-shadow: var(--shadow);
+    overflow: hidden;
+    flex-shrink: 0;
+  }
+  .mock-window .mw-tabs { display: flex; gap: 4px; padding: 8px 8px 0; background: #1a1a1a; border-bottom: 1px solid #2f3645; }
+  .mock-window .mw-tab { flex: 1; padding: 6px 8px; font-size: 11px; font-weight: 600; border-radius: 6px; text-align: center; color: #98989d; background: #2c2c2e; }
+  .mock-window .mw-tab.active { color: white; background: #0a84ff; }
+  .mock-window .mw-list { background: #1a1a1a; padding: 8px; }
+  .mock-window .mw-item {
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 10px 12px; margin: 4px 0;
+    background: #000; border-radius: 8px;
+  }
+  .mock-window .mw-name { font-size: 13px; font-weight: 600; color: #fff; }
+  .mock-window .mw-sym { font-size: 10px; color: #98989d; display: block; }
+  .mock-window .mw-price { font-family: var(--mono); font-size: 13px; font-weight: 600; color: #fff; text-align: right; }
+  .mock-window .mw-chg { font-family: var(--mono); font-size: 11px; font-weight: 500; display: block; }
+  .mw-chg.up { color: #ff453a; }
+  .mw-chg.down { color: #0a84ff; }
+  .mock-window .mw-foot { display: flex; justify-content: space-between; padding: 8px 14px; background: #2c2c2e; font-size: 11px; color: #98989d; }
+
+  /* macOS 시스템 메뉴바 (실제 모양: 화면 최상단 얇은 가로 바) */
+  .mock-menubar {
+    width: 100%;
+    background: rgba(30, 30, 30, 0.92);
+    backdrop-filter: blur(20px);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 6px 10px;
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    gap: 12px;
+    font-family: var(--sans);
+    font-size: 12px;
+    line-height: 1;
+    color: #f5f5f7;
+    box-shadow: var(--shadow);
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+  .mock-menubar::-webkit-scrollbar { display: none; }
+  .mock-menubar > * { flex: 0 0 auto; white-space: nowrap; }
+  .mock-menubar .mb-apple { font-size: 13px; }
+  .mock-menubar .mb-app { font-weight: 700; }
+  .mock-menubar .mb-menu { color: #f5f5f7; opacity: .9; }
+  .mock-menubar .mb-spacer { flex: 1 1 auto; min-width: 8px; }
+  .mock-menubar .mb-sys { color: #d1d1d6; opacity: .9; font-size: 12px; }
+  .mock-menubar .mb-ticker {
+    font-family: var(--mono);
+    color: #fff;
+    padding: 0 8px;
+    border-left: 1px solid rgba(255,255,255,0.1);
+    border-right: 1px solid rgba(255,255,255,0.1);
+  }
+  .mock-menubar .mb-up { color: #ff453a; }
+  .mock-menubar .mb-down { color: #0a84ff; }
+  .mock-menubar .mb-time { color: #f5f5f7; }
+  .menubar-caption {
+    text-align: center; color: var(--text-mute); font-size: 11px; margin-top: 8px;
+  }
+  .menubar-wrap { flex: 1; min-width: 0; display: flex; flex-direction: column; }
+  @media (max-width: 720px) {
+    .mock-menubar .mb-menu { display: none; }
+    .mock-menubar { font-size: 11px; gap: 8px; }
+  }
+
+  /* Sections */
+  section.case-section {
+    margin: 64px 0 0;
+  }
+  section.case-section > h2 {
+    font-size: 13px; letter-spacing: 0.18em; text-transform: uppercase;
+    color: var(--text-mute);
+    margin: 0 0 14px;
+    font-weight: 700;
+  }
+  section.case-section > h3 {
+    font-size: 26px; letter-spacing: -0.01em; margin: 0 0 16px; font-weight: 700;
+  }
+  section.case-section p.body {
+    color: var(--text-dim); margin: 0 0 14px; font-size: 16px; line-height: 1.7;
+  }
+  section.case-section p.body b, section.case-section p.body strong { color: var(--text); }
+
+  /* Problem callouts */
+  .problems { display: grid; gap: 14px; grid-template-columns: repeat(3, 1fr); margin-top: 18px; }
+  @media (max-width: 800px) { .problems { grid-template-columns: 1fr; } }
+  .problem {
+    background: var(--bg-elev);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 20px 22px;
+  }
+  .problem .icon {
+    width: 36px; height: 36px; border-radius: 10px;
+    display: flex; align-items: center; justify-content: center;
+    background: linear-gradient(135deg, rgba(91,140,255,.18), rgba(122,107,255,.18));
+    border: 1px solid rgba(91,140,255,.25);
+    margin-bottom: 12px;
+    font-size: 18px;
+  }
+  .problem h4 { margin: 0 0 8px; font-size: 16px; }
+  .problem p { margin: 0; color: var(--text-dim); font-size: 14px; line-height: 1.6; }
+
+  /* Decisions */
+  .decisions { display: grid; gap: 14px; margin-top: 18px; }
+  .decision {
+    background: var(--bg-elev);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 22px 24px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px 24px;
+  }
+  @media (max-width: 800px) { .decision { grid-template-columns: 1fr; } }
+  .decision h4 {
+    grid-column: 1 / -1;
+    margin: 0; font-size: 17px; display: flex; align-items: center; gap: 10px;
+  }
+  .decision h4 .num {
+    font-family: var(--mono); font-size: 12px;
+    color: var(--accent);
+    background: rgba(91,140,255,.1);
+    border: 1px solid rgba(91,140,255,.3);
+    border-radius: 6px;
+    padding: 2px 8px;
+  }
+  .decision .label { color: var(--text-mute); font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 6px; font-weight: 700; }
+  .decision .text { color: var(--text-dim); font-size: 14px; line-height: 1.6; }
+  .decision .text b { color: var(--text); }
+
+  /* Architecture diagram */
+  .arch-wrap {
+    background: var(--bg-elev);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 28px 24px 18px;
+    margin-top: 18px;
+  }
+  svg.arch { width: 100%; height: auto; display: block; }
+  .arch-caption { color: var(--text-mute); font-size: 12px; text-align: center; margin-top: 10px; }
+
+  /* Stack grid */
+  .stack {
+    display: grid; gap: 12px; grid-template-columns: repeat(3, 1fr); margin-top: 18px;
+  }
+  @media (max-width: 800px) { .stack { grid-template-columns: 1fr; } }
+  .stack-col {
+    background: var(--bg-elev); border: 1px solid var(--border); border-radius: 12px; padding: 16px 18px;
+  }
+  .stack-col h5 {
+    margin: 0 0 10px; font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-mute);
+  }
+  .stack-col ul { margin: 0; padding: 0; list-style: none; }
+  .stack-col li { padding: 4px 0; font-size: 14px; color: var(--text); }
+  .stack-col li .sub { color: var(--text-mute); font-size: 12px; margin-left: 6px; }
+
+  /* Numbers */
+  .numbers { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin-top: 18px; }
+  @media (max-width: 800px) { .numbers { grid-template-columns: repeat(2, 1fr); } }
+  .num-card {
+    background: var(--bg-elev); border: 1px solid var(--border); border-radius: 12px; padding: 18px 16px;
+  }
+  .num-card .v { font-family: var(--mono); font-size: 26px; font-weight: 700; letter-spacing: -0.02em; }
+  .num-card .l { color: var(--text-mute); font-size: 12px; margin-top: 4px; }
+
+  /* Delivery / CI pipeline */
+  .pipeline {
+    margin-top: 18px;
+    background: var(--bg-elev); border: 1px solid var(--border); border-radius: 14px; padding: 22px 18px;
+  }
+  .pipe-row { display: flex; justify-content: space-between; align-items: stretch; gap: 8px; }
+  .pipe-step { flex: 1; text-align: center; padding: 12px 8px; background: var(--bg-elev-2); border: 1px solid var(--border); border-radius: 10px; min-width: 0; }
+  .pipe-step .ti { font-size: 13px; font-weight: 600; color: var(--text); }
+  .pipe-step .su { font-size: 11px; color: var(--text-mute); margin-top: 4px; }
+  .pipe-arrow { display: flex; align-items: center; color: var(--text-mute); font-family: var(--mono); }
+  @media (max-width: 800px) {
+    .pipe-row { flex-direction: column; }
+    .pipe-arrow { transform: rotate(90deg); justify-content: center; padding: 4px 0; }
+  }
+
+  /* Reflection / learnings */
+  .learnings { margin-top: 18px; }
+  .learning {
+    background: var(--bg-elev);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 20px 22px;
+    margin-bottom: 12px;
+  }
+  .learning h4 { margin: 0 0 8px; font-size: 16px; }
+  .learning p { margin: 0; color: var(--text-dim); font-size: 14px; line-height: 1.65; }
+
+  footer.foot {
+    margin-top: 72px; padding-top: 22px;
+    border-top: 1px solid var(--border);
+    text-align: center;
+    color: var(--text-mute); font-size: 13px;
+  }
+  footer.foot a { color: var(--text-dim); }
+  footer.foot .links { display: flex; gap: 18px; justify-content: center; margin-top: 8px; }
+</style>
+</head>
+<body>
+<div class="layout">
+
+  <!-- HERO -->
+  <header class="hero">
+    <div class="eyebrow">Case Study · Desktop App · 2024–2026</div>
+    <h1 class="title"><span class="accent">Maantano Ticker</span><br/>메뉴바 위에 올라간 한·미 주식 시세</h1>
+    <p class="lede">
+      트레이딩 앱을 띄워두지 않아도, 거래 시간 내내 관심 종목 시세가 <b>macOS 메뉴바</b>에 작게 떠 있게 만든 데스크톱 앱.
+      혼자 기획·설계·구현·배포까지 진행했으며, Homebrew Cask로 자동 배포되어 한 줄 명령으로 설치됩니다.
+    </p>
+    <div class="meta-row">
+      <span class="chip ver">v1.6.0</span>
+      <span class="chip">macOS Menu Bar</span>
+      <span class="chip">Electron · Node.js</span>
+      <span class="chip kr">🇰🇷 KOSPI / KOSDAQ</span>
+      <span class="chip us">🇺🇸 NASDAQ / NYSE / AMEX</span>
+      <span class="chip">Homebrew Cask 배포</span>
+      <span class="chip">MIT</span>
+    </div>
+
+    <div class="hero-preview">
+      <div class="mock-window" aria-label="앱 메인 윈도우 목업">
+        <div class="mw-tabs">
+          <div class="mw-tab active">🇰🇷 한국</div>
+          <div class="mw-tab">🇺🇸 미국</div>
+        </div>
+        <div class="mw-list">
+          <div class="mw-item">
+            <div>
+              <div class="mw-name">삼성전자</div>
+              <span class="mw-sym">005930</span>
+            </div>
+            <div>
+              <div class="mw-price">71,400</div>
+              <span class="mw-chg up">▲ +1.28%</span>
+            </div>
+          </div>
+          <div class="mw-item">
+            <div>
+              <div class="mw-name">SK하이닉스</div>
+              <span class="mw-sym">000660</span>
+            </div>
+            <div>
+              <div class="mw-price">182,500</div>
+              <span class="mw-chg down">▼ -0.82%</span>
+            </div>
+          </div>
+          <div class="mw-item">
+            <div>
+              <div class="mw-name">카카오</div>
+              <span class="mw-sym">035720</span>
+            </div>
+            <div>
+              <div class="mw-price">46,200</div>
+              <span class="mw-chg up">▲ +0.43%</span>
+            </div>
+          </div>
+        </div>
+        <div class="mw-foot">
+          <span>설정</span><span>새로고침</span><span>종료</span>
+        </div>
+      </div>
+
+      <div class="menubar-wrap" aria-label="macOS 메뉴바 표시 목업">
+        <div class="mock-menubar">
+          <span class="mb-apple"></span>
+          <span class="mb-app">Maantano Ticker</span>
+          <span class="mb-menu">File</span>
+          <span class="mb-menu">Edit</span>
+          <span class="mb-menu">View</span>
+          <span class="mb-menu">Window</span>
+          <span class="mb-menu">Help</span>
+          <span class="mb-spacer"></span>
+          <span class="mb-ticker">삼성전자 285,000 <span class="mb-up">▲ 6.15%</span></span>
+          <span class="mb-sys">🔋</span>
+          <span class="mb-sys">📶</span>
+          <span class="mb-sys">🔍</span>
+          <span class="mb-time">월 9:24</span>
+        </div>
+        <div class="menubar-caption">↑ 화면 최상단 시스템 메뉴바에 종목 시세가 항상 표시됩니다</div>
+      </div>
+    </div>
+  </header>
+
+  <!-- PROBLEM -->
+  <section class="case-section">
+    <h2>Problem</h2>
+    <h3>차트 앱을 켜는 게 귀찮아서, 메뉴바를 봤다</h3>
+    <p class="body">
+      평소에 주식을 자주 들여다보지는 않지만 <b>시장에 큰 변동이 있을 때만 빠르게 확인</b>하고 싶었다.
+      매번 브라우저나 증권 앱을 켜는 흐름은 끊김이 크고, 메뉴바에는 마침 비어 있는 공간이 있었다.
+      이미 시중에 비슷한 앱이 있지만 — 한국 주식 미지원, 한국식 적/청 컬러 미적용, 텍스트 색·크기 조절 불가 — 내 사용 흐름에 맞지 않았다.
+    </p>
+
+    <div class="problems">
+      <div class="problem">
+        <div class="icon">⏱️</div>
+        <h4>흐름이 끊긴다</h4>
+        <p>관심 종목을 잠깐 보기 위해 브라우저/앱을 열고 로그인까지 가는 비용이 너무 컸다.</p>
+      </div>
+      <div class="problem">
+        <div class="icon">🌏</div>
+        <h4>국내·해외 분리</h4>
+        <p>한국 주식과 미국 주식을 함께 트래킹하려면 결국 두 곳을 동시에 봐야 했다.</p>
+      </div>
+      <div class="problem">
+        <div class="icon">🎨</div>
+        <h4>가독성</h4>
+        <p>메뉴바는 좁고 OS 테마에 따라 색이 묻힌다. 한국식 적/청 관습도 맞춰야 했다.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SOLUTION -->
+  <section class="case-section">
+    <h2>Solution</h2>
+    <h3>항상 보이는 미니 시세 + 클릭 한 번에 다종목 관리</h3>
+    <p class="body">
+      트레이 아이콘 자리에 첫 번째 관심 종목의 <b>이름·가격·등락률</b>을 작게 그려 상시 노출하고,
+      클릭하면 360px 폭의 작은 팝업으로 <b>다종목 리스트·검색·드래그 재정렬·설정</b>을 제공.
+      한·미 시장은 탭으로 분리하지만 시세 표시는 동일한 흐름으로 일관되게 처리.
+    </p>
+
+    <div class="numbers">
+      <div class="num-card"><div class="v">2 클릭</div><div class="l">앱 실행 → 시세 확인까지</div></div>
+      <div class="num-card"><div class="v">5초</div><div class="l">자동 갱신 주기</div></div>
+      <div class="num-card"><div class="v">10색 · 4단계</div><div class="l">메뉴바 색상 · 텍스트 크기</div></div>
+      <div class="num-card"><div class="v">2 시장</div><div class="l">KR / US 동시 트래킹</div></div>
+    </div>
+  </section>
+
+  <!-- DECISIONS -->
+  <section class="case-section">
+    <h2>Key Decisions</h2>
+    <h3>설계에서 신경 쓴 4가지</h3>
+
+    <div class="decisions">
+      <div class="decision">
+        <h4><span class="num">01</span> 메뉴바 텍스트는 직접 그린다</h4>
+        <div>
+          <div class="label">왜</div>
+          <div class="text">macOS 기본 트레이 타이틀은 색·자간·다국어 처리에 제약이 있었다. <b>상승 빨강 / 하락 파랑(한국식)</b>처럼 부분 컬러링이 핵심 요구였기 때문에 텍스트를 이미지로 렌더링하는 길을 선택.</div>
+        </div>
+        <div>
+          <div class="label">어떻게</div>
+          <div class="text">Node canvas로 Retina 스케일을 고려해 <b>@2x 비트맵</b>을 생성하고 트레이 이미지로 주입. 색·크기는 사용자 설정에 따라 매 갱신마다 다시 그림.</div>
+        </div>
+      </div>
+
+      <div class="decision">
+        <h4><span class="num">02</span> 시장은 Factory로 분리한다</h4>
+        <div>
+          <div class="label">왜</div>
+          <div class="text">한국과 미국은 데이터 소스, 통화, 표기, 거래 시간이 완전히 다르다. 처음부터 if-else로 묶으면 시장 추가 시 분기가 폭발한다.</div>
+        </div>
+        <div>
+          <div class="label">어떻게</div>
+          <div class="text">`StockServiceFactory`가 시장 키로 서비스 인스턴스를 반환하고, Renderer는 <b>단일 facade(`StockDataManager`)</b>만 호출. 다종목 갱신 시에는 시장별로 묶어 병렬 처리해 응답 지연을 줄였다.</div>
+        </div>
+      </div>
+
+      <div class="decision">
+        <h4><span class="num">03</span> 장 마감이면 호출하지 않는다</h4>
+        <div>
+          <div class="label">왜</div>
+          <div class="text">5초 간격으로 무조건 호출하면 야간·주말에도 트래픽이 발생하고, 종목 수가 늘수록 외부 API 부하가 커진다.</div>
+        </div>
+        <div>
+          <div class="label">어떻게</div>
+          <div class="text">한국은 KST 기준 정규장+시간외 구간을, 미국은 EST/EDT <b>서머타임 자동 계산</b> 후 정규장 구간을 게이트로 적용. 거래 시간 밖에서는 갱신을 건너뛰고 마지막 값을 그대로 유지.</div>
+        </div>
+      </div>
+
+      <div class="decision">
+        <h4><span class="num">04</span> 죽은 종목은 알아서 빠진다</h4>
+        <div>
+          <div class="label">왜</div>
+          <div class="text">상장폐지·합병으로 종목 코드가 사라지면 사용자는 영문도 모르고 계속 에러를 본다.</div>
+        </div>
+        <div>
+          <div class="label">어떻게</div>
+          <div class="text">종목 객체에 <b>연속 실패 카운터</b>를 두고, 임계치를 넘은 종목을 종목 DB와 교차 확인. 둘 다 음성이면 목록에서 자동 제거하고 사용자에게 시스템 다이얼로그로 안내.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ARCHITECTURE -->
+  <section class="case-section">
+    <h2>Architecture</h2>
+    <h3>3-레이어로 단순하게</h3>
+    <p class="body">
+      Electron의 두 프로세스를 <b>UI 책임(Renderer)</b>과 <b>OS 통합 책임(Main)</b>으로 나누고, 그 사이에 <b>Service 레이어</b>를 두어
+      외부 데이터 소스와 UI를 격리. 데이터 소스가 바뀌어도 UI는 영향을 받지 않는 구조.
+    </p>
+
+    <div class="arch-wrap">
+      <svg class="arch" viewBox="0 0 980 380" xmlns="http://www.w3.org/2000/svg" aria-label="Architecture diagram">
+        <defs>
+          <linearGradient id="lg-ui" x1="0" x2="1" y1="0" y2="1">
+            <stop offset="0" stop-color="#2b1e42"/><stop offset="1" stop-color="#1c172c"/>
+          </linearGradient>
+          <linearGradient id="lg-svc" x1="0" x2="1" y1="0" y2="1">
+            <stop offset="0" stop-color="#1e3a2b"/><stop offset="1" stop-color="#13251b"/>
+          </linearGradient>
+          <linearGradient id="lg-os" x1="0" x2="1" y1="0" y2="1">
+            <stop offset="0" stop-color="#1e2742"/><stop offset="1" stop-color="#171c2c"/>
+          </linearGradient>
+          <marker id="a1" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+            <path d="M 0 0 L 10 5 L 0 10 z" fill="#a4abbb"/>
+          </marker>
+        </defs>
+
+        <!-- UI lane -->
+        <rect x="40" y="40" width="900" height="80" rx="14" fill="url(#lg-ui)" stroke="#2f3645"/>
+        <text x="60" y="68" font-family="ui-monospace,monospace" font-size="12" fill="#a4abbb">UI LAYER · Renderer</text>
+        <g font-family="-apple-system,Segoe UI,sans-serif" font-size="13" fill="#e6e8ee">
+          <rect x="90" y="82" width="180" height="28" rx="8" fill="#0e1117" stroke="#7a6bff"/>
+          <text x="180" y="100" text-anchor="middle">Market Tabs (KR / US)</text>
+          <rect x="290" y="82" width="200" height="28" rx="8" fill="#0e1117" stroke="#7a6bff"/>
+          <text x="390" y="100" text-anchor="middle">Stock List · Drag-Reorder</text>
+          <rect x="510" y="82" width="160" height="28" rx="8" fill="#0e1117" stroke="#7a6bff"/>
+          <text x="590" y="100" text-anchor="middle">Search · Autocomplete</text>
+          <rect x="690" y="82" width="200" height="28" rx="8" fill="#0e1117" stroke="#7a6bff"/>
+          <text x="790" y="100" text-anchor="middle">Settings (Color / Size)</text>
+        </g>
+
+        <!-- Services lane -->
+        <rect x="40" y="150" width="900" height="80" rx="14" fill="url(#lg-svc)" stroke="#2f3645"/>
+        <text x="60" y="178" font-family="ui-monospace,monospace" font-size="12" fill="#a4abbb">SERVICE LAYER</text>
+        <g font-family="-apple-system,Segoe UI,sans-serif" font-size="13" fill="#e6e8ee">
+          <rect x="90" y="192" width="220" height="28" rx="8" fill="#0e1117" stroke="#22c55e"/>
+          <text x="200" y="210" text-anchor="middle">Stock Data Manager (facade)</text>
+          <rect x="330" y="192" width="200" height="28" rx="8" fill="#0e1117" stroke="#22c55e"/>
+          <text x="430" y="210" text-anchor="middle">Service Factory</text>
+          <rect x="550" y="192" width="160" height="28" rx="8" fill="#0e1117" stroke="#22c55e"/>
+          <text x="630" y="210" text-anchor="middle">KR Provider</text>
+          <rect x="730" y="192" width="160" height="28" rx="8" fill="#0e1117" stroke="#22c55e"/>
+          <text x="810" y="210" text-anchor="middle">US Provider</text>
+        </g>
+
+        <!-- OS lane -->
+        <rect x="40" y="260" width="900" height="80" rx="14" fill="url(#lg-os)" stroke="#2f3645"/>
+        <text x="60" y="288" font-family="ui-monospace,monospace" font-size="12" fill="#a4abbb">OS INTEGRATION · Main Process</text>
+        <g font-family="-apple-system,Segoe UI,sans-serif" font-size="13" fill="#e6e8ee">
+          <rect x="90" y="302" width="200" height="28" rx="8" fill="#0e1117" stroke="#5b8cff"/>
+          <text x="190" y="320" text-anchor="middle">Tray Icon Renderer</text>
+          <rect x="310" y="302" width="200" height="28" rx="8" fill="#0e1117" stroke="#5b8cff"/>
+          <text x="410" y="320" text-anchor="middle">Window Lifecycle</text>
+          <rect x="530" y="302" width="180" height="28" rx="8" fill="#0e1117" stroke="#5b8cff"/>
+          <text x="620" y="320" text-anchor="middle">Local Storage</text>
+          <rect x="730" y="302" width="160" height="28" rx="8" fill="#0e1117" stroke="#5b8cff"/>
+          <text x="810" y="320" text-anchor="middle">System Dialogs</text>
+        </g>
+
+        <!-- arrows between lanes -->
+        <g stroke="#a4abbb" stroke-width="1.4" fill="none">
+          <path d="M 200 192 V 120" marker-end="url(#a1)"/>
+          <path d="M 200 230 V 302" marker-end="url(#a1)"/>
+          <path d="M 630 230 V 260"/>
+          <path d="M 810 230 V 260"/>
+        </g>
+      </svg>
+      <div class="arch-caption">UI는 facade 하나만 알고, facade가 시장별 provider에게 위임. OS 통합은 Main 프로세스에 격리.</div>
+    </div>
+  </section>
+
+  <!-- TECH STACK -->
+  <section class="case-section">
+    <h2>Tech Stack</h2>
+    <h3>가능한 한 가볍게</h3>
+    <p class="body">
+      개인 데스크톱 앱이라 번들 크기와 메모리를 의식했고, 프레임워크보다 <b>vanilla JS</b>로 직접 다루는 쪽을 택했다.
+      복잡도를 늘리지 않고도 충분히 관리 가능한 규모로 유지하는 것이 목표.
+    </p>
+    <div class="stack">
+      <div class="stack-col">
+        <h5>Runtime</h5>
+        <ul>
+          <li>Electron 28 <span class="sub">데스크톱 셸</span></li>
+          <li>Node.js 20 <span class="sub">백엔드</span></li>
+          <li>Vanilla JS <span class="sub">프레임워크 없음</span></li>
+        </ul>
+      </div>
+      <div class="stack-col">
+        <h5>UI / Rendering</h5>
+        <ul>
+          <li>CSS3 <span class="sub">다크 글래스모피즘</span></li>
+          <li>HTML5 Drag &amp; Drop <span class="sub">종목 재정렬</span></li>
+          <li>Canvas <span class="sub">트레이 텍스트 렌더링</span></li>
+        </ul>
+      </div>
+      <div class="stack-col">
+        <h5>Tooling</h5>
+        <ul>
+          <li>electron-builder <span class="sub">DMG/zip 패키징</span></li>
+          <li>standard-version <span class="sub">SemVer · CHANGELOG</span></li>
+          <li>GitHub Actions <span class="sub">CI/CD</span></li>
+          <li>Homebrew Cask <span class="sub">한 줄 설치</span></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- DELIVERY -->
+  <section class="case-section">
+    <h2>Delivery</h2>
+    <h3>커밋 한 번이면 사용자 손까지</h3>
+    <p class="body">
+      Conventional Commits 컨벤션을 기반으로 자동 버전 → 자동 빌드 → 자동 릴리즈 → Homebrew Cask 자동 갱신까지 묶어,
+      <b>개인 프로젝트에서도 운영 수준의 배포 파이프라인</b>을 갖췄다.
+    </p>
+
+    <div class="pipeline">
+      <div class="pipe-row">
+        <div class="pipe-step"><div class="ti">Commit</div><div class="su">Conventional Commits</div></div>
+        <div class="pipe-arrow">→</div>
+        <div class="pipe-step"><div class="ti">Version Bump</div><div class="su">standard-version · CHANGELOG 자동 생성</div></div>
+        <div class="pipe-arrow">→</div>
+        <div class="pipe-step"><div class="ti">CI Build</div><div class="su">GitHub Actions · DMG + zip (arm64/x64)</div></div>
+        <div class="pipe-arrow">→</div>
+        <div class="pipe-step"><div class="ti">Release</div><div class="su">GitHub Release 자동 업로드</div></div>
+        <div class="pipe-arrow">→</div>
+        <div class="pipe-step"><div class="ti">Homebrew Cask</div><div class="su">Cask 저장소 자동 PR</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- LEARNINGS -->
+  <section class="case-section">
+    <h2>Reflection</h2>
+    <h3>이 프로젝트에서 배운 것</h3>
+    <div class="learnings">
+      <div class="learning">
+        <h4>OS 통합은 "보이지 않게 정확히" 가 핵심이다</h4>
+        <p>메뉴바 아이콘은 한 번 거슬리기 시작하면 바로 지워진다. 폰트 크기, 자간, 다크모드 색상 대비, 텍스트 잘림 — 사용자가 의식하지 않는 디테일이 채택률을 결정한다. 작은 캔버스 렌더링 하나에 가장 많은 시간을 썼다.</p>
+      </div>
+      <div class="learning">
+        <h4>혼자 만드는 앱일수록 배포가 제품의 일부다</h4>
+        <p>"빌드 후 DMG를 어디서 받는지" 한 단계만 막혀도 사용자는 떠난다. 자동 버전 관리와 Homebrew Cask 자동화는 처음에는 과해 보였지만, 결과적으로 <b>업데이트 사이클을 짧게 유지</b>하는 가장 큰 이유가 됐다.</p>
+      </div>
+      <div class="learning">
+        <h4>외부 데이터를 다룰 때는 "예의"가 필요하다</h4>
+        <p>공개된 데이터라도 호출 간격을 두고, 거래 시간 밖에서는 호출하지 않고, 사용 목적과 면책 사항을 README에 명시하는 식의 운영 기본기. 기능을 만드는 것보다 <b>지속 가능하게 운영하는 감각</b>이 더 중요하다는 걸 체감했다.</p>
+      </div>
+      <div class="learning">
+        <h4>다음 버전이라면</h4>
+        <p>차트 미니뷰, 알림(임계치 도달 시 푸시), 환율 자동 환산, 그리고 Apple Notarization을 통한 정식 서명까지 — 사용자 신뢰를 한 번 더 올릴 수 있는 단계가 명확히 보인다.</p>
+      </div>
+    </div>
+  </section>
+
+  <footer class="foot">
+    <div>Maantano Ticker — Case Study</div>
+    <div class="links">
+      <a href="#">GitHub</a>
+      <a href="#">Download</a>
+      <a href="#">Homepage</a>
+    </div>
+  </footer>
+
+</div>
+</body>
+</html>

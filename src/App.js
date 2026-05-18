@@ -23,6 +23,8 @@ import PatternMatching from "./page/portfolio/PatternMatching";
 import ShapeReview from "./page/portfolio/ShapeReview";
 import RagProject from "./page/portfolio/RagProject";
 import MaantanoTicker from "./page/portfolio/MaantanoTicker";
+import Lemini from "./page/portfolio/Lemini";
+import DailyNews from "./page/portfolio/DailyNews";
 
 const queryClient = new QueryClient();
 const router = createBrowserRouter([
@@ -72,6 +74,8 @@ const router = createBrowserRouter([
       { path: "/shapereview", element: <ShapeReview /> },
       { path: "/ragproject", element: <RagProject /> },
       { path: "/maantanoticker", element: <MaantanoTicker /> },
+      { path: "/lemini", element: <Lemini /> },
+      { path: "/dailynews", element: <DailyNews /> },
     ],
   },
 ]);

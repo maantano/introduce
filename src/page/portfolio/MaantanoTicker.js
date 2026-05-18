@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "./Portfolio.css";
+import PortfolioTabs from "../../component/CaseStudy/PortfolioTabs";
 
 import demo from "../../asset/maantanoTicker/demo.gif";
 
@@ -119,17 +120,8 @@ const MaantanoTicker = () => {
     setVisible((prev) => (prev === 0 ? 0 : prev - 1));
   };
 
-  return (
-    <div className="mt-24 bg-black text-white flex flex-col justify-center items-center">
-      {/* Header Section */}
-      <section className="w-full h-[300px] relative bg-white flex items-center justify-center">
-        <div className="text-center">
-          <div className="text-6xl font-bold text-black mb-4 tracking-wider">
-            Maantano Ticker
-          </div>
-        </div>
-      </section>
-
+  const overview = (
+    <>
       {/* Project Info */}
       <section className="container mx-auto px-4 pt-16 pb-12">
         <div className="flex items-center pb-6">
@@ -438,6 +430,25 @@ brew uninstall --cask maantano-ticker`}
           </div>
         </div>
       </section>
+    </>
+  );
+
+  return (
+    <div className="mt-24 bg-black text-white flex flex-col">
+      {/* Header Section */}
+      <section className="w-full h-[300px] relative bg-white flex items-center justify-center">
+        <div className="text-center">
+          <div className="text-6xl font-bold text-black mb-4 tracking-wider">
+            Maantano Ticker
+          </div>
+        </div>
+      </section>
+
+      <PortfolioTabs
+        overview={overview}
+        caseStudySrc="/case-studies/maantano-ticker.html"
+        caseStudyTitle="Maantano Ticker · Case Study"
+      />
     </div>
   );
 };
